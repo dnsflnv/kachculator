@@ -6,7 +6,7 @@ class RmPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(label: 'Menu'),
+      appBar: mpAppBar(label: '1 RM calculation'),
     );
   }
 }
