@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kachkulator/generated/l10n.dart';
 import 'package:kachkulator/pages/BmiPage.dart';
 import 'package:kachkulator/pages/RmPage.dart';
 import 'package:kachkulator/widgets/mpWidgets.dart';
@@ -9,25 +10,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(label: 'Menu'),
+      appBar: mpAppBar(label: S.of(context).title),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // TreeView(
-            //   data: treeData,
-            //   titleOnTap: () {
-            //     print('title');
-            //   },
-            //   leadingOnTap: () {
-            //     print('leading');
-            //   },
-            //   trailingOnTap: () {
-            //     print('trailing');
-            //   },
-            // ),
             mpButton(
-                label: 'Body',
+                label: S.of(context).homePageBody,
                 context: context,
                 onPressed: () {
                   Navigator.pushNamed(context, BmiPage.id);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kachkulator/generated/l10n.dart';
 import 'package:kachkulator/widgets/mpWidgets.dart';
 import 'package:kachkulator/models/CalcBody.dart';
 
@@ -20,7 +21,7 @@ class _BmiPageState extends State<BmiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(label: 'BMI'),
+      appBar: mpAppBar(label: S.of(context).bmiPageTitle),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
