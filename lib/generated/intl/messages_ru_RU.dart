@@ -21,10 +21,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "bmi" : MessageLookupByLibrary.simpleMessage("ИМТ"),
+    "bmiCalculate" : MessageLookupByLibrary.simpleMessage("Расчитать"),
+    "bmiHeight" : MessageLookupByLibrary.simpleMessage("Рост"),
+    "bmiHeightValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите рост в сантиметрах"),
+    "bmiPageDesc" : MessageLookupByLibrary.simpleMessage("Расчитайте индекс массы тела."),
     "bmiPageTitle" : MessageLookupByLibrary.simpleMessage("Индекс массы тела"),
+    "bmiWeight" : MessageLookupByLibrary.simpleMessage("Вес"),
+    "bmiWeightValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите вес в килограммах"),
     "homePageBody" : MessageLookupByLibrary.simpleMessage("Измерения тела"),
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Еда"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Сила"),
+    "rmPageTitle" : MessageLookupByLibrary.simpleMessage("Повторный максимум"),
     "title" : MessageLookupByLibrary.simpleMessage("Качкулятор")
   };
 }

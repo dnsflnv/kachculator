@@ -28,19 +28,19 @@ class _BmiPageState extends State<BmiPage> {
           key: _formKey,
           child: Column(
             children: [
-              Text('This calculate your Body Mass Index.'),
+              Text(S.of(context).bmiPageDesc),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: TextFormField(
                   controller: tcWeight,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Weight',
+                    labelText: S.of(context).bmiWeight,
                   ),
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter your weight in kilogramms.';
+                      return S.of(context).bmiWeightValidation;
                     }
                     // if (value == 0) {
                     //   return 'Please enter weight';
@@ -55,12 +55,12 @@ class _BmiPageState extends State<BmiPage> {
                   controller: tcHeight,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Height',
+                    labelText: S.of(context).bmiHeight,
                   ),
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter your height in cantimeters.';
+                      return S.of(context).bmiHeightValidation;
                     }
                     // if (value == 0) {
                     //   return 'Please enter weight';
@@ -70,7 +70,7 @@ class _BmiPageState extends State<BmiPage> {
                 ),
               ),
               mpButton(
-                label: 'Calculate',
+                label: S.of(context).bmiCalculate,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     double weight = double.parse(tcWeight.text);
@@ -84,7 +84,8 @@ class _BmiPageState extends State<BmiPage> {
                   }
                 },
               ),
-              if (bmi > 0) Text('BMI: ${bmi.toStringAsFixed(2)}'),
+              if (bmi > 0)
+                Text('${S.of(context).bmi}: ${bmi.toStringAsFixed(2)}'),
               Text(result),
             ],
           ),

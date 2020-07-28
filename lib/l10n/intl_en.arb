@@ -4,5 +4,14 @@
     "homePagePower":"Power",
     "homePageFood":"Food",
     
-    "bmiPageTitle":"Body Mass Index"
+    "bmiPageTitle":"Body Mass Index",
+    "bmiPageDesc":"Calculate your Body Mass Index.",
+    "bmiWeight":"Weight",
+    "bmiWeightValidation":"Please enter your weight in kilogramms.",
+    "bmiHeight":"Height",
+    "bmiHeightValidation":"Please enter your height in cantimeters.",
+    "bmiCalculate":"Calculate",
+    "bmi":"BMI",
+
+    "rmPageTitle":"1 RM calculation"
 }

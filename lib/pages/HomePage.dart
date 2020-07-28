@@ -23,13 +23,16 @@ class HomePage extends StatelessWidget {
                 }),
             SizedBox(height: 8.0),
             mpButton(
-                label: 'Power',
+                label: S.of(context).homePagePower,
                 context: context,
                 onPressed: () {
                   Navigator.pushNamed(context, RmPage.id);
                 }),
             SizedBox(height: 8.0),
-            mpButton(label: 'Food', context: context, onPressed: () {}),
+            mpButton(
+                label: S.of(context).homePageFood,
+                context: context,
+                onPressed: () {}),
           ],
         ),
       ),

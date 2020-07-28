@@ -82,6 +82,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Расчитайте индекс массы тела.`
+  String get bmiPageDesc {
+    return Intl.message(
+      'Расчитайте индекс массы тела.',
+      name: 'bmiPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Вес`
+  String get bmiWeight {
+    return Intl.message(
+      'Вес',
+      name: 'bmiWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите вес в килограммах`
+  String get bmiWeightValidation {
+    return Intl.message(
+      'Пожалуйста, введите вес в килограммах',
+      name: 'bmiWeightValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Рост`
+  String get bmiHeight {
+    return Intl.message(
+      'Рост',
+      name: 'bmiHeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите рост в сантиметрах`
+  String get bmiHeightValidation {
+    return Intl.message(
+      'Пожалуйста, введите рост в сантиметрах',
+      name: 'bmiHeightValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчитать`
+  String get bmiCalculate {
+    return Intl.message(
+      'Расчитать',
+      name: 'bmiCalculate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ИМТ`
+  String get bmi {
+    return Intl.message(
+      'ИМТ',
+      name: 'bmi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Повторный максимум`
+  String get rmPageTitle {
+    return Intl.message(
+      'Повторный максимум',
+      name: 'rmPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

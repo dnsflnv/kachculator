@@ -3,6 +3,15 @@
     "homePageBody":"Измерения тела",
     "homePagePower":"Сила",
     "homePageFood":"Еда",
-    
-    "bmiPageTitle":"Индекс массы тела"
+
+    "bmiPageTitle":"Индекс массы тела",
+    "bmiPageDesc":"Расчитайте индекс массы тела.",
+    "bmiWeight":"Вес",
+    "bmiWeightValidation":"Пожалуйста, введите вес в килограммах",
+    "bmiHeight":"Рост",
+    "bmiHeightValidation":"Пожалуйста, введите рост в сантиметрах",
+    "bmiCalculate":"Расчитать",
+    "bmi":"ИМТ",
+
+    "rmPageTitle":"Повторный максимум"
 }

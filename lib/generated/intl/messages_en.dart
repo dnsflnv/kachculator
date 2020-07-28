@@ -21,10 +21,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "bmi" : MessageLookupByLibrary.simpleMessage("BMI"),
+    "bmiCalculate" : MessageLookupByLibrary.simpleMessage("Calculate"),
+    "bmiHeight" : MessageLookupByLibrary.simpleMessage("Height"),
+    "bmiHeightValidation" : MessageLookupByLibrary.simpleMessage("Please enter your height in cantimeters."),
+    "bmiPageDesc" : MessageLookupByLibrary.simpleMessage("Calculate your Body Mass Index."),
     "bmiPageTitle" : MessageLookupByLibrary.simpleMessage("Body Mass Index"),
+    "bmiWeight" : MessageLookupByLibrary.simpleMessage("Weight"),
+    "bmiWeightValidation" : MessageLookupByLibrary.simpleMessage("Please enter your weight in kilogramms."),
     "homePageBody" : MessageLookupByLibrary.simpleMessage("Body metrics"),
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Food"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Power"),
+    "rmPageTitle" : MessageLookupByLibrary.simpleMessage("1 RM calculation"),
     "title" : MessageLookupByLibrary.simpleMessage("Kachculator")
   };
 }
