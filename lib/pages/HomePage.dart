@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kachkulator/generated/l10n.dart';
-import 'package:kachkulator/pages/BmiPage.dart';
-import 'package:kachkulator/pages/RmPage.dart';
-import 'package:kachkulator/widgets/mpWidgets.dart';
+import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/pages/BmiPage.dart';
+import 'package:kachculator/pages/RmPage.dart';
+import 'package:kachculator/widgets/mpWidgets.dart';
 
 class HomePage extends StatelessWidget {
   static String id = '/';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kachkulator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mpWidgets.dart';
 
 class RmPage extends StatelessWidget {
   static String id = '/rm';

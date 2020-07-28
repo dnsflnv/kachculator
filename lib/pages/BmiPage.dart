@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kachkulator/generated/l10n.dart';
-import 'package:kachkulator/widgets/mpWidgets.dart';
-import 'package:kachkulator/models/CalcBody.dart';
+import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/models/CalcBody.dart';
 
 class BmiPage extends StatefulWidget {
   static String id = '/bmi';
