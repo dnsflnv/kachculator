@@ -83,10 +83,10 @@ class S {
     );
   }
 
-  /// `Расчитайте индекс массы тела.`
+  /// `Расчитайте индекс массы тела (ВОЗ).`
   String get bmiPageDesc {
     return Intl.message(
-      'Расчитайте индекс массы тела.',
+      'Расчитайте индекс массы тела (ВОЗ).',
       name: 'bmiPageDesc',
       desc: '',
       args: [],
@@ -148,6 +148,86 @@ class S {
     return Intl.message(
       'ИМТ',
       name: 'bmi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Выраженный дефицит массы тела.`
+  String get bmi15 {
+    return Intl.message(
+      'Выраженный дефицит массы тела.',
+      name: 'bmi15',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Дефицит массы тела.`
+  String get bmi15_16 {
+    return Intl.message(
+      'Дефицит массы тела.',
+      name: 'bmi15_16',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Недостаточная (дефицит) масса тела.`
+  String get bmi16_18 {
+    return Intl.message(
+      'Недостаточная (дефицит) масса тела.',
+      name: 'bmi16_18',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Нормальная масса тела.`
+  String get bmi18_25 {
+    return Intl.message(
+      'Нормальная масса тела.',
+      name: 'bmi18_25',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Избыточная масса тела.`
+  String get bmi25_30 {
+    return Intl.message(
+      'Избыточная масса тела.',
+      name: 'bmi25_30',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ожирение.`
+  String get bmi30_35 {
+    return Intl.message(
+      'Ожирение.',
+      name: 'bmi30_35',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Резкое ожирение.`
+  String get bmi35_40 {
+    return Intl.message(
+      'Резкое ожирение.',
+      name: 'bmi35_40',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очень резкое ожирение.`
+  String get bmi40 {
+    return Intl.message(
+      'Очень резкое ожирение.',
+      name: 'bmi40',
       desc: '',
       args: [],
     );
