@@ -3,12 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/home_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
+import 'package:native_widgets/native_widgets.dart';
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart';
 // Localization
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 
 void main() {
+  if (!kIsWeb) _setTargetPlatformForDesktop();
   runApp(App());
+}
+
+void _setTargetPlatformForDesktop() {
+  TargetPlatform targetPlatform;
+  if (Platform.isMacOS) {
+    targetPlatform = TargetPlatform.iOS;
+  } else if (Platform.isLinux || Platform.isWindows) {
+    targetPlatform = TargetPlatform.android;
+  }
+  if (targetPlatform != null) {
+    debugDefaultTargetPlatformOverride = targetPlatform;
+  }
 }
 
 class App extends StatelessWidget {
