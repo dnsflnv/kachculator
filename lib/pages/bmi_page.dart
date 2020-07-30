@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
@@ -13,10 +14,17 @@ class BmiPage extends StatefulWidget {
 
 class _BmiPageState extends State<BmiPage> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController tcWeight = TextEditingController(text: '90');
-  TextEditingController tcHeight = TextEditingController(text: '184');
+  TextEditingController tcWeight;
+  TextEditingController tcHeight;
   double bmi = 0;
   String result = '';
+
+  @override
+  void initState() {
+    super.initState();
+    tcWeight = TextEditingController(text: '90');
+    tcHeight = TextEditingController(text: '184');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +50,6 @@ class _BmiPageState extends State<BmiPage> {
                     if (value.isEmpty) {
                       return S.of(context).bmiWeightValidation;
                     }
-                    // if (value == 0) {
-                    //   return 'Please enter weight';
-                    // }
                     return null;
                   },
                 ),
@@ -62,9 +67,6 @@ class _BmiPageState extends State<BmiPage> {
                     if (value.isEmpty) {
                       return S.of(context).bmiHeightValidation;
                     }
-                    // if (value == 0) {
-                    //   return 'Please enter weight';
-                    // }
                     return null;
                   },
                 ),
@@ -75,7 +77,10 @@ class _BmiPageState extends State<BmiPage> {
                   if (_formKey.currentState.validate()) {
                     double weight = double.parse(tcWeight.text);
                     double height = double.parse(tcHeight.text);
-                    Calc calc = Calc(weightKg: weight, heightCm: height);
+                    Calc calc = Calc.bmi(
+                        weightAthlete: weight,
+                        heightAthleteCm: height,
+                        context: context);
                     setState(() {
                       bmi = calc.bmi;
                       result = calc.bmiInterpretation(bmi);
