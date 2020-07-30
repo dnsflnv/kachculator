@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
-import 'package:kachculator/models/CalcBody.dart';
+import 'package:kachculator/models/calc.dart';
 
 class BmiPage extends StatefulWidget {
   static String id = '/bmi';
@@ -75,8 +75,7 @@ class _BmiPageState extends State<BmiPage> {
                   if (_formKey.currentState.validate()) {
                     double weight = double.parse(tcWeight.text);
                     double height = double.parse(tcHeight.text);
-                    CalcBody calc =
-                        CalcBody(weightKg: weight, heightCm: height);
+                    Calc calc = Calc(weightKg: weight, heightCm: height);
                     setState(() {
                       bmi = calc.bmi;
                       result = calc.bmiInterpretation(bmi);

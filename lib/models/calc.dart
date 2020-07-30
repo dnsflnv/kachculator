@@ -4,12 +4,12 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:meta/meta.dart';
 
 /// Body calculators.
-class CalcBody {
+class Calc {
   double weightKg;
   double heightCm;
   BuildContext context; // For localization
 
-  CalcBody({@required this.weightKg, @required this.heightCm, this.context});
+  Calc({@required this.weightKg, @required this.heightCm, this.context});
 
   double get bmi => this.weightKg / pow((this.heightCm / 100), 2);
 

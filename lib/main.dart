@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kachculator/pages/BmiPage.dart';
-import 'package:kachculator/pages/HomePage.dart';
-import 'package:kachculator/pages/RmPage.dart';
+import 'package:kachculator/pages/bmi_page.dart';
+import 'package:kachculator/pages/home_page.dart';
+import 'package:kachculator/pages/rm_page.dart';
 // Localization
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';

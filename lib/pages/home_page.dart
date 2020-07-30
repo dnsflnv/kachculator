@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kachculator/generated/l10n.dart';
-import 'package:kachculator/pages/BmiPage.dart';
-import 'package:kachculator/pages/RmPage.dart';
+import 'package:kachculator/pages/bmi_page.dart';
+import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,8 +15,9 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(S.of(context).homePageBody),
             mpButton(
-                label: S.of(context).homePageBody,
+                label: S.of(context).bmiPageTitle,
                 context: context,
                 onPressed: () {
                   Navigator.pushNamed(context, BmiPage.id);
