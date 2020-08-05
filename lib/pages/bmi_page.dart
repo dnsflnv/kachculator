@@ -29,7 +29,7 @@ class _BmiPageState extends State<BmiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(label: S.of(context).bmiPageTitle),
+      appBar: mpAppBar(title: Text(S.of(context).bmiPageTitle)),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
