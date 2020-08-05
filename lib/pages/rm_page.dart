@@ -26,7 +26,7 @@ class _RmPageState extends State<RmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(label: S.of(context).rmPageTitle),
+      appBar: mpAppBar(title: Text(S.of(context).rmPageTitle)),
     );
   }
 }

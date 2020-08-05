@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
 
+//TODO: One detection of targetPlatform on start.
+
 /// Button.
 Widget mpButton({BuildContext context, String label, Function onPressed}) {
   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
@@ -18,13 +20,13 @@ Widget mpButton({BuildContext context, String label, Function onPressed}) {
 }
 
 /// AppBar.
-PreferredSizeWidget mpAppBar({String label}) {
+PreferredSizeWidget mpAppBar({Widget title}) {
   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
     return CupertinoNavigationBar(
-      middle: Text(label),
+      middle: title,
     );
   else
     return AppBar(
-      title: Text(label),
+      title: title,
     );
 }

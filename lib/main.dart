@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/home_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
-import 'package:native_widgets/native_widgets.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 // Localization
@@ -50,7 +49,6 @@ class App extends StatelessWidget {
         BmiPage.id: (context) => BmiPage(),
         RmPage.id: (context) => RmPage(),
       },
-      //home: HomePage(),
     );
   }
 }
