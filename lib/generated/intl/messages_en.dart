@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "homePageBody" : MessageLookupByLibrary.simpleMessage("Body metrics"),
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Food"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Power"),
+    "rmPageDesc" : MessageLookupByLibrary.simpleMessage("1 RM calculation by different methods."),
     "rmPageTitle" : MessageLookupByLibrary.simpleMessage("1 RM calculation"),
     "title" : MessageLookupByLibrary.simpleMessage("Kachculator")
   };
