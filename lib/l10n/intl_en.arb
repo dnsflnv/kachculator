@@ -21,5 +21,6 @@
     "bmi35_40":"Obese Class II (Severely obese).",
     "bmi40":"Obese Class III (Very severely obese).",
 
-    "rmPageTitle":"1 RM calculation"
+    "rmPageTitle":"1 RM calculation",
+    "rmPageDesc":"1 RM calculation by different methods."
 }

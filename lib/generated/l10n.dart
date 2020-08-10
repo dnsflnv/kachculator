@@ -83,10 +83,10 @@ class S {
     );
   }
 
-  /// `Расчитайте индекс массы тела (ВОЗ).`
+  /// `Расчитайте индекс массы тела (мктодика ВОЗ).`
   String get bmiPageDesc {
     return Intl.message(
-      'Расчитайте индекс массы тела (ВОЗ).',
+      'Расчитайте индекс массы тела (мктодика ВОЗ).',
       name: 'bmiPageDesc',
       desc: '',
       args: [],
@@ -238,6 +238,16 @@ class S {
     return Intl.message(
       'Повторный максимум',
       name: 'rmPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт повторного максимума по разным методикам.`
+  String get rmPageDesc {
+    return Intl.message(
+      'Расчёт повторного максимума по разным методикам.',
+      name: 'rmPageDesc',
       desc: '',
       args: [],
     );

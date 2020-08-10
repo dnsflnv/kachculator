@@ -33,13 +33,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "bmiCalculate" : MessageLookupByLibrary.simpleMessage("Расчитать"),
     "bmiHeight" : MessageLookupByLibrary.simpleMessage("Рост"),
     "bmiHeightValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите рост в сантиметрах"),
-    "bmiPageDesc" : MessageLookupByLibrary.simpleMessage("Расчитайте индекс массы тела (ВОЗ)."),
+    "bmiPageDesc" : MessageLookupByLibrary.simpleMessage("Расчитайте индекс массы тела (мктодика ВОЗ)."),
     "bmiPageTitle" : MessageLookupByLibrary.simpleMessage("Индекс массы тела"),
     "bmiWeight" : MessageLookupByLibrary.simpleMessage("Вес"),
     "bmiWeightValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите вес в килограммах"),
     "homePageBody" : MessageLookupByLibrary.simpleMessage("Измерения тела"),
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Еда"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Сила"),
+    "rmPageDesc" : MessageLookupByLibrary.simpleMessage("Расчёт повторного максимума по разным методикам."),
     "rmPageTitle" : MessageLookupByLibrary.simpleMessage("Повторный максимум"),
     "title" : MessageLookupByLibrary.simpleMessage("Качкулятор")
   };
