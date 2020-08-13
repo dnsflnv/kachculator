@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "OConner" : MessageLookupByLibrary.simpleMessage("O`Conner"),
     "Wathan" : MessageLookupByLibrary.simpleMessage("Wathan"),
     "Wilks" : MessageLookupByLibrary.simpleMessage("Wilks"),
+    "absiPageDesc" : MessageLookupByLibrary.simpleMessage("Расчёт индекса объёма тела."),
+    "absiPageTitle" : MessageLookupByLibrary.simpleMessage("A body shape index (ABSI)"),
     "bmi" : MessageLookupByLibrary.simpleMessage("BMI"),
     "bmi15" : MessageLookupByLibrary.simpleMessage("Very severely underweight."),
     "bmi15_16" : MessageLookupByLibrary.simpleMessage("Severely underweight."),

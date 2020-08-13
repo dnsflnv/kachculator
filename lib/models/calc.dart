@@ -10,6 +10,7 @@ class Calc {
   BuildContext context; // For localization
   double weightAthlete;
   double heightAthleteCm;
+  double waistCircumference;
 
   int repeat;
   double weight;
@@ -82,6 +83,7 @@ class Calc {
       Coeff.f: -0.00000009054
     }
   };
+
   double get oneRmWilks {
     Map<Coeff, double> c = coeff[this.gender];
     double result = (500.0 * weight) /
@@ -93,4 +95,9 @@ class Calc {
             c[Coeff.f] * pow(this.weightAthlete, 5));
     return result;
   }
+
+  Calc.absi(
+      {@required context,
+      @required this.weightAthlete,
+      @required this.waistCircumference});
 }

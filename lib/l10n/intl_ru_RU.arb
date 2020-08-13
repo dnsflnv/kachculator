@@ -4,7 +4,7 @@
     "homePagePower":"Сила",
     "homePageFood":"Еда",
 
-    "bmiPageTitle":"Индекс массы тела",
+    "bmiPageTitle":"Индекс массы тела (BMI)",
     "bmiPageDesc":"Расчитайте индекс массы тела (методика ВОЗ).",
     "bmiWeight":"Ваш вес",
     "bmiWeightValidation":"Пожалуйста, введите ваш вес в килограммах",
@@ -36,5 +36,8 @@
     "OConner":"О`Коннор",
     "Wathan":"Ватан",
     "Wilks":"Вилкс",
-    "Epley":"Эпли"
+    "Epley":"Эпли",
+
+    "absiPageTitle":"Индекс объёма тела (ABSI)",
+    "absiPageDesc":"Расчёт индекса объёма тела."
 }

@@ -73,10 +73,10 @@ class S {
     );
   }
 
-  /// `Индекс массы тела`
+  /// `Индекс массы тела (BMI)`
   String get bmiPageTitle {
     return Intl.message(
-      'Индекс массы тела',
+      'Индекс массы тела (BMI)',
       name: 'bmiPageTitle',
       desc: '',
       args: [],
@@ -388,6 +388,26 @@ class S {
     return Intl.message(
       'Эпли',
       name: 'Epley',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Индекс объёма тела (ABSI)`
+  String get absiPageTitle {
+    return Intl.message(
+      'Индекс объёма тела (ABSI)',
+      name: 'absiPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт индекса объёма тела.`
+  String get absiPageDesc {
+    return Intl.message(
+      'Расчёт индекса объёма тела.',
+      name: 'absiPageDesc',
       desc: '',
       args: [],
     );

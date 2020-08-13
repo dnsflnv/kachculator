@@ -93,7 +93,11 @@ class _RmPageState extends State<RmPage> {
                   context: context,
                   label: S.of(context).calculate,
                   onPressed: () {
+                    double wa = double.parse(tcWeightAthlete.text);
+                    double w = double.parse(tcWeight.text);
+                    int r = int.parse(tcRepeat.text);
                     //TODO Validation here
+                    if (wa <= 0 || w <= 0 || r <= 0) return;
 
                     Calc rm = Calc.rm(
                         context: context,
@@ -113,7 +117,6 @@ class _RmPageState extends State<RmPage> {
 |${S.of(context).Wathan}|${rm.oneRmWathan.toStringAsFixed(3)}|                  
 |${S.of(context).Wilks}|${rm.oneRmWilks.toStringAsFixed(3)}|
 ''';
-                    print(res);
                     Navigator.push(
                       context,
                       MaterialPageRoute(

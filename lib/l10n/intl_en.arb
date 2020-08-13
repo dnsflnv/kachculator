@@ -36,5 +36,8 @@
     "OConner":"O`Conner",
     "Wathan":"Wathan",
     "Wilks":"Wilks",
-    "Epley":"Epley"
+    "Epley":"Epley",
+
+    "absiPageTitle":"A body shape index (ABSI)",
+    "absiPageDesc":"Расчёт индекса объёма тела."
 }
