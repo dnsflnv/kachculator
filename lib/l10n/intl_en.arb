@@ -6,11 +6,11 @@
     
     "bmiPageTitle":"Body Mass Index",
     "bmiPageDesc":"Calculate your Body Mass Index (WHO).",
-    "bmiWeight":"Weight",
+    "bmiWeight":"Your weight",
     "bmiWeightValidation":"Please enter your weight in kilogramms.",
-    "bmiHeight":"Height",
+    "bmiHeight":"Your height",
     "bmiHeightValidation":"Please enter your height in cantimeters.",
-    "bmiCalculate":"Calculate",
+    "calculate":"Calculate",
     "bmi":"BMI",
     "bmi15":"Very severely underweight.",
     "bmi15_16":"Severely underweight.",
@@ -22,5 +22,19 @@
     "bmi40":"Obese Class III (Very severely obese).",
 
     "rmPageTitle":"1 RM calculation",
-    "rmPageDesc":"1 RM calculation by different methods."
+    "rmPageDesc":"1 RM calculation by different methods.",
+    "rmBarebellWeight":"Weight of barebell",
+    "rmRepeats":"Repeats",
+    "rmMethod":"Method",
+    "rmResult":"Result",
+    "male":"Male",
+    "female":"Female",
+    "Brzycki":"Brzycki",
+    "Lander":"Lander",
+    "Lombardi":"Lombardi",
+    "Mayhew":"Mayhew",
+    "OConner":"O`Conner",
+    "Wathan":"Wathan",
+    "Wilks":"Wilks",
+    "Epley":"Epley"
 }

@@ -21,6 +21,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "Brzycki" : MessageLookupByLibrary.simpleMessage("Brzycki"),
+    "Epley" : MessageLookupByLibrary.simpleMessage("Epley"),
+    "Lander" : MessageLookupByLibrary.simpleMessage("Lander"),
+    "Lombardi" : MessageLookupByLibrary.simpleMessage("Lombardi"),
+    "Mayhew" : MessageLookupByLibrary.simpleMessage("Mayhew"),
+    "OConner" : MessageLookupByLibrary.simpleMessage("O`Conner"),
+    "Wathan" : MessageLookupByLibrary.simpleMessage("Wathan"),
+    "Wilks" : MessageLookupByLibrary.simpleMessage("Wilks"),
     "bmi" : MessageLookupByLibrary.simpleMessage("BMI"),
     "bmi15" : MessageLookupByLibrary.simpleMessage("Very severely underweight."),
     "bmi15_16" : MessageLookupByLibrary.simpleMessage("Severely underweight."),
@@ -30,18 +38,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "bmi30_35" : MessageLookupByLibrary.simpleMessage("Obese Class I (Moderately obese)."),
     "bmi35_40" : MessageLookupByLibrary.simpleMessage("Obese Class II (Severely obese)."),
     "bmi40" : MessageLookupByLibrary.simpleMessage("Obese Class III (Very severely obese)."),
-    "bmiCalculate" : MessageLookupByLibrary.simpleMessage("Calculate"),
-    "bmiHeight" : MessageLookupByLibrary.simpleMessage("Height"),
+    "bmiHeight" : MessageLookupByLibrary.simpleMessage("Your height"),
     "bmiHeightValidation" : MessageLookupByLibrary.simpleMessage("Please enter your height in cantimeters."),
     "bmiPageDesc" : MessageLookupByLibrary.simpleMessage("Calculate your Body Mass Index (WHO)."),
     "bmiPageTitle" : MessageLookupByLibrary.simpleMessage("Body Mass Index"),
-    "bmiWeight" : MessageLookupByLibrary.simpleMessage("Weight"),
+    "bmiWeight" : MessageLookupByLibrary.simpleMessage("Your weight"),
     "bmiWeightValidation" : MessageLookupByLibrary.simpleMessage("Please enter your weight in kilogramms."),
+    "calculate" : MessageLookupByLibrary.simpleMessage("Calculate"),
+    "female" : MessageLookupByLibrary.simpleMessage("Female"),
     "homePageBody" : MessageLookupByLibrary.simpleMessage("Body metrics"),
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Food"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Power"),
+    "male" : MessageLookupByLibrary.simpleMessage("Male"),
+    "rmBarebellWeight" : MessageLookupByLibrary.simpleMessage("Weight of barebell"),
+    "rmMethod" : MessageLookupByLibrary.simpleMessage("Method"),
     "rmPageDesc" : MessageLookupByLibrary.simpleMessage("1 RM calculation by different methods."),
     "rmPageTitle" : MessageLookupByLibrary.simpleMessage("1 RM calculation"),
+    "rmRepeats" : MessageLookupByLibrary.simpleMessage("Repeats"),
+    "rmResult" : MessageLookupByLibrary.simpleMessage("Result"),
     "title" : MessageLookupByLibrary.simpleMessage("Kachculator")
   };
 }

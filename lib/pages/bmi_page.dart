@@ -72,7 +72,7 @@ class _BmiPageState extends State<BmiPage> {
                 ),
               ),
               mpButton(
-                label: S.of(context).bmiCalculate,
+                label: S.of(context).calculate,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     double weight = double.parse(tcWeight.text);

@@ -22,6 +22,7 @@ Widget mpButton({BuildContext context, String label, Function onPressed}) {
     );
 }
 
+/// Text field.
 Widget mpTextField(
     {BuildContext context,
     TextEditingController controller,
@@ -67,3 +68,10 @@ PreferredSizeWidget mpAppBar({Widget title}) {
       title: title,
     );
 }
+
+// Widget mpPageRoute({Function(BuildContext) builder}) {
+//   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
+//     return CupertinoPageRoute(builder:  builder);
+//   else
+//     return MaterialPageRoute(builder: builder);
+// }
