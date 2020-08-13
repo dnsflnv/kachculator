@@ -83,50 +83,50 @@ class S {
     );
   }
 
-  /// `Расчитайте индекс массы тела (мктодика ВОЗ).`
+  /// `Расчитайте индекс массы тела (методика ВОЗ).`
   String get bmiPageDesc {
     return Intl.message(
-      'Расчитайте индекс массы тела (мктодика ВОЗ).',
+      'Расчитайте индекс массы тела (методика ВОЗ).',
       name: 'bmiPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Вес`
+  /// `Ваш вес`
   String get bmiWeight {
     return Intl.message(
-      'Вес',
+      'Ваш вес',
       name: 'bmiWeight',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите вес в килограммах`
+  /// `Пожалуйста, введите ваш вес в килограммах`
   String get bmiWeightValidation {
     return Intl.message(
-      'Пожалуйста, введите вес в килограммах',
+      'Пожалуйста, введите ваш вес в килограммах',
       name: 'bmiWeightValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Рост`
+  /// `Ваш рост`
   String get bmiHeight {
     return Intl.message(
-      'Рост',
+      'Ваш рост',
       name: 'bmiHeight',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите рост в сантиметрах`
+  /// `Пожалуйста, введите ваш рост в сантиметрах`
   String get bmiHeightValidation {
     return Intl.message(
-      'Пожалуйста, введите рост в сантиметрах',
+      'Пожалуйста, введите ваш рост в сантиметрах',
       name: 'bmiHeightValidation',
       desc: '',
       args: [],
@@ -134,10 +134,10 @@ class S {
   }
 
   /// `Расчитать`
-  String get bmiCalculate {
+  String get calculate {
     return Intl.message(
       'Расчитать',
-      name: 'bmiCalculate',
+      name: 'calculate',
       desc: '',
       args: [],
     );
@@ -248,6 +248,146 @@ class S {
     return Intl.message(
       'Расчёт повторного максимума по разным методикам.',
       name: 'rmPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Вес снаряда`
+  String get rmBarebellWeight {
+    return Intl.message(
+      'Вес снаряда',
+      name: 'rmBarebellWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Количество повторов`
+  String get rmRepeats {
+    return Intl.message(
+      'Количество повторов',
+      name: 'rmRepeats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Метод`
+  String get rmMethod {
+    return Intl.message(
+      'Метод',
+      name: 'rmMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Результат`
+  String get rmResult {
+    return Intl.message(
+      'Результат',
+      name: 'rmResult',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Мужской`
+  String get male {
+    return Intl.message(
+      'Мужской',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Женский`
+  String get female {
+    return Intl.message(
+      'Женский',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Бржицки`
+  String get Brzycki {
+    return Intl.message(
+      'Бржицки',
+      name: 'Brzycki',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ландер`
+  String get Lander {
+    return Intl.message(
+      'Ландер',
+      name: 'Lander',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ломбарди`
+  String get Lombardi {
+    return Intl.message(
+      'Ломбарди',
+      name: 'Lombardi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Мэхью`
+  String get Mayhew {
+    return Intl.message(
+      'Мэхью',
+      name: 'Mayhew',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `О'Коннор`
+  String get OConner {
+    return Intl.message(
+      'О`Коннор',
+      name: 'OConner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ватан`
+  String get Wathan {
+    return Intl.message(
+      'Ватан',
+      name: 'Wathan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Вилкс`
+  String get Wilks {
+    return Intl.message(
+      'Вилкс',
+      name: 'Wilks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Эпли`
+  String get Epley {
+    return Intl.message(
+      'Эпли',
+      name: 'Epley',
       desc: '',
       args: [],
     );

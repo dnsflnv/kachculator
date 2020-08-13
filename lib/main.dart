@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/home_page.dart';
+import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
@@ -43,12 +44,15 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: HomePage.id,
       routes: {
         HomePage.id: (context) => HomePage(),
         BmiPage.id: (context) => BmiPage(),
         RmPage.id: (context) => RmPage(),
       },
     );
+
+//TODO return this app, if mac
+    //return CupertinoApp();
   }
 }
