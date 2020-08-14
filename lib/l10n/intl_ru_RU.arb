@@ -39,5 +39,7 @@
     "Epley":"Эпли",
 
     "absiPageTitle":"Индекс объёма тела (ABSI)",
-    "absiPageDesc":"Расчёт индекса объёма тела."
+    "absiPageDesc":"Расчёт индекса объёма тела и риска преждевременной смерти",
+    "absiWaistCircumference":"Объём талии",
+    "absiWaistCircumferenceValidation":"Пожалуйста, введите окружность талии в сантиметрах."
 }

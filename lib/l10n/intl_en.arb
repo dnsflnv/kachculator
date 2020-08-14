@@ -39,5 +39,7 @@
     "Epley":"Epley",
 
     "absiPageTitle":"A body shape index (ABSI)",
-    "absiPageDesc":"Расчёт индекса объёма тела."
+    "absiPageDesc":"A body shape index and mortality risk calculator.",
+    "absiWaistCircumference":"Waist circumference",
+    "absiWaistCircumferenceValidation":"Please enter your waist circumference in cantimeters."
 }

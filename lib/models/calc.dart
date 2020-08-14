@@ -10,7 +10,7 @@ class Calc {
   BuildContext context; // For localization
   double weightAthlete;
   double heightAthleteCm;
-  double waistCircumference;
+  double waistCircumferenceCm;
 
   int repeat;
   double weight;
@@ -99,5 +99,12 @@ class Calc {
   Calc.absi(
       {@required context,
       @required this.weightAthlete,
-      @required this.waistCircumference});
+      @required this.heightAthleteCm,
+      @required this.waistCircumferenceCm});
+
+  double get absi {
+    double result = (this.waistCircumferenceCm / 100.0) /
+        (pow(this.bmi, 2.0 / 3.0) * pow(this.heightAthleteCm / 100.0, 0.5));
+    return result;
+  }
 }

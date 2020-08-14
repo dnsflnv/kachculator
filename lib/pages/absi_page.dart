@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:kachculator/models/calc.dart';
 
 class AbsiPage extends StatefulWidget {
   static String id = '/absi';
-  // https://nirkrakauer.net/sw/absi-calculator.html
 
   @override
   _AbsiPageState createState() => _AbsiPageState();
@@ -40,6 +40,7 @@ class _AbsiPageState extends State<AbsiPage> {
             key: _formKey,
             child: Column(
               children: [
+                // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
                 Text(S.of(context).bmiPageDesc),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -84,18 +85,18 @@ class _AbsiPageState extends State<AbsiPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: TextFormField(
-                    controller: tcHeight,
+                    controller: tcWaistCircumference,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: S.of(context).bmiHeight,
+                      labelText: S.of(context).absiWaistCircumference,
                     ),
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                     validator: (value) {
                       if (value.isEmpty) {
-                        return S.of(context).bmiHeightValidation;
+                        return S.of(context).absiWaistCircumferenceValidation;
                       }
                       if (double.parse(value) <= 0) {
-                        return S.of(context).bmiHeightValidation;
+                        return S.of(context).absiWaistCircumferenceValidation;
                       }
                       return null;
                     },
@@ -107,20 +108,29 @@ class _AbsiPageState extends State<AbsiPage> {
                     if (_formKey.currentState.validate()) {
                       double weight = double.parse(tcWeight.text);
                       double height = double.parse(tcHeight.text);
-                      Calc calc = Calc.bmi(
+                      double waistCircumference =
+                          double.parse(tcWaistCircumference.text);
+                      Calc calc = Calc.absi(
                           weightAthlete: weight,
                           heightAthleteCm: height,
+                          waistCircumferenceCm: waistCircumference,
                           context: context);
-                      setState(() {
-                        bmi = calc.bmi;
-                        result = calc.bmiInterpretation(bmi);
-                      });
+                      // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
+                      String res = """
+ABSI: ${calc.absi.toStringAsFixed(4)}
+""";
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResultPage(
+                            result: res,
+                            title: S.of(context).absiPageTitle,
+                          ),
+                        ),
+                      );
                     }
                   },
                 ),
-                if (bmi > 0)
-                  Text('${S.of(context).bmi}: ${bmi.toStringAsFixed(2)}'),
-                Text(result),
               ],
             ),
           ),

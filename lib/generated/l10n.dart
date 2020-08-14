@@ -403,11 +403,31 @@ class S {
     );
   }
 
-  /// `Расчёт индекса объёма тела.`
+  /// `Расчёт индекса объёма тела и риска преждевременной смерти`
   String get absiPageDesc {
     return Intl.message(
-      'Расчёт индекса объёма тела.',
+      'Расчёт индекса объёма тела и риска преждевременной смерти',
       name: 'absiPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Объём талии`
+  String get absiWaistCircumference {
+    return Intl.message(
+      'Объём талии',
+      name: 'absiWaistCircumference',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите окружность талии в сантиметрах.`
+  String get absiWaistCircumferenceValidation {
+    return Intl.message(
+      'Пожалуйста, введите окружность талии в сантиметрах.',
+      name: 'absiWaistCircumferenceValidation',
       desc: '',
       args: [],
     );
