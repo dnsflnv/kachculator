@@ -18,7 +18,9 @@ class _AbsiPageState extends State<AbsiPage> {
   TextEditingController tcWeight;
   TextEditingController tcHeight;
   TextEditingController tcWaistCircumference;
+  TextEditingController tcAge;
   double bmi = 0;
+  Gender gender;
   String result = '';
 
   @override
@@ -27,6 +29,8 @@ class _AbsiPageState extends State<AbsiPage> {
     tcWeight = TextEditingController(text: '90');
     tcHeight = TextEditingController(text: '184');
     tcWaistCircumference = TextEditingController(text: '100');
+    tcAge = TextEditingController(text: '35');
+    gender = Gender.male;
   }
 
   @override
@@ -101,6 +105,50 @@ class _AbsiPageState extends State<AbsiPage> {
                       return null;
                     },
                   ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: TextFormField(
+                    controller: tcAge,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: S.of(context).age,
+                    ),
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return S.of(context).ageValidation;
+                      }
+                      if (double.parse(value) <= 0) {
+                        return S.of(context).ageValidation;
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: Gender.female,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
+                    ),
+                    Text(S.of(context).female),
+                    Radio(
+                      value: Gender.male,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
+                    ),
+                    Text(S.of(context).male),
+                  ],
                 ),
                 mpButton(
                   label: S.of(context).calculate,

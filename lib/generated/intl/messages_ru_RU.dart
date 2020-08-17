@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "absiPageTitle" : MessageLookupByLibrary.simpleMessage("Индекс формы тела (ABSI)"),
     "absiWaistCircumference" : MessageLookupByLibrary.simpleMessage("Объём талии"),
     "absiWaistCircumferenceValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите окружность талии в сантиметрах."),
+    "age" : MessageLookupByLibrary.simpleMessage("Возраст"),
+    "ageValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите возраст."),
     "bmi" : MessageLookupByLibrary.simpleMessage("ИМТ"),
     "bmi15" : MessageLookupByLibrary.simpleMessage("Выраженный дефицит массы тела."),
     "bmi15_16" : MessageLookupByLibrary.simpleMessage("Дефицит массы тела."),

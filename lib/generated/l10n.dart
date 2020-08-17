@@ -313,6 +313,26 @@ class S {
     );
   }
 
+  /// `Возраст`
+  String get age {
+    return Intl.message(
+      'Возраст',
+      name: 'age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите возраст.`
+  String get ageValidation {
+    return Intl.message(
+      'Пожалуйста, введите возраст.',
+      name: 'ageValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Бржицки`
   String get Brzycki {
     return Intl.message(

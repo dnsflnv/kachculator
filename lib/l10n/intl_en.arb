@@ -29,6 +29,8 @@
     "rmResult":"Result",
     "male":"Male",
     "female":"Female",
+    "age":"Age",
+    "ageValidation":"Please, enter you age.",
     "Brzycki":"Brzycki",
     "Lander":"Lander",
     "Lombardi":"Lombardi",
