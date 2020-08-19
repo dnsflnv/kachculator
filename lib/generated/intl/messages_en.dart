@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "absiPageTitle" : MessageLookupByLibrary.simpleMessage("A body shape index (ABSI)"),
     "absiWaistCircumference" : MessageLookupByLibrary.simpleMessage("Waist circumference"),
     "absiWaistCircumferenceValidation" : MessageLookupByLibrary.simpleMessage("Please enter your waist circumference in cantimeters."),
+    "adsiAgeValidation" : MessageLookupByLibrary.simpleMessage("Please, enter you age. ABSI calculator is only for people 2 or much years old."),
     "age" : MessageLookupByLibrary.simpleMessage("Age"),
     "ageValidation" : MessageLookupByLibrary.simpleMessage("Please, enter you age."),
     "bmi" : MessageLookupByLibrary.simpleMessage("BMI"),

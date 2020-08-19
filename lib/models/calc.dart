@@ -112,10 +112,12 @@ class Calc {
   }
 
   double get absiZ {
-    double absiSD = absiTable[this.gender][this.age][1];
-    double absiMean = absiTable[this.gender][this.age][2];
+    double absiSD = absiTable[this.gender][this.age][4];
+    double absiMean = absiTable[this.gender][this.age][3];
 
     double Z = (this.absi - absiMean) / absiSD;
+    print(
+        "Age: ${this.age} Gender: ${this.gender} absi: ${this.absi} ADBSIsd: $absiSD ABSImean: $absiMean Z: $Z");
     return Z;
   }
 

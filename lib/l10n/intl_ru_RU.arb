@@ -41,7 +41,8 @@
     "Epley":"Эпли",
 
     "absiPageTitle":"Индекс формы тела (ABSI)",
-    "absiPageDesc":"Расчёт индекса формы тела и риска преждевременной смерти",
+    "absiPageDesc":"Расчёт индекса формы тела и риска преждевременной смерти.",
     "absiWaistCircumference":"Объём талии",
-    "absiWaistCircumferenceValidation":"Пожалуйста, введите окружность талии в сантиметрах."
+    "absiWaistCircumferenceValidation":"Пожалуйста, введите окружность талии в сантиметрах.",
+    "adsiAgeValidation":"Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет."
 }

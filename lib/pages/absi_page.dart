@@ -29,7 +29,7 @@ class _AbsiPageState extends State<AbsiPage> {
     tcWeight = TextEditingController(text: '90');
     tcHeight = TextEditingController(text: '184');
     tcWaistCircumference = TextEditingController(text: '100');
-    tcAge = TextEditingController(text: '35');
+    tcAge = TextEditingController(text: '41');
     gender = Gender.male;
   }
 
@@ -45,7 +45,7 @@ class _AbsiPageState extends State<AbsiPage> {
             child: Column(
               children: [
                 // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
-                Text(S.of(context).bmiPageDesc),
+                Text(S.of(context).absiPageDesc),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: TextFormField(
@@ -119,8 +119,8 @@ class _AbsiPageState extends State<AbsiPage> {
                       if (value.isEmpty) {
                         return S.of(context).ageValidation;
                       }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).ageValidation;
+                      if (double.parse(value) <= 2) {
+                        return S.of(context).adsiAgeValidation;
                       }
                       return null;
                     },
@@ -156,16 +156,22 @@ class _AbsiPageState extends State<AbsiPage> {
                     if (_formKey.currentState.validate()) {
                       double weight = double.parse(tcWeight.text);
                       double height = double.parse(tcHeight.text);
+                      int age = int.parse(tcAge.text);
+                      if (age > 85) age = 85;
                       double waistCircumference =
                           double.parse(tcWaistCircumference.text);
                       Calc calc = Calc.absi(
                           weightAthlete: weight,
                           heightAthleteCm: height,
+                          gender: gender,
+                          age: age,
                           waistCircumferenceCm: waistCircumference,
                           context: context);
                       // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
                       String res = """
-ABSI: ${calc.absi.toStringAsFixed(4)}
+**ABSI:** ${calc.absi.toStringAsFixed(4)}
+
+**ABSI Z score**: ${calc.absiZ.toStringAsFixed(4)}
 """;
                       Navigator.push(
                         context,
