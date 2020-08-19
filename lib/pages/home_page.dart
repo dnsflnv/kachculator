@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kachculator/generated/l10n.dart';
-import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
@@ -26,13 +25,6 @@ class HomePage extends StatelessWidget {
               label: S.of(context).bmiPageTitle,
               onPressed: () {
                 Navigator.pushNamed(context, BmiPage.id);
-              },
-            ),
-            mpButton(
-              context: context,
-              label: S.of(context).absiPageTitle,
-              onPressed: () {
-                Navigator.pushNamed(context, AbsiPage.id);
               },
             ),
             Text(S.of(context).homePagePower),
