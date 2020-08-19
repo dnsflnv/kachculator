@@ -120,7 +120,7 @@ class _AbsiPageState extends State<AbsiPage> {
                         return S.of(context).ageValidation;
                       }
                       if (double.parse(value) <= 2) {
-                        return S.of(context).adsiAgeValidation;
+                        return S.of(context).absiAgeValidation;
                       }
                       return null;
                     },
@@ -161,18 +161,35 @@ class _AbsiPageState extends State<AbsiPage> {
                       double waistCircumference =
                           double.parse(tcWaistCircumference.text);
                       Calc calc = Calc.absi(
-                          weightAthlete: weight,
-                          heightAthleteCm: height,
-                          gender: gender,
-                          age: age,
-                          waistCircumferenceCm: waistCircumference,
-                          context: context);
+                        context: context,
+                        weightAthlete: weight,
+                        heightAthleteCm: height,
+                        gender: gender,
+                        age: age,
+                        waistCircumferenceCm: waistCircumference,
+                      );
                       // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
                       String res = """
-**ABSI:** ${calc.absi.toStringAsFixed(4)}
+**Age:** $age
+
+**Gender**: $gender
+
+**Height**: $height
+
+**BMI**: ${calc.bmi.toStringAsFixed(4)}
+
+**Waist Circumference**: $waistCircumference
+
+**ABSI:** ${calc.absi.toStringAsFixed(5)}
+
+**ABSImean**: ${calc.absiMean.toStringAsFixed(5)}
+
+**ABSIsd**: ${calc.absiSD.toStringAsFixed(5)}
 
 **ABSI Z score**: ${calc.absiZ.toStringAsFixed(4)}
-""";
+
+**${S.of(context).absiRisk}**: ${calc.absiRisk}
+"""; //
                       Navigator.push(
                         context,
                         MaterialPageRoute(

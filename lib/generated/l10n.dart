@@ -454,10 +454,70 @@ class S {
   }
 
   /// `Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет.`
-  String get adsiAgeValidation {
+  String get absiAgeValidation {
     return Intl.message(
       'Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет.',
-      name: 'adsiAgeValidation',
+      name: 'absiAgeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Риск преждевременной смерти`
+  String get absiRisk {
+    return Intl.message(
+      'Риск преждевременной смерти',
+      name: 'absiRisk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очень низкий.`
+  String get absiRisk1 {
+    return Intl.message(
+      'Очень низкий.',
+      name: 'absiRisk1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Низкий.`
+  String get absiRisk2 {
+    return Intl.message(
+      'Низкий.',
+      name: 'absiRisk2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Средний.`
+  String get absiRisk3 {
+    return Intl.message(
+      'Средний.',
+      name: 'absiRisk3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Высокий.`
+  String get absiRisk4 {
+    return Intl.message(
+      'Высокий.',
+      name: 'absiRisk4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очень выскокий.`
+  String get absiRisk5 {
+    return Intl.message(
+      'Очень выскокий.',
+      name: 'absiRisk5',
       desc: '',
       args: [],
     );

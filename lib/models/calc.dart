@@ -98,27 +98,35 @@ class Calc {
   }
 
   Calc.absi(
-      {@required context,
+      {@required this.context,
       @required this.weightAthlete,
       @required this.heightAthleteCm,
       @required this.gender,
       @required this.age,
       @required this.waistCircumferenceCm});
 
-  double get absi {
-    double result = (this.waistCircumferenceCm / 100.0) /
-        (pow(this.bmi, 2.0 / 3.0) * pow(this.heightAthleteCm / 100.0, 0.5));
+  double get absi =>
+      (this.waistCircumferenceCm / 100.0) /
+      (pow(this.bmi, 2.0 / 3.0) * pow(this.heightAthleteCm / 100.0, 0.5));
+  double get absiMean => absiTable[this.gender][this.age][3];
+  double get absiSD => absiTable[this.gender][this.age][4];
+  double get absiZ => (this.absi - this.absiMean) / this.absiSD;
+
+  String get absiRisk {
+    double z = this.absiZ;
+    String result = '';
+    if (z < -0.868) {
+      result = S.of(context).absiRisk1;
+    } else if (z >= -0.868 && z < -0.272) {
+      result = S.of(context).absiRisk2;
+    } else if (z >= -0.272 && z < 0.229) {
+      result = S.of(context).absiRisk3;
+    } else if (z >= 0.229 && z < 0.798) {
+      result = S.of(context).absiRisk4;
+    } else if (z >= 0.798) {
+      result = S.of(context).absiRisk5;
+    }
     return result;
-  }
-
-  double get absiZ {
-    double absiSD = absiTable[this.gender][this.age][4];
-    double absiMean = absiTable[this.gender][this.age][3];
-
-    double Z = (this.absi - absiMean) / absiSD;
-    print(
-        "Age: ${this.age} Gender: ${this.gender} absi: ${this.absi} ADBSIsd: $absiSD ABSImean: $absiMean Z: $Z");
-    return Z;
   }
 
   // https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0039504.s001&type=supplementary

@@ -44,5 +44,11 @@
     "absiPageDesc":"A body shape index and mortality risk calculator.",
     "absiWaistCircumference":"Waist circumference",
     "absiWaistCircumferenceValidation":"Please enter your waist circumference in cantimeters.",
-    "adsiAgeValidation":"Please, enter you age. ABSI calculator is only for people 2 or much years old."
+    "absiAgeValidation":"Please, enter you age. ABSI calculator is only for people 2 or much years old.",
+    "absiRisk":"Premature mortality risk",
+    "absiRisk1":"Very Low",
+    "absiRisk2":"Low",
+    "absiRisk3":"Averange",
+    "absiRisk4":"High",
+    "absiRisk5":"Very High"
 }
