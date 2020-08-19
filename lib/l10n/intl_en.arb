@@ -29,6 +29,8 @@
     "rmResult":"Result",
     "male":"Male",
     "female":"Female",
+    "age":"Age",
+    "ageValidation":"Please, enter you age.",
     "Brzycki":"Brzycki",
     "Lander":"Lander",
     "Lombardi":"Lombardi",
@@ -36,5 +38,11 @@
     "OConner":"O`Conner",
     "Wathan":"Wathan",
     "Wilks":"Wilks",
-    "Epley":"Epley"
+    "Epley":"Epley",
+
+    "absiPageTitle":"A body shape index (ABSI)",
+    "absiPageDesc":"A body shape index and mortality risk calculator.",
+    "absiWaistCircumference":"Waist circumference",
+    "absiWaistCircumferenceValidation":"Please enter your waist circumference in cantimeters.",
+    "adsiAgeValidation":"Please, enter you age. ABSI calculator is only for people 2 or much years old."
 }

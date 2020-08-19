@@ -73,10 +73,10 @@ class S {
     );
   }
 
-  /// `Индекс массы тела`
+  /// `Индекс массы тела (BMI)`
   String get bmiPageTitle {
     return Intl.message(
-      'Индекс массы тела',
+      'Индекс массы тела (BMI)',
       name: 'bmiPageTitle',
       desc: '',
       args: [],
@@ -193,40 +193,40 @@ class S {
     );
   }
 
-  /// `Избыточная масса тела.`
+  /// `Избыточная масса тела (1 степень).`
   String get bmi25_30 {
     return Intl.message(
-      'Избыточная масса тела.',
+      'Избыточная масса тела (1 степень).',
       name: 'bmi25_30',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ожирение.`
+  /// `Ожирение (2a степень).`
   String get bmi30_35 {
     return Intl.message(
-      'Ожирение.',
+      'Ожирение (2a степень).',
       name: 'bmi30_35',
       desc: '',
       args: [],
     );
   }
 
-  /// `Резкое ожирение.`
+  /// `Выраженное ожирение (2b степень).`
   String get bmi35_40 {
     return Intl.message(
-      'Резкое ожирение.',
+      'Выраженное ожирение (2b степень).',
       name: 'bmi35_40',
       desc: '',
       args: [],
     );
   }
 
-  /// `Очень резкое ожирение.`
+  /// `Резко выраженное, морбидное ожирение (3 степень).`
   String get bmi40 {
     return Intl.message(
-      'Очень резкое ожирение.',
+      'Резко выраженное, морбидное ожирение (3 степень).',
       name: 'bmi40',
       desc: '',
       args: [],
@@ -313,6 +313,26 @@ class S {
     );
   }
 
+  /// `Возраст`
+  String get age {
+    return Intl.message(
+      'Возраст',
+      name: 'age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите возраст.`
+  String get ageValidation {
+    return Intl.message(
+      'Пожалуйста, введите возраст.',
+      name: 'ageValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Бржицки`
   String get Brzycki {
     return Intl.message(
@@ -388,6 +408,56 @@ class S {
     return Intl.message(
       'Эпли',
       name: 'Epley',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Индекс формы тела (ABSI)`
+  String get absiPageTitle {
+    return Intl.message(
+      'Индекс формы тела (ABSI)',
+      name: 'absiPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт индекса формы тела и риска преждевременной смерти.`
+  String get absiPageDesc {
+    return Intl.message(
+      'Расчёт индекса формы тела и риска преждевременной смерти.',
+      name: 'absiPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Объём талии`
+  String get absiWaistCircumference {
+    return Intl.message(
+      'Объём талии',
+      name: 'absiWaistCircumference',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите окружность талии в сантиметрах.`
+  String get absiWaistCircumferenceValidation {
+    return Intl.message(
+      'Пожалуйста, введите окружность талии в сантиметрах.',
+      name: 'absiWaistCircumferenceValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет.`
+  String get adsiAgeValidation {
+    return Intl.message(
+      'Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет.',
+      name: 'adsiAgeValidation',
       desc: '',
       args: [],
     );
