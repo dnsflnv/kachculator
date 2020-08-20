@@ -20,28 +20,82 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(S.of(context).homePageBody),
-            mpButton(
-              context: context,
-              label: S.of(context).bmiPageTitle,
-              onPressed: () {
-                Navigator.pushNamed(context, BmiPage.id);
-              },
+            Text(
+              S.of(context).homePageBody,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
             ),
-            mpButton(
-              context: context,
-              label: S.of(context).absiPageTitle,
-              onPressed: () {
-                Navigator.pushNamed(context, AbsiPage.id);
-              },
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, BmiPage.id);
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset('icons/icons8-bmi-96.png'),
+                          Text(
+                            S.of(context).bmiPageTitle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, AbsiPage.id);
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                              'icons/icons8-dead-man-in-a-coffin-96.png'),
+                          Text(
+                            S.of(context).absiPageTitle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Text(S.of(context).homePagePower),
-            mpButton(
-              context: context,
-              label: S.of(context).rmPageTitle,
-              onPressed: () {
-                Navigator.pushNamed(context, RmPage.id);
-              },
+            Text(
+              S.of(context).homePagePower,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, RmPage.id);
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset('icons/icons8-deadlift-96.png'),
+                          Text(
+                            S.of(context).rmPageTitle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
