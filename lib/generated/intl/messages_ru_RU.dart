@@ -59,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bmiWeightValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите ваш вес в килограммах"),
     "calculate" : MessageLookupByLibrary.simpleMessage("Расчитать"),
     "female" : MessageLookupByLibrary.simpleMessage("Женский"),
-    "homePageBody" : MessageLookupByLibrary.simpleMessage("Измерения тела"),
+    "homePageBody" : MessageLookupByLibrary.simpleMessage("Физическая форма"),
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Еда"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Сила"),
     "male" : MessageLookupByLibrary.simpleMessage("Мужской"),

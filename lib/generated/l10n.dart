@@ -43,10 +43,10 @@ class S {
     );
   }
 
-  /// `Измерения тела`
+  /// `Физическая форма`
   String get homePageBody {
     return Intl.message(
-      'Измерения тела',
+      'Физическая форма',
       name: 'homePageBody',
       desc: '',
       args: [],
