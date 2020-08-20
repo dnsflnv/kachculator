@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:kachculator/models/calc.dart';
 
@@ -81,16 +82,27 @@ class _BmiPageState extends State<BmiPage> {
                         weightAthlete: weight,
                         heightAthleteCm: height,
                         context: context);
-                    setState(() {
-                      bmi = calc.bmi;
-                      result = calc.bmiInterpretation(bmi);
-                    });
+
+                    bmi = calc.bmi;
+                    result = calc.bmiInterpretation(bmi);
+
+                    String res = """
+**${S.of(context).bmi}:** ${bmi.toStringAsFixed(3)}
+
+$result
+                    """;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResultPage(
+                          result: res,
+                          title: S.of(context).absiPageTitle,
+                        ),
+                      ),
+                    );
                   }
                 },
               ),
-              if (bmi > 0)
-                Text('${S.of(context).bmi}: ${bmi.toStringAsFixed(2)}'),
-              Text(result),
             ],
           ),
         ),
