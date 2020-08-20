@@ -116,15 +116,15 @@ class Calc {
     double z = this.absiZ;
     String result = '';
     if (z < -0.868) {
-      result = S.of(context).absiRisk1;
+      result = S.of(this.context).absiRisk1;
     } else if (z >= -0.868 && z < -0.272) {
-      result = S.of(context).absiRisk2;
+      result = S.of(this.context).absiRisk2;
     } else if (z >= -0.272 && z < 0.229) {
-      result = S.of(context).absiRisk3;
+      result = S.of(this.context).absiRisk3;
     } else if (z >= 0.229 && z < 0.798) {
-      result = S.of(context).absiRisk4;
+      result = S.of(this.context).absiRisk4;
     } else if (z >= 0.798) {
-      result = S.of(context).absiRisk5;
+      result = S.of(this.context).absiRisk5;
     }
     return result;
   }
