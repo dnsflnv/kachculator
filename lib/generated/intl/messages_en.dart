@@ -63,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Food"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Power"),
     "male" : MessageLookupByLibrary.simpleMessage("Male"),
+    "rfmPageDescription" : MessageLookupByLibrary.simpleMessage("Relative fat mass in % calculation."),
+    "rfmPageTitle" : MessageLookupByLibrary.simpleMessage("Relative fat mass (RFM)"),
     "rmBarebellWeight" : MessageLookupByLibrary.simpleMessage("Weight of barebell"),
     "rmMethod" : MessageLookupByLibrary.simpleMessage("Method"),
     "rmPageDesc" : MessageLookupByLibrary.simpleMessage("1 RM calculation by different methods."),

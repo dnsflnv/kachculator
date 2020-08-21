@@ -305,4 +305,32 @@ class Calc {
       85: [196, 0.08533, 0.00528, 0.08533, 0.00528]
     },
   };
+
+  Calc.rfm(
+      {@required this.context,
+      @required this.heightAthleteCm,
+      @required this.gender,
+      @required this.waistCircumferenceCm});
+
+// https://www.nature.com/articles/s41598-018-29362-1
+// https://en.wikipedia.org/wiki/Body_fat_percentage#Typical_body_fat_amounts
+  double get rfm {
+    double res = 0;
+    switch (this.gender) {
+      case Gender.female:
+        res = 76.0 -
+            (20.0 *
+                ((this.heightAthleteCm / 100.0) /
+                    (this.waistCircumferenceCm / 100.0)));
+        break;
+      case Gender.male:
+        res = 64.0 -
+            (20.0 *
+                ((this.heightAthleteCm / 100.0) /
+                    (this.waistCircumferenceCm / 100.0)));
+        break;
+      default:
+    }
+    return res;
+  }
 }

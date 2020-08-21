@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
+import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 
@@ -31,6 +32,7 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: FlatButton(
+                      padding: EdgeInsets.all(8.0),
                       onPressed: () {
                         Navigator.pushNamed(context, BmiPage.id);
                       },
@@ -51,6 +53,7 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: FlatButton(
+                      padding: EdgeInsets.all(8.0),
                       onPressed: () {
                         Navigator.pushNamed(context, AbsiPage.id);
                       },
@@ -67,8 +70,30 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      padding: EdgeInsets.all(8.0),
+                      onPressed: () {
+                        Navigator.pushNamed(context, RfmPage.id);
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset('icons/icons8-sumo-96.png'),
+                          Text(
+                            S.of(context).rfmPageTitle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
+            SizedBox(height: 48.0),
             Text(
               S.of(context).homePagePower,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
@@ -80,6 +105,7 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: FlatButton(
+                      padding: EdgeInsets.all(8.0),
                       onPressed: () {
                         Navigator.pushNamed(context, RmPage.id);
                       },

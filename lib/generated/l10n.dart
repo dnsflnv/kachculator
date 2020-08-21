@@ -133,10 +133,10 @@ class S {
     );
   }
 
-  /// `Расчитать`
+  /// `Рассчитать`
   String get calculate {
     return Intl.message(
-      'Расчитать',
+      'Рассчитать',
       name: 'calculate',
       desc: '',
       args: [],
@@ -518,6 +518,26 @@ class S {
     return Intl.message(
       'Очень выскокий.',
       name: 'absiRisk5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Относительная масса жира (RFM)`
+  String get rfmPageTitle {
+    return Intl.message(
+      'Относительная масса жира (RFM)',
+      name: 'rfmPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт относительной массы жира в процентах.`
+  String get rfmPageDescription {
+    return Intl.message(
+      'Расчёт относительной массы жира в процентах.',
+      name: 'rfmPageDescription',
       desc: '',
       args: [],
     );

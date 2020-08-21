@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/home_page.dart';
+import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
@@ -49,7 +50,8 @@ class App extends StatelessWidget {
         HomePage.id: (context) => HomePage(),
         BmiPage.id: (context) => BmiPage(),
         RmPage.id: (context) => RmPage(),
-        AbsiPage.id: (context) => AbsiPage()
+        AbsiPage.id: (context) => AbsiPage(),
+        RfmPage.id: (context) => RfmPage(),
       },
     );
 

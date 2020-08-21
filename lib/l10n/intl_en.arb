@@ -50,5 +50,8 @@
     "absiRisk2":"Low",
     "absiRisk3":"Averange",
     "absiRisk4":"High",
-    "absiRisk5":"Very High"
+    "absiRisk5":"Very High",
+
+    "rfmPageTitle":"Relative fat mass (RFM)",
+    "rfmPageDescription":"Relative fat mass in % calculation."
 }
