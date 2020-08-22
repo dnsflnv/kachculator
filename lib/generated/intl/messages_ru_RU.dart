@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "absiWaistCircumferenceValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите окружность талии в сантиметрах."),
     "age" : MessageLookupByLibrary.simpleMessage("Возраст"),
     "ageValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите возраст."),
+    "bfpPageTitle" : MessageLookupByLibrary.simpleMessage("Процент жира в теле"),
     "bmi" : MessageLookupByLibrary.simpleMessage("ИМТ"),
     "bmi15" : MessageLookupByLibrary.simpleMessage("Выраженный дефицит массы тела."),
     "bmi15_16" : MessageLookupByLibrary.simpleMessage("Дефицит массы тела."),

@@ -542,6 +542,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Процент жира в теле`
+  String get bfpPageTitle {
+    return Intl.message(
+      'Процент жира в теле',
+      name: 'bfpPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

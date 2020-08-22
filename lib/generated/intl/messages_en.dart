@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "absiWaistCircumferenceValidation" : MessageLookupByLibrary.simpleMessage("Please enter your waist circumference in cantimeters."),
     "age" : MessageLookupByLibrary.simpleMessage("Age"),
     "ageValidation" : MessageLookupByLibrary.simpleMessage("Please, enter you age."),
+    "bfpPageTitle" : MessageLookupByLibrary.simpleMessage("Body fat percentage (BFP)"),
     "bmi" : MessageLookupByLibrary.simpleMessage("BMI"),
     "bmi15" : MessageLookupByLibrary.simpleMessage("Very severely underweight."),
     "bmi15_16" : MessageLookupByLibrary.simpleMessage("Severely underweight."),
