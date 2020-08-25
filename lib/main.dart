@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kachculator/pages/absi_page.dart';
+import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/home_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
@@ -52,6 +53,7 @@ class App extends StatelessWidget {
         RmPage.id: (context) => RmPage(),
         AbsiPage.id: (context) => AbsiPage(),
         RfmPage.id: (context) => RfmPage(),
+        BfpPage.id: (context) => BfpPage(),
       },
     );
 

@@ -17,7 +17,6 @@ class _BfpPageState extends State<BfpPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController tcWeight;
   TextEditingController tcHeight;
-  TextEditingController tcWaistCircumference;
   TextEditingController tcAge;
   double bmi = 0;
   Gender gender;
@@ -28,7 +27,6 @@ class _BfpPageState extends State<BfpPage> {
     super.initState();
     tcWeight = TextEditingController(text: '90');
     tcHeight = TextEditingController(text: '184');
-    tcWaistCircumference = TextEditingController(text: '100');
     tcAge = TextEditingController(text: '41');
     gender = Gender.male;
   }
@@ -36,7 +34,7 @@ class _BfpPageState extends State<BfpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).absiPageTitle)),
+      appBar: mpAppBar(title: Text(S.of(context).bfpPageTitle)),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -44,8 +42,7 @@ class _BfpPageState extends State<BfpPage> {
             key: _formKey,
             child: Column(
               children: [
-                // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
-                Text(S.of(context).absiPageDesc),
+                //Text(S.of(context).b),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: TextFormField(
@@ -81,26 +78,6 @@ class _BfpPageState extends State<BfpPage> {
                       }
                       if (double.parse(value) <= 0) {
                         return S.of(context).bmiHeightValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcWaistCircumference,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).absiWaistCircumference,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).absiWaistCircumferenceValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).absiWaistCircumferenceValidation;
                       }
                       return null;
                     },
@@ -158,26 +135,24 @@ class _BfpPageState extends State<BfpPage> {
                       double height = double.parse(tcHeight.text);
                       int age = int.parse(tcAge.text);
                       if (age > 85) age = 85;
-                      double waistCircumference =
-                          double.parse(tcWaistCircumference.text);
-                      Calc calc = Calc.absi(
-                        context: context,
-                        weightAthlete: weight,
-                        heightAthleteCm: height,
-                        gender: gender,
-                        age: age,
-                        waistCircumferenceCm: waistCircumference,
-                      );
-                      // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
-                      String res = """
+                      Calc calc = Calc.bfp(
+                          context: context,
+                          weightAthlete: weight,
+                          heightAthleteCm: height,
+                          gender: gender,
+                          age: age);
 
+                      String res = """
+${S.of(context).bfpPageTitle}: ${calc.bfp}
+
+${calc.bodyFat(calc.bfp)}
 """; //
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ResultPage(
                             result: res,
-                            title: S.of(context).absiPageTitle,
+                            title: S.of(context).bfpPageTitle,
                           ),
                         ),
                       );

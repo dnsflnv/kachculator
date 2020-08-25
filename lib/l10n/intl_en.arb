@@ -55,5 +55,10 @@
     "rfmPageTitle":"Relative fat mass (RFM)",
     "rfmPageDescription":"Relative fat mass in % calculation.",
 
-    "bfpPageTitle":"Body fat percentage (BFP)"
+    "bfpPageTitle":"Body fat percentage (BFP)",
+    "bfpEssential":"Essential fat",
+    "bfpAthletes":"Athletes",
+    "bfpFitness":"Fitness",
+    "bfpAverage":"Average",
+    "bfpObese":"Obese"
 }
