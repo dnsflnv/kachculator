@@ -129,7 +129,8 @@ class Calc {
     return result;
   }
 
-  // https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0039504.s001&type=supplementary
+  /// ABSI Coeffs
+  /// https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0039504.s001&type=supplementary
   final Map<Gender, Map<int, List<double>>> absiTable = {
     Gender.male: {
       //age: [ 0 numbber of people, 1 ABSImean, 2 ABSIsd, 3 smoothed ABSImean, 4 smothed ABSIsd]
@@ -312,8 +313,9 @@ class Calc {
       @required this.gender,
       @required this.waistCircumferenceCm});
 
-// https://www.nature.com/articles/s41598-018-29362-1
-// https://en.wikipedia.org/wiki/Body_fat_percentage#Typical_body_fat_amounts
+  /// RFM
+  /// https://www.nature.com/articles/s41598-018-29362-1
+  /// https://en.wikipedia.org/wiki/Body_fat_percentage#Typical_body_fat_amounts
   double get rfm {
     double res = 0;
     switch (this.gender) {
@@ -332,5 +334,48 @@ class Calc {
       default:
     }
     return res;
+  }
+
+  /// BFP https://en.wikipedia.org/wiki/Body_fat_percentage
+  Calc.bfp(
+      {@required this.context,
+      @required this.weightAthlete,
+      @required this.heightAthleteCm,
+      @required this.gender,
+      @required this.age});
+
+  double get bfp {
+    double res = 0;
+    double sex = 0.0;
+    if (this.gender == Gender.male) sex = 1.0;
+
+    if (this.age <= 15.0) {
+      res = (1.51 * this.bmi) - (0.7 * this.age) - (3.6 * sex) + 1.4;
+    } else {
+      //res = (1.2 * this.bmi) - (0.23 * this.age) - (10.8 * sex) - 5.4;
+      res = (1.39 * this.bmi) - (0.16 * this.age) - (10.34 * sex) - 9.0;
+    }
+    return res;
+  }
+
+  /// BFP and RFM interpretation
+  String bodyFat(double persest) {
+    String result = '';
+
+    if (this.gender == Gender.female) {
+      if (persest >= 10 && persest < 14) {
+        result = S.of(this.context).bfpEssential;
+      } else if (persest >= 14 && persest < 21) {
+        result = S.of(this.context).bfpAthletes;
+      } else if (persest >= 21 && persest < 25) {
+        result = S.of(this.context).bfpFitness;
+      } else if (persest >= 25 && persest < 32) {
+        result = S.of(this.context).bfpAverage;
+      } else if (persest >= 32) {
+        result = S.of(this.context).bfpObese;
+      }
+    } else {}
+
+    return result;
   }
 }

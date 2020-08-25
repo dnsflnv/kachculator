@@ -542,6 +542,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Процент жира в теле`
+  String get bfpPageTitle {
+    return Intl.message(
+      'Процент жира в теле',
+      name: 'bfpPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Необходимый жир`
+  String get bfpEssential {
+    return Intl.message(
+      'Необходимый жир',
+      name: 'bfpEssential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Атлеты`
+  String get bfpAthletes {
+    return Intl.message(
+      'Атлеты',
+      name: 'bfpAthletes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Фитнесс`
+  String get bfpFitness {
+    return Intl.message(
+      'Фитнесс',
+      name: 'bfpFitness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Средний`
+  String get bfpAverage {
+    return Intl.message(
+      'Средний',
+      name: 'bfpAverage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ожирение`
+  String get bfpObese {
+    return Intl.message(
+      'Ожирение',
+      name: 'bfpObese',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -53,5 +53,12 @@
     "absiRisk5":"Очень выскокий.",
 
     "rfmPageTitle":"Относительная масса жира (RFM)",
-    "rfmPageDescription":"Расчёт относительной массы жира в процентах."
+    "rfmPageDescription":"Расчёт относительной массы жира в процентах.",
+
+    "bfpPageTitle":"Процент жира в теле",
+    "bfpEssential":"Необходимый жир",
+    "bfpAthletes":"Атлеты",
+    "bfpFitness":"Фитнесс",
+    "bfpAverage":"Средний",
+    "bfpObese":"Ожирение"
 }

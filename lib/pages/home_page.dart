@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/absi_page.dart';
+import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
@@ -92,6 +93,26 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: FlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, BfpPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-fat-man-cry-96.png'),
+                      Text(
+                        S.of(context).bfpPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
             SizedBox(height: 48.0),
             Text(
