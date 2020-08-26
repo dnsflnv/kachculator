@@ -39,6 +39,8 @@
     "Wathan":"Wathan",
     "Wilks":"Wilks",
     "Epley":"Epley",
+    "rmBarebellWeightValidation":"Please, enter weight of barebell in kilogramms.",
+    "rmRepeatValidation":"Enter repeats.",
 
     "absiPageTitle":"A body shape index (ABSI)",
     "absiPageDesc":"A body shape index and mortality risk calculator.",

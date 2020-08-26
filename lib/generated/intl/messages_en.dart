@@ -72,9 +72,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "rfmPageDescription" : MessageLookupByLibrary.simpleMessage("Relative fat mass in % calculation."),
     "rfmPageTitle" : MessageLookupByLibrary.simpleMessage("Relative fat mass (RFM)"),
     "rmBarebellWeight" : MessageLookupByLibrary.simpleMessage("Weight of barebell"),
+    "rmBarebellWeightValidation" : MessageLookupByLibrary.simpleMessage("Please, enter weight of barebell in kilogramms."),
     "rmMethod" : MessageLookupByLibrary.simpleMessage("Method"),
     "rmPageDesc" : MessageLookupByLibrary.simpleMessage("1 RM calculation by different methods."),
     "rmPageTitle" : MessageLookupByLibrary.simpleMessage("1 RM calculation"),
+    "rmRepeatValidation" : MessageLookupByLibrary.simpleMessage("Enter repeats."),
     "rmRepeats" : MessageLookupByLibrary.simpleMessage("Repeats"),
     "rmResult" : MessageLookupByLibrary.simpleMessage("Result"),
     "title" : MessageLookupByLibrary.simpleMessage("Kachculator")
