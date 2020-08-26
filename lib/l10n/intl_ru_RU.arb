@@ -39,6 +39,8 @@
     "Wathan":"Ватан",
     "Wilks":"Вилкс",
     "Epley":"Эпли",
+    "rmBarebellWeightValidation":"Введите вес снаряда в килограммах.",
+    "rmRepeatValidation":"Введите количество повторов.",
 
     "absiPageTitle":"Индекс формы тела (ABSI)",
     "absiPageDesc":"Расчёт индекса формы тела и риска преждевременной смерти.",

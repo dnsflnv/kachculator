@@ -413,6 +413,26 @@ class S {
     );
   }
 
+  /// `Введите вес снаряда в килограммах.`
+  String get rmBarebellWeightValidation {
+    return Intl.message(
+      'Введите вес снаряда в килограммах.',
+      name: 'rmBarebellWeightValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Введите количество повторов.`
+  String get rmRepeatValidation {
+    return Intl.message(
+      'Введите количество повторов.',
+      name: 'rmRepeatValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Индекс формы тела (ABSI)`
   String get absiPageTitle {
     return Intl.message(

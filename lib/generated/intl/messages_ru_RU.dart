@@ -72,9 +72,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "rfmPageDescription" : MessageLookupByLibrary.simpleMessage("Расчёт относительной массы жира в процентах."),
     "rfmPageTitle" : MessageLookupByLibrary.simpleMessage("Относительная масса жира (RFM)"),
     "rmBarebellWeight" : MessageLookupByLibrary.simpleMessage("Вес снаряда"),
+    "rmBarebellWeightValidation" : MessageLookupByLibrary.simpleMessage("Введите вес снаряда в килограммах."),
     "rmMethod" : MessageLookupByLibrary.simpleMessage("Метод"),
     "rmPageDesc" : MessageLookupByLibrary.simpleMessage("Расчёт повторного максимума по разным методикам."),
     "rmPageTitle" : MessageLookupByLibrary.simpleMessage("Повторный максимум"),
+    "rmRepeatValidation" : MessageLookupByLibrary.simpleMessage("Введите количество повторов."),
     "rmRepeats" : MessageLookupByLibrary.simpleMessage("Количество повторов"),
     "rmResult" : MessageLookupByLibrary.simpleMessage("Результат"),
     "title" : MessageLookupByLibrary.simpleMessage("Качкулятор")
