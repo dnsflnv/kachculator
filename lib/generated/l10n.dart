@@ -622,6 +622,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Пропорциии тела (МакКаллум)`
+  String get mcPageTitle {
+    return Intl.message(
+      'Пропорциии тела (МакКаллум)',
+      name: 'mcPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт идеальных пропорций тела по МакКаллуму.`
+  String get mcPageDesc {
+    return Intl.message(
+      'Расчёт идеальных пропорций тела по МакКаллуму.',
+      name: 'mcPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват запястья`
+  String get mcWrist {
+    return Intl.message(
+      'Обхват запястья',
+      name: 'mcWrist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Введите обхват запястья в сантиметрах.`
+  String get mcWristValidation {
+    return Intl.message(
+      'Введите обхват запястья в сантиметрах.',
+      name: 'mcWristValidation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -62,5 +62,10 @@
     "bfpAthletes":"Athletes",
     "bfpFitness":"Fitness",
     "bfpAverage":"Average",
-    "bfpObese":"Obese"
+    "bfpObese":"Obese",
+
+    "mcPageTitle":"Пропорциии тела (МакКаллум)",
+    "mcPageDesc":"Расчёт идеальных пропорций тела по МакКаллуму.",
+    "mcWrist":"Обхват запястья",
+    "mcWristValidation":"Введите обхват запястья в сантиметрах."
 }
