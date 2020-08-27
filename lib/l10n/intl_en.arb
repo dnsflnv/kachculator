@@ -64,8 +64,17 @@
     "bfpAverage":"Average",
     "bfpObese":"Obese",
 
-    "mcPageTitle":"Пропорциии тела (МакКаллум)",
-    "mcPageDesc":"Расчёт идеальных пропорций тела по МакКаллуму.",
-    "mcWrist":"Обхват запястья",
-    "mcWristValidation":"Введите обхват запястья в сантиметрах."
+    "mcPageTitle":"Body proportions (McCallum)",
+    "mcPageDesc":"Ideal Body Proportions Formula For the Natural Athlete (McCallum).",
+    "mcPart":"Body part",
+    "mcWrist":"Wrist girth",
+    "mcWristValidation":"Enter your wrist circumference in centimeters.",
+    "mcChest":"Chest girth",
+    "mcButt":"Girth of the buttocks",
+    "mcWaist":"Waist",
+    "mcThigh":"Thigh girth",
+    "mcNeck":"Neck girth",
+    "mcBicep":"Bicep girth",
+    "mcCalf":"Calf circumference",
+    "mcForearm":"Forearm girth"
 }

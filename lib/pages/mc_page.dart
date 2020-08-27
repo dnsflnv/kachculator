@@ -57,17 +57,17 @@ class _McPageState extends State<McPage> {
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     double wrist = double.parse(tcWrist.text);
-                    Map<String, double> mac = mcCallum(wrist);
+                    Map<String, double> mac =
+                        mcCallum(wristCm: wrist, context: context);
                     String res = '''
- |**Мышца**|**Обхват,см**|
- |---|---|
+|**${S.of(context).mcPart}**|**cm**|
+|---|---|
 ''';
                     mac.forEach((key, value) {
-                      res += """
-| $key | ${value.toStringAsFixed(2)} |
-                      """;
+                      res += '''
+|  $key  |  ${value.toStringAsFixed(2)}  |
+''';
                     });
-
                     Navigator.push(
                       context,
                       MaterialPageRoute(
