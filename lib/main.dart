@@ -4,6 +4,7 @@ import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/home_page.dart';
+import 'package:kachculator/pages/mc_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'dart:io' show Platform;
@@ -54,10 +55,8 @@ class App extends StatelessWidget {
         AbsiPage.id: (context) => AbsiPage(),
         RfmPage.id: (context) => RfmPage(),
         BfpPage.id: (context) => BfpPage(),
+        McPage.id: (context) => McPage(),
       },
     );
-
-//TODO return this app, if mac
-    //return CupertinoApp();
   }
 }

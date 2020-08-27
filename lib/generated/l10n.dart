@@ -622,6 +622,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Пропорциии тела (МакКаллум)`
+  String get mcPageTitle {
+    return Intl.message(
+      'Пропорциии тела (МакКаллум)',
+      name: 'mcPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Часть тела`
+  String get mcPart {
+    return Intl.message(
+      'Часть тела',
+      name: 'mcPart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт идеальных пропорций тела по МакКаллуму для натурального бодибилдера.`
+  String get mcPageDesc {
+    return Intl.message(
+      'Расчёт идеальных пропорций тела по МакКаллуму для натурального бодибилдера.',
+      name: 'mcPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват запястья`
+  String get mcWrist {
+    return Intl.message(
+      'Обхват запястья',
+      name: 'mcWrist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Введите обхват запястья в сантиметрах.`
+  String get mcWristValidation {
+    return Intl.message(
+      'Введите обхват запястья в сантиметрах.',
+      name: 'mcWristValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват груди`
+  String get mcChest {
+    return Intl.message(
+      'Обхват груди',
+      name: 'mcChest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват ягодиц`
+  String get mcButt {
+    return Intl.message(
+      'Обхват ягодиц',
+      name: 'mcButt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват талии`
+  String get mcWaist {
+    return Intl.message(
+      'Обхват талии',
+      name: 'mcWaist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват бедра`
+  String get mcThigh {
+    return Intl.message(
+      'Обхват бедра',
+      name: 'mcThigh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват шеи`
+  String get mcNeck {
+    return Intl.message(
+      'Обхват шеи',
+      name: 'mcNeck',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват бицепса`
+  String get mcBicep {
+    return Intl.message(
+      'Обхват бицепса',
+      name: 'mcBicep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват голени`
+  String get mcCalf {
+    return Intl.message(
+      'Обхват голени',
+      name: 'mcCalf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Обхват предплечья`
+  String get mcForearm {
+    return Intl.message(
+      'Обхват предплечья',
+      name: 'mcForearm',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
