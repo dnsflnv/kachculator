@@ -76,5 +76,13 @@
     "mcNeck":"Neck girth",
     "mcBicep":"Bicep girth",
     "mcCalf":"Calf circumference",
-    "mcForearm":"Forearm girth"
+    "mcForearm":"Forearm girth",
+
+    "cooperPageTitle":"Cooper test",
+    "cooperPageDesc":"",
+    "cooperExcellent":"Excellent",
+    "cooperGood":"Good",
+    "cooperAverage":"Average",
+    "cooperBad":"Bad",
+    "cooperTerrible":"Terrible"
 }

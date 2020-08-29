@@ -752,6 +752,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Cooper test`
+  String get cooperPageTitle {
+    return Intl.message(
+      'Cooper test',
+      name: 'cooperPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get cooperPageDesc {
+    return Intl.message(
+      '',
+      name: 'cooperPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Excellent`
+  String get cooperExcellent {
+    return Intl.message(
+      'Excellent',
+      name: 'cooperExcellent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good`
+  String get cooperGood {
+    return Intl.message(
+      'Good',
+      name: 'cooperGood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average`
+  String get cooperAverage {
+    return Intl.message(
+      'Average',
+      name: 'cooperAverage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad`
+  String get cooperBad {
+    return Intl.message(
+      'Bad',
+      name: 'cooperBad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terrible`
+  String get cooperTerrible {
+    return Intl.message(
+      'Terrible',
+      name: 'cooperTerrible',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

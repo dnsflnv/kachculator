@@ -76,5 +76,13 @@
     "mcNeck":"Обхват шеи",
     "mcBicep":"Обхват бицепса",
     "mcCalf":"Обхват голени",
-    "mcForearm":"Обхват предплечья"
+    "mcForearm":"Обхват предплечья",
+
+    "cooperPageTitle":"Cooper test",
+    "cooperPageDesc":"",
+    "cooperExcellent":"Excellent",
+    "cooperGood":"Good",
+    "cooperAverage":"Average",
+    "cooperBad":"Bad",
+    "cooperTerrible":"Terrible"
 }
