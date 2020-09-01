@@ -4,6 +4,7 @@ import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/cooper_page.dart';
+import 'package:kachculator/pages/cooper_strong_page.dart';
 import 'package:kachculator/pages/home_page.dart';
 import 'package:kachculator/pages/mc_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
@@ -58,6 +59,7 @@ class App extends StatelessWidget {
         BfpPage.id: (context) => BfpPage(),
         McPage.id: (context) => McPage(),
         CooperPage.id: (context) => CooperPage(),
+        CooperStrongPage.id: (context) => CooperStrongPage(),
       },
     );
   }
