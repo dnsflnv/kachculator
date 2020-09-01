@@ -5,13 +5,10 @@ import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/cooper_page.dart';
-import 'package:kachculator/pages/cooper_strong_page.dart';
 import 'package:kachculator/pages/mc_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
-
-import '../widgets/mpWidgets.dart';
 
 class HomePage extends StatelessWidget {
   static String id = '/';
@@ -183,7 +180,7 @@ class HomePage extends StatelessWidget {
                     child: FlatButton(
                       padding: EdgeInsets.all(8.0),
                       onPressed: () {
-                        Navigator.pushNamed(context, CooperStrongPage.id);
+                        Navigator.pushNamed(context, CooperPage.id);
                       },
                       child: Column(
                         children: [
