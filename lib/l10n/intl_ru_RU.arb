@@ -57,7 +57,7 @@
     "rfmPageTitle":"Относительная масса жира (RFM)",
     "rfmPageDescription":"Расчёт относительной массы жира в процентах.",
 
-    "bfpPageTitle":"Процент жира в теле",
+    "bfpPageTitle":"Процент жира в теле (BFP)",
     "bfpEssential":"Необходимый жир",
     "bfpAthletes":"Атлеты",
     "bfpFitness":"Фитнесс",
@@ -78,11 +78,13 @@
     "mcCalf":"Обхват голени",
     "mcForearm":"Обхват предплечья",
 
-    "cooperPageTitle":"Cooper test",
-    "cooperPageDesc":"",
-    "cooperExcellent":"Excellent",
-    "cooperGood":"Good",
-    "cooperAverage":"Average",
-    "cooperBad":"Bad",
-    "cooperTerrible":"Terrible"
+    "cooperPageTitle":"Тест Купера + VO max",
+    "cooperPageDesc":"Тест на физическую подготовку, применяется в армии США. Для прохождения придётся побегать. Найдите стадион или беговую дорожку с отмеченным расстоянием (или используйте фитнесс-трекер с GPS) и замерьте, какое расстояние вы пробегаете за 12 минут непрерывного бега с максимально возможным для Вас усилием. Перед выполнением теста проконсультируйтесь с врачом, особенно, если у вас проблемы с сердечно-сосудистой системой.",
+    "cooperExcellent":"Отлично",
+    "cooperGood":"Хорошо",
+    "cooperAverage":"Удовлетворительно",
+    "cooperBad":"Плохо",
+    "cooperTerrible":"Ужасно",
+    "cooperDistanse":"Дистанция (м)",
+    "isAthlete":"Вы профессиональный спортсмен?"
 }

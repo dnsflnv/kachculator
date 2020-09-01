@@ -563,10 +563,10 @@ class S {
     );
   }
 
-  /// `Процент жира в теле`
+  /// `Процент жира в теле (BFP)`
   String get bfpPageTitle {
     return Intl.message(
-      'Процент жира в теле',
+      'Процент жира в теле (BFP)',
       name: 'bfpPageTitle',
       desc: '',
       args: [],
@@ -753,71 +753,91 @@ class S {
     );
   }
 
-  /// `Cooper test`
+  /// `Тест Купера + VO max`
   String get cooperPageTitle {
     return Intl.message(
-      'Cooper test',
+      'Тест Купера + VO max',
       name: 'cooperPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Тест на физическую подготовку, применяется в армии США. Для прохождения придётся побегать. Найдите стадион или беговую дорожку с отмеченным расстоянием (или используйте фитнесс-трекер с GPS) и замерьте, какое расстояние вы пробегаете за 12 минут непрерывного бега с максимально возможным для Вас усилием. Перед выполнением теста проконсультируйтесь с врачом, особенно, если у вас проблемы с сердечно-сосудистой системой.`
   String get cooperPageDesc {
     return Intl.message(
-      '',
+      'Тест на физическую подготовку, применяется в армии США. Для прохождения придётся побегать. Найдите стадион или беговую дорожку с отмеченным расстоянием (или используйте фитнесс-трекер с GPS) и замерьте, какое расстояние вы пробегаете за 12 минут непрерывного бега с максимально возможным для Вас усилием. Перед выполнением теста проконсультируйтесь с врачом, особенно, если у вас проблемы с сердечно-сосудистой системой.',
       name: 'cooperPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Excellent`
+  /// `Отлично`
   String get cooperExcellent {
     return Intl.message(
-      'Excellent',
+      'Отлично',
       name: 'cooperExcellent',
       desc: '',
       args: [],
     );
   }
 
-  /// `Good`
+  /// `Хорошо`
   String get cooperGood {
     return Intl.message(
-      'Good',
+      'Хорошо',
       name: 'cooperGood',
       desc: '',
       args: [],
     );
   }
 
-  /// `Average`
+  /// `Удовлетворительно`
   String get cooperAverage {
     return Intl.message(
-      'Average',
+      'Удовлетворительно',
       name: 'cooperAverage',
       desc: '',
       args: [],
     );
   }
 
-  /// `Bad`
+  /// `Плохо`
   String get cooperBad {
     return Intl.message(
-      'Bad',
+      'Плохо',
       name: 'cooperBad',
       desc: '',
       args: [],
     );
   }
 
-  /// `Terrible`
+  /// `Ужасно`
   String get cooperTerrible {
     return Intl.message(
-      'Terrible',
+      'Ужасно',
       name: 'cooperTerrible',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Дистанция (м)`
+  String get cooperDistanse {
+    return Intl.message(
+      'Дистанция (м)',
+      name: 'cooperDistanse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Вы профессиональный спортсмен?`
+  String get isAthlete {
+    return Intl.message(
+      'Вы профессиональный спортсмен?',
+      name: 'isAthlete',
       desc: '',
       args: [],
     );

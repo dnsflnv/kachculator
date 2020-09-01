@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/generated/l10n.dart';
 
-double cooperVoMax({double distance}) => (distance - 504.9) / 44.73;
+double cooperVoMax({double distanse}) => (distanse - 504.9) / 44.73;
 
 bool inRange(int x, int a, int b) {
   if (x >= a && x <= b)
@@ -12,10 +12,10 @@ bool inRange(int x, int a, int b) {
 }
 
 String cooperRun(
-    {int distanse,
-    Gender gender,
-    int age,
-    bool isAthlete,
+    {@required int distanse,
+    @required Gender gender,
+    @required int age,
+    @required bool isAthlete,
     BuildContext context}) {
   if (isAthlete) {
     if (gender == Gender.male) {

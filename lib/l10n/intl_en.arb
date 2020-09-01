@@ -78,11 +78,13 @@
     "mcCalf":"Calf circumference",
     "mcForearm":"Forearm girth",
 
-    "cooperPageTitle":"Cooper test",
-    "cooperPageDesc":"",
+    "cooperPageTitle":"Cooper test + VO max",
+    "cooperPageDesc":"Run 12 minutes as fast, as you can. And enter the distanse in the field below. You can do it on stadium, or using fitness tracker with GPS.",
     "cooperExcellent":"Excellent",
     "cooperGood":"Good",
     "cooperAverage":"Average",
     "cooperBad":"Bad",
-    "cooperTerrible":"Terrible"
+    "cooperTerrible":"Terrible",
+    "cooperDistanse":"Distanse (m)",
+    "isAthlete":"Are you professional athlete?"
 }
