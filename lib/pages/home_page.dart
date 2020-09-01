@@ -4,6 +4,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
+import 'package:kachculator/pages/cooper_page.dart';
 import 'package:kachculator/pages/mc_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
@@ -19,13 +20,16 @@ class HomePage extends StatelessWidget {
       appBar: mpAppBar(
         title: Text(S.of(context).title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              S.of(context).homePageBody,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+            Center(
+              child: Text(
+                S.of(context).homePageBody,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+              ),
             ),
             Row(
               children: <Widget>[
@@ -139,33 +143,14 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: FlatButton(
-                      padding: EdgeInsets.all(8.0),
-                      onPressed: () {
-                        Navigator.pushNamed(context, McPage.id);
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset('icons/icons8-bodybuilder-96.png'),
-                          Text(
-                            S.of(context).bfpPageTitle,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
             SizedBox(height: 48.0),
-            Text(
-              S.of(context).homePagePower,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+            Center(
+              child: Text(
+                S.of(context).homePagePower,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+              ),
             ),
             Row(
               children: [
@@ -183,6 +168,27 @@ class HomePage extends StatelessWidget {
                           Image.asset('icons/icons8-deadlift-96.png'),
                           Text(
                             S.of(context).rmPageTitle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      padding: EdgeInsets.all(8.0),
+                      onPressed: () {
+                        Navigator.pushNamed(context, CooperPage.id);
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset('icons/icons8-running-96.png'),
+                          Text(
+                            S.of(context).cooperPageTitle,
                             textAlign: TextAlign.center,
                           ),
                         ],
