@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OConner" : MessageLookupByLibrary.simpleMessage("O`Conner"),
     "Wathan" : MessageLookupByLibrary.simpleMessage("Wathan"),
     "Wilks" : MessageLookupByLibrary.simpleMessage("Wilks"),
+    "about" : MessageLookupByLibrary.simpleMessage("About"),
     "absiAgeValidation" : MessageLookupByLibrary.simpleMessage("Please, enter you age. ABSI calculator is only for people 2 or much years old."),
     "absiPageDesc" : MessageLookupByLibrary.simpleMessage("A body shape index and mortality risk calculator."),
     "absiPageTitle" : MessageLookupByLibrary.simpleMessage("A body shape index (ABSI)"),

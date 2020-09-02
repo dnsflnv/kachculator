@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OConner" : MessageLookupByLibrary.simpleMessage("О`Коннор"),
     "Wathan" : MessageLookupByLibrary.simpleMessage("Ватан"),
     "Wilks" : MessageLookupByLibrary.simpleMessage("Вилкс"),
+    "about" : MessageLookupByLibrary.simpleMessage("О приложении"),
     "absiAgeValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет."),
     "absiPageDesc" : MessageLookupByLibrary.simpleMessage("Расчёт индекса формы тела и риска преждевременной смерти."),
     "absiPageTitle" : MessageLookupByLibrary.simpleMessage("Индекс формы тела (ABSI)"),

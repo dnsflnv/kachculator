@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
@@ -12,6 +13,8 @@ import 'package:kachculator/widgets/mpWidgets.dart';
 
 class HomePage extends StatelessWidget {
   static String id = '/';
+  final controller = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +125,8 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 48.0),
+            Divider(),
+            SizedBox(height: 32.0),
             Center(
               child: Text(
                 S.of(context).homePageProportions,
@@ -154,7 +158,8 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 48.0),
+            Divider(),
+            SizedBox(height: 32.0),
             Center(
               child: Text(
                 S.of(context).homePagePower,
@@ -206,6 +211,24 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Divider(),
+            SizedBox(height: 16.0),
+            mpButton(
+              context: context,
+              label: S.of(context).about,
+              onPressed: () {
+                showAboutDialog(
+                  context: context,
+                  applicationIcon: FlutterLogo(),
+                  applicationName: S.of(context).title,
+                  applicationVersion: '1.0.0',
+                  applicationLegalese: '© 2020 Denis Filonov',
+                  children: [
+                    Text('Icons by https://icons8.com'),
+                  ],
+                );
+              },
             ),
           ],
         ),

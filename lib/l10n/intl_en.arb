@@ -4,6 +4,7 @@
     "homePagePower":"Strength and endurance",
     "homePageProportions":"Body proportions",
     "homePageFood":"Food",
+    "about": "About",
     
     "bmiPageTitle":"Body Mass Index (BMI)",
     "bmiPageDesc":"Calculate your Body Mass Index (WHO).",

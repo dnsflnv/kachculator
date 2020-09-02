@@ -83,6 +83,16 @@ class S {
     );
   }
 
+  /// `О приложении`
+  String get about {
+    return Intl.message(
+      'О приложении',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Индекс массы тела (BMI)`
   String get bmiPageTitle {
     return Intl.message(
