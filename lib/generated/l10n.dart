@@ -53,11 +53,21 @@ class S {
     );
   }
 
-  /// `Сила`
+  /// `Сила и выносливость`
   String get homePagePower {
     return Intl.message(
-      'Сила',
+      'Сила и выносливость',
       name: 'homePagePower',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пропорции тела`
+  String get homePageProportions {
+    return Intl.message(
+      'Пропорции тела',
+      name: 'homePageProportions',
       desc: '',
       args: [],
     );

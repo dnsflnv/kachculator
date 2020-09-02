@@ -1,10 +1,11 @@
 {
     "title":"Kachculator",
     "homePageBody":"Body form",
-    "homePagePower":"Power",
+    "homePagePower":"Strength and endurance",
+    "homePageProportions":"Body proportions",
     "homePageFood":"Food",
     
-    "bmiPageTitle":"Body Mass Index",
+    "bmiPageTitle":"Body Mass Index (BMI)",
     "bmiPageDesc":"Calculate your Body Mass Index (WHO).",
     "bmiWeight":"Your weight",
     "bmiWeightValidation":"Please enter your weight in kilogramms.",

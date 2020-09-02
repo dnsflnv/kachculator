@@ -1,7 +1,8 @@
 {
     "title":"Качкулятор",
     "homePageBody":"Физическая форма",
-    "homePagePower":"Сила",
+    "homePagePower":"Сила и выносливость",
+    "homePageProportions":"Пропорции тела",
     "homePageFood":"Еда",
 
     "bmiPageTitle":"Индекс массы тела (BMI)",
