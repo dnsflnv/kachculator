@@ -259,7 +259,7 @@ class HomePage extends StatelessWidget {
                       context: context,
                       applicationIcon: Image.asset('icons/icons8-torso-96.png'),
                       applicationName: S.of(context).title,
-                      applicationVersion: '1.0.0',
+                      applicationVersion: '1.0',
                       applicationLegalese: '© 2020 Denis Filonov',
                       children: [
                         Linkify(
