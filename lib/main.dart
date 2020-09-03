@@ -7,6 +7,7 @@ import 'package:kachculator/pages/cooper_page.dart';
 import 'package:kachculator/pages/cooper_strong_page.dart';
 import 'package:kachculator/pages/home_page.dart';
 import 'package:kachculator/pages/mc_page.dart';
+import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'dart:io' show Platform;
@@ -58,6 +59,7 @@ class App extends StatelessWidget {
         RfmPage.id: (context) => RfmPage(),
         BfpPage.id: (context) => BfpPage(),
         McPage.id: (context) => McPage(),
+        McRobertPage.id: (context) => McRobertPage(),
         CooperPage.id: (context) => CooperPage(),
         CooperStrongPage.id: (context) => CooperStrongPage(),
       },

@@ -862,6 +862,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Пропорциии тела (МакРоберт)`
+  String get mcrobertPageTitle {
+    return Intl.message(
+      'Пропорциии тела (МакРоберт)',
+      name: 'mcrobertPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расчёт идеальных пропорций тела по МакРоберту для натурального бодибилдера.`
+  String get mcrobertPageDesc {
+    return Intl.message(
+      'Расчёт идеальных пропорций тела по МакРоберту для натурального бодибилдера.',
+      name: 'mcrobertPageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Минимум`
+  String get mcrobertMin {
+    return Intl.message(
+      'Минимум',
+      name: 'mcrobertMin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Максимум`
+  String get mcrobertMax {
+    return Intl.message(
+      'Максимум',
+      name: 'mcrobertMax',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
