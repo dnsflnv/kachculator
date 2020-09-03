@@ -266,6 +266,10 @@ class HomePage extends StatelessWidget {
                           onOpen: _onOpen,
                           text: 'Icons by https://icons8.com',
                         ),
+                        Linkify(
+                          onOpen: _onOpen,
+                          text: 'Logo by https://canva.com',
+                        ),
                       ],
                     );
                   },
