@@ -1,6 +1,6 @@
 ## Kachkulator — opensource fitness, bodybuilding and powerlifting calculator.
 
-You can use the [Web version](https://kachculator.ru).
+You can use the [Web version](https://kachculator.ru). Mobile apps in AppStore and Google.Play coming soon.
 
 
 ### Support or Contact
