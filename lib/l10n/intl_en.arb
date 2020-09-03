@@ -5,6 +5,11 @@
     "homePageProportions":"Body proportions",
     "homePageFood":"Food",
     "about": "About",
+
+    "gender":"Gender",
+    "male":"Male",
+    "female":"Female",
+    "age":"Age",
     
     "bmiPageTitle":"Body Mass Index (BMI)",
     "bmiPageDesc":"Calculate your Body Mass Index (WHO).",
@@ -29,9 +34,6 @@
     "rmRepeats":"Repeats",
     "rmMethod":"Method",
     "rmResult":"Result",
-    "male":"Male",
-    "female":"Female",
-    "age":"Age",
     "ageValidation":"Please, enter you age.",
     "Brzycki":"Brzycki",
     "Lander":"Lander",
@@ -55,6 +57,7 @@
     "absiRisk3":"Averange",
     "absiRisk4":"High",
     "absiRisk5":"Very High",
+    "absiMean":"Averange ABSI of people in your age and same gender",
 
     "rfmPageTitle":"Relative fat mass (RFM)",
     "rfmPageDescription":"Relative fat mass in % calculation.",

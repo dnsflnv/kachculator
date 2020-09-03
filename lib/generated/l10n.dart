@@ -93,6 +93,46 @@ class S {
     );
   }
 
+  /// `Пол`
+  String get gender {
+    return Intl.message(
+      'Пол',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Мужской`
+  String get male {
+    return Intl.message(
+      'Мужской',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Женский`
+  String get female {
+    return Intl.message(
+      'Женский',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Возраст`
+  String get age {
+    return Intl.message(
+      'Возраст',
+      name: 'age',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Индекс массы тела (BMI)`
   String get bmiPageTitle {
     return Intl.message(
@@ -313,36 +353,6 @@ class S {
     );
   }
 
-  /// `Мужской`
-  String get male {
-    return Intl.message(
-      'Мужской',
-      name: 'male',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Женский`
-  String get female {
-    return Intl.message(
-      'Женский',
-      name: 'female',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Возраст`
-  String get age {
-    return Intl.message(
-      'Возраст',
-      name: 'age',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Пожалуйста, введите возраст.`
   String get ageValidation {
     return Intl.message(
@@ -558,6 +568,16 @@ class S {
     return Intl.message(
       'Очень выскокий.',
       name: 'absiRisk5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Средний ABSI людей вашего пола и возраста`
+  String get absiMean {
+    return Intl.message(
+      'Средний ABSI людей вашего пола и возраста',
+      name: 'absiMean',
       desc: '',
       args: [],
     );

@@ -38,171 +38,184 @@ class _AbsiPageState extends State<AbsiPage> {
     return Scaffold(
       appBar: mpAppBar(title: Text(S.of(context).absiPageTitle)),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
-                Text(S.of(context).absiPageDesc),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcWeight,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).bmiWeight,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).bmiWeightValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).bmiWeightValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcHeight,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).bmiHeight,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).bmiHeightValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).bmiHeightValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcWaistCircumference,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).absiWaistCircumference,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).absiWaistCircumferenceValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).absiWaistCircumferenceValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcAge,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).age,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).ageValidation;
-                      }
-                      if (double.parse(value) <= 2) {
-                        return S.of(context).absiAgeValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Row(
+        child: Center(
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 800.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
                   children: [
-                    Radio(
-                      value: Gender.female,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value;
-                        });
-                      },
+                    // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
+                    Text(S.of(context).absiPageDesc),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcWeight,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).bmiWeight,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty || double.parse(value) <= 0) {
+                            return S.of(context).bmiWeightValidation;
+                          }
+                          return null;
+                        },
+                      ),
                     ),
-                    Text(S.of(context).female),
-                    Radio(
-                      value: Gender.male,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value;
-                        });
-                      },
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcHeight,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).bmiHeight,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).bmiHeightValidation;
+                          }
+                          if (double.parse(value) <= 0) {
+                            return S.of(context).bmiHeightValidation;
+                          }
+                          return null;
+                        },
+                      ),
                     ),
-                    Text(S.of(context).male),
-                  ],
-                ),
-                mpButton(
-                  label: S.of(context).calculate,
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      double weight = double.parse(tcWeight.text);
-                      double height = double.parse(tcHeight.text);
-                      int age = int.parse(tcAge.text);
-                      if (age > 85) age = 85;
-                      double waistCircumference =
-                          double.parse(tcWaistCircumference.text);
-                      Calc calc = Calc.absi(
-                        context: context,
-                        weightAthlete: weight,
-                        heightAthleteCm: height,
-                        gender: gender,
-                        age: age,
-                        waistCircumferenceCm: waistCircumference,
-                      );
-                      // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
-                      String res = """
-**Age:** $age
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcWaistCircumference,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).absiWaistCircumference,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S
+                                .of(context)
+                                .absiWaistCircumferenceValidation;
+                          }
+                          if (double.parse(value) <= 0) {
+                            return S
+                                .of(context)
+                                .absiWaistCircumferenceValidation;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcAge,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).age,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).ageValidation;
+                          }
+                          if (double.parse(value) <= 2) {
+                            return S.of(context).absiAgeValidation;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Radio(
+                          value: Gender.female,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).female),
+                        Radio(
+                          value: Gender.male,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).male),
+                      ],
+                    ),
+                    mpButton(
+                      label: S.of(context).calculate,
+                      onPressed: () {
+                        if (_formKey.currentState.validate()) {
+                          double weight = double.parse(tcWeight.text);
+                          double height = double.parse(tcHeight.text);
+                          int age = int.parse(tcAge.text);
+                          if (age > 85) age = 85;
+                          double waistCircumference =
+                              double.parse(tcWaistCircumference.text);
+                          Calc calc = Calc.absi(
+                            context: context,
+                            weightAthlete: weight,
+                            heightAthleteCm: height,
+                            gender: gender,
+                            age: age,
+                            waistCircumferenceCm: waistCircumference,
+                          );
+                          // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
+                          String sGender = (gender == Gender.male)
+                              ? S.of(context).male
+                              : S.of(context).female;
+                          String res = """
+**${S.of(context).age}:** $age
 
-**Gender**: $gender
+**${S.of(context).gender}**: $sGender
 
-**Height**: $height
+**${S.of(context).bmiHeight}**: $height
 
-**BMI**: ${calc.bmi.toStringAsFixed(4)}
+**${S.of(context).bmiPageTitle}**: ${calc.bmi.toStringAsFixed(3)}
 
-**Waist Circumference**: $waistCircumference
+**${S.of(context).absiWaistCircumference}**: $waistCircumference
 
 **ABSI:** ${calc.absi.toStringAsFixed(5)}
 
-**ABSImean**: ${calc.absiMean.toStringAsFixed(5)}
-
-**ABSIsd**: ${calc.absiSD.toStringAsFixed(5)}
-
-**ABSI Z score**: ${calc.absiZ.toStringAsFixed(4)}
+**${S.of(context).absiMean}**: ${calc.absiMean.toStringAsFixed(5)}
 
 **${S.of(context).absiRisk}**: ${calc.absiRisk}
 """; //
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ResultPage(
-                            result: res,
-                            title: S.of(context).absiPageTitle,
-                          ),
-                        ),
-                      );
-                    }
-                  },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultPage(
+                                result: res,
+                                title: S.of(context).absiPageTitle,
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
