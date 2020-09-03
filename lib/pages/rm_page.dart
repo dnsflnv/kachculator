@@ -34,153 +34,147 @@ class _RmPageState extends State<RmPage> {
     return Scaffold(
       appBar: mpAppBar(title: Text(S.of(context).rmPageTitle)),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: <Widget>[
-                Text(S.of(context).rmPageDesc),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcWeightAthlete,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).bmiWeight,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).bmiWeightValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).bmiWeightValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                  // mpTextField(
-                  //   context: context,
-                  //   labelText: S.of(context).bmiWeight,
-                  //   controller: tcWeightAthlete,
-                  //   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  // ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: TextFormField(
-                      controller: tcWeight,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: S.of(context).rmBarebellWeight,
+        child: Center(
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 800.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Text(S.of(context).rmPageDesc),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcWeightAthlete,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).bmiWeight,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).bmiWeightValidation;
+                          }
+                          if (double.parse(value) <= 0) {
+                            return S.of(context).bmiWeightValidation;
+                          }
+                          return null;
+                        },
                       ),
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return S.of(context).rmBarebellWeightValidation;
-                        }
-                        if (double.parse(value) <= 0) {
-                          return S.of(context).rmBarebellWeightValidation;
-                        }
-                        return null;
-                      },
                     ),
-                  ),
-                  // mpTextField(
-                  //   context: context,
-                  //   labelText: S.of(context).rmBarebellWeight,
-                  //   controller: tcWeight,
-                  //   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  // ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcRepeat,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).rmRepeats,
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 8.0),
+                        child: TextFormField(
+                          controller: tcWeight,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: S.of(context).rmBarebellWeight,
+                          ),
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly
+                          ],
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return S.of(context).rmBarebellWeightValidation;
+                            }
+                            if (double.parse(value) <= 0) {
+                              return S.of(context).rmBarebellWeightValidation;
+                            }
+                            return null;
+                          },
+                        ),
+                      ),
                     ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).rmRepeatValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).rmRepeatValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                  // mpTextField(
-                  //   context: context,
-                  //   labelText: S.of(context).rmRepeats,
-                  //   controller: tcRepeat,
-                  //   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  // ),
-                ),
-                Row(
-                  children: [
-                    Radio(
-                      value: Gender.female,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value;
-                        });
-                      },
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcRepeat,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).rmRepeats,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).rmRepeatValidation;
+                          }
+                          if (double.parse(value) <= 0) {
+                            return S.of(context).rmRepeatValidation;
+                          }
+                          return null;
+                        },
+                      ),
                     ),
-                    Text(S.of(context).female),
-                    Radio(
-                      value: Gender.male,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value;
-                        });
-                      },
+                    Row(
+                      children: [
+                        Radio(
+                          value: Gender.female,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).female),
+                        Radio(
+                          value: Gender.male,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).male),
+                      ],
                     ),
-                    Text(S.of(context).male),
-                  ],
-                ),
-                mpButton(
-                    context: context,
-                    label: S.of(context).calculate,
-                    onPressed: () {
-                      if (_formKey.currentState.validate()) {
-                        Calc rm = Calc.rm(
-                            context: context,
-                            weightAthlete: double.parse(tcWeightAthlete.text),
-                            weight: double.parse(tcWeight.text),
-                            repeat: int.parse(tcRepeat.text),
-                            gender: gender);
-                        String res = ''' 
+                    mpButton(
+                        context: context,
+                        label: S.of(context).calculate,
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            Calc rm = Calc.rm(
+                                context: context,
+                                weightAthlete:
+                                    double.parse(tcWeightAthlete.text),
+                                weight: double.parse(tcWeight.text),
+                                repeat: int.parse(tcRepeat.text),
+                                gender: gender);
+                            String res = ''' 
 |**${S.of(context).rmMethod}**|**${S.of(context).rmResult}**|
 |---|---|
 |${S.of(context).Brzycki}|${rm.oneRmBrzycki.toStringAsFixed(3)}|
 |${S.of(context).Epley}|${rm.oneRmEpley.toStringAsFixed(3)}|
 |${S.of(context).Lander}|${rm.oneRmLander.toStringAsFixed(3)}|
-|${S.of(context).Lombardi}|${rm.oneRmLombardi.toStringAsFixed(3)}|            
+|${S.of(context).Lombardi}|${rm.oneRmLombardi.toStringAsFixed(3)}|
 |${S.of(context).Mayhew}|${rm.oneRmMayhew.toStringAsFixed(3)}|
 |${S.of(context).OConner}|${rm.oneRmOConner.toStringAsFixed(3)}|
-|${S.of(context).Wathan}|${rm.oneRmWathan.toStringAsFixed(3)}|                  
+|${S.of(context).Wathan}|${rm.oneRmWathan.toStringAsFixed(3)}|
 |${S.of(context).Wilks}|${rm.oneRmWilks.toStringAsFixed(3)}|
 ''';
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ResultPage(
-                              result: res,
-                              title: S.of(context).rmPageTitle,
-                            ),
-                          ),
-                        );
-                      }
-                    }),
-              ],
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ResultPage(
+                                  result: res,
+                                  title: S.of(context).rmPageTitle,
+                                ),
+                              ),
+                            );
+                          }
+                        }),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
