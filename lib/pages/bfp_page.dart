@@ -36,130 +36,143 @@ class _BfpPageState extends State<BfpPage> {
     return Scaffold(
       appBar: mpAppBar(title: Text(S.of(context).bfpPageTitle)),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                //Text(S.of(context).b),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcWeight,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).bmiWeight,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).bmiWeightValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).bmiWeightValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcHeight,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).bmiHeight,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).bmiHeightValidation;
-                      }
-                      if (double.parse(value) <= 0) {
-                        return S.of(context).bmiHeightValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: tcAge,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: S.of(context).age,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return S.of(context).ageValidation;
-                      }
-                      if (double.parse(value) <= 2) {
-                        return S.of(context).absiAgeValidation;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                Row(
+        child: Center(
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 800.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
                   children: [
-                    Radio(
-                      value: Gender.female,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value;
-                        });
+                    //Text(S.of(context).b),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcWeight,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).bmiWeight,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).bmiWeightValidation;
+                          }
+                          if (double.parse(value) <= 0) {
+                            return S.of(context).bmiWeightValidation;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcHeight,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).bmiHeight,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).bmiHeightValidation;
+                          }
+                          if (double.parse(value) <= 0) {
+                            return S.of(context).bmiHeightValidation;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      child: TextFormField(
+                        controller: tcAge,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: S.of(context).age,
+                        ),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return S.of(context).ageValidation;
+                          }
+                          if (double.parse(value) <= 2) {
+                            return S.of(context).absiAgeValidation;
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Radio(
+                          value: Gender.female,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).female),
+                        Radio(
+                          value: Gender.male,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).male),
+                      ],
+                    ),
+                    mpButton(
+                      label: S.of(context).calculate,
+                      onPressed: () {
+                        if (_formKey.currentState.validate()) {
+                          double weight = double.parse(tcWeight.text);
+                          double height = double.parse(tcHeight.text);
+                          int age = int.parse(tcAge.text);
+                          if (age > 85) age = 85;
+                          Calc calc = Calc.bfp(
+                              context: context,
+                              weightAthlete: weight,
+                              heightAthleteCm: height,
+                              gender: gender,
+                              age: age);
+
+                          String res = """
+**${S.of(context).bfpPageTitle}:** ${calc.bfp.toStringAsFixed(2)}%
+
+**${S.of(context).bmiPageTitle}:** ${calc.bmi.toStringAsFixed(2)}
+
+**${S.of(context).bfpCategory}:** ${calc.bodyFat(calc.bfp)}
+"""; //
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultPage(
+                                result: res,
+                                title: S.of(context).bfpPageTitle,
+                              ),
+                            ),
+                          );
+                        }
                       },
                     ),
-                    Text(S.of(context).female),
-                    Radio(
-                      value: Gender.male,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value;
-                        });
-                      },
-                    ),
-                    Text(S.of(context).male),
                   ],
                 ),
-                mpButton(
-                  label: S.of(context).calculate,
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      double weight = double.parse(tcWeight.text);
-                      double height = double.parse(tcHeight.text);
-                      int age = int.parse(tcAge.text);
-                      if (age > 85) age = 85;
-                      Calc calc = Calc.bfp(
-                          context: context,
-                          weightAthlete: weight,
-                          heightAthleteCm: height,
-                          gender: gender,
-                          age: age);
-
-                      String res = """
-${S.of(context).bfpPageTitle}: ${calc.bfp}
-
-${calc.bodyFat(calc.bfp)}
-"""; //
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ResultPage(
-                            result: res,
-                            title: S.of(context).bfpPageTitle,
-                          ),
-                        ),
-                      );
-                    }
-                  },
-                ),
-              ],
+              ),
             ),
           ),
         ),

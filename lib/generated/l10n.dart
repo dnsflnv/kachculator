@@ -663,6 +663,16 @@ class S {
     );
   }
 
+  /// `Категория`
+  String get bfpCategory {
+    return Intl.message(
+      'Категория',
+      name: 'bfpCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Пропорциии тела (МакКаллум)`
   String get mcPageTitle {
     return Intl.message(

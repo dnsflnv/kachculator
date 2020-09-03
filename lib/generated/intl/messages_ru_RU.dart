@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ageValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите возраст."),
     "bfpAthletes" : MessageLookupByLibrary.simpleMessage("Атлеты"),
     "bfpAverage" : MessageLookupByLibrary.simpleMessage("Средний"),
+    "bfpCategory" : MessageLookupByLibrary.simpleMessage("Категория"),
     "bfpEssential" : MessageLookupByLibrary.simpleMessage("Необходимый жир"),
     "bfpFitness" : MessageLookupByLibrary.simpleMessage("Фитнесс"),
     "bfpObese" : MessageLookupByLibrary.simpleMessage("Ожирение"),

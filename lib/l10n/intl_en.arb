@@ -68,6 +68,7 @@
     "bfpFitness":"Fitness",
     "bfpAverage":"Average",
     "bfpObese":"Obese",
+    "bfpCategory":"Category",
 
     "mcPageTitle":"Body proportions (McCallum)",
     "mcPageDesc":"Ideal Body Proportions Formula For the Natural Athlete (McCallum).",

@@ -69,6 +69,7 @@
     "bfpFitness":"Фитнесс",
     "bfpAverage":"Средний",
     "bfpObese":"Ожирение",
+    "bfpCategory":"Категория",
 
     "mcPageTitle":"Пропорциии тела (МакКаллум)",
     "mcPart":"Часть тела",

@@ -352,29 +352,43 @@ class Calc {
     if (this.age <= 15.0) {
       res = (1.51 * this.bmi) - (0.7 * this.age) - (3.6 * sex) + 1.4;
     } else {
-      //res = (1.2 * this.bmi) - (0.23 * this.age) - (10.8 * sex) - 5.4;
-      res = (1.39 * this.bmi) - (0.16 * this.age) - (10.34 * sex) - 9.0;
+      // First formula (1991)
+      //res = (1.2 * this.bmi) + (0.23 * this.age) - (10.8 * sex) - 5.4;
+      // Second fomula (2002)
+      res = (1.39 * this.bmi) + (0.16 * this.age) - (10.34 * sex) - 9.0;
     }
     return res;
   }
 
   /// BFP and RFM interpretation
-  String bodyFat(double persest) {
+  String bodyFat(double persent) {
     String result = '';
 
     if (this.gender == Gender.female) {
-      if (persest >= 10 && persest < 14) {
+      if (persent >= 10 && persent < 14) {
         result = S.of(this.context).bfpEssential;
-      } else if (persest >= 14 && persest < 21) {
+      } else if (persent >= 14 && persent < 21) {
         result = S.of(this.context).bfpAthletes;
-      } else if (persest >= 21 && persest < 25) {
+      } else if (persent >= 21 && persent < 25) {
         result = S.of(this.context).bfpFitness;
-      } else if (persest >= 25 && persest < 32) {
+      } else if (persent >= 25 && persent < 32) {
         result = S.of(this.context).bfpAverage;
-      } else if (persest >= 32) {
+      } else if (persent >= 32) {
         result = S.of(this.context).bfpObese;
       }
-    } else {}
+    } else {
+      if (persent >= 2 && persent < 6) {
+        result = S.of(this.context).bfpEssential;
+      } else if (persent >= 6 && persent < 14) {
+        result = S.of(this.context).bfpAthletes;
+      } else if (persent >= 14 && persent < 18) {
+        result = S.of(this.context).bfpFitness;
+      } else if (persent >= 18 && persent < 25) {
+        result = S.of(this.context).bfpAverage;
+      } else if (persent >= 25) {
+        result = S.of(this.context).bfpObese;
+      }
+    }
 
     return result;
   }
