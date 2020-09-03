@@ -88,5 +88,10 @@
     "cooperBad":"Bad",
     "cooperTerrible":"Terrible",
     "cooperDistanse":"Distanse (m)",
-    "isAthlete":"Are you professional athlete?"
+    "isAthlete":"Are you professional athlete?",
+
+    "mcrobertPageTitle":"Body proportions (McRobert)",
+    "mcrobertPageDesc":"Ideal Body Proportions Formula For the Natural Athlete (McRobert).",
+    "mcrobertMin":"Minimum",
+    "mcrobertMax":"Maximum"
 }

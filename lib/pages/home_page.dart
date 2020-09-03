@@ -7,6 +7,7 @@ import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/cooper_page.dart';
 import 'package:kachculator/pages/mc_page.dart';
+import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
@@ -149,6 +150,27 @@ class HomePage extends StatelessWidget {
                           Image.asset('icons/icons8-bodybuilder-96.png'),
                           Text(
                             S.of(context).mcPageTitle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      padding: EdgeInsets.all(8.0),
+                      onPressed: () {
+                        Navigator.pushNamed(context, McRobertPage.id);
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset('icons/icons8-torso-96.png'),
+                          Text(
+                            S.of(context).mcrobertPageTitle,
                             textAlign: TextAlign.center,
                           ),
                         ],
