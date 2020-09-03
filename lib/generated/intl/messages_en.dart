@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperAverage" : MessageLookupByLibrary.simpleMessage("Average"),
     "cooperBad" : MessageLookupByLibrary.simpleMessage("Bad"),
     "cooperDistanse" : MessageLookupByLibrary.simpleMessage("Distanse (m)"),
+    "cooperDistanseValidation" : MessageLookupByLibrary.simpleMessage("Please, enter the distanse in meters."),
     "cooperExcellent" : MessageLookupByLibrary.simpleMessage("Excellent"),
     "cooperGood" : MessageLookupByLibrary.simpleMessage("Good"),
     "cooperPageDesc" : MessageLookupByLibrary.simpleMessage("Run 12 minutes as fast, as you can. And enter the distanse in the field below. You can do it on stadium, or using fitness tracker with GPS."),

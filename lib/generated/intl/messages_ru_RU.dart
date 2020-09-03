@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperAverage" : MessageLookupByLibrary.simpleMessage("Удовлетворительно"),
     "cooperBad" : MessageLookupByLibrary.simpleMessage("Плохо"),
     "cooperDistanse" : MessageLookupByLibrary.simpleMessage("Дистанция (м)"),
+    "cooperDistanseValidation" : MessageLookupByLibrary.simpleMessage("Пожалуйста, введите дистанцию в метрах."),
     "cooperExcellent" : MessageLookupByLibrary.simpleMessage("Отлично"),
     "cooperGood" : MessageLookupByLibrary.simpleMessage("Хорошо"),
     "cooperPageDesc" : MessageLookupByLibrary.simpleMessage("Тест на физическую подготовку, применяется в армии США. Для прохождения придётся побегать. Найдите стадион или беговую дорожку с отмеченным расстоянием (или используйте фитнесс-трекер с GPS) и замерьте, какое расстояние вы пробегаете за 12 минут непрерывного бега с максимально возможным для Вас усилием. Перед выполнением теста проконсультируйтесь с врачом, особенно, если у вас проблемы с сердечно-сосудистой системой."),

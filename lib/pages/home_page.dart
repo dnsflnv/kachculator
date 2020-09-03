@@ -10,10 +10,20 @@ import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
 class HomePage extends StatelessWidget {
   static String id = '/';
   final controller = ScrollController();
+
+  Future<void> _onOpen(LinkableElement link) async {
+    if (await canLaunch(link.url)) {
+      await launch(link.url);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -247,12 +257,15 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     showAboutDialog(
                       context: context,
-                      applicationIcon: FlutterLogo(),
+                      applicationIcon: Image.asset('icons/icons8-torso-96.png'),
                       applicationName: S.of(context).title,
                       applicationVersion: '1.0.0',
                       applicationLegalese: '© 2020 Denis Filonov',
                       children: [
-                        Text('Icons by https://icons8.com'),
+                        Linkify(
+                          onOpen: _onOpen,
+                          text: 'Icons by https://icons8.com',
+                        ),
                       ],
                     );
                   },

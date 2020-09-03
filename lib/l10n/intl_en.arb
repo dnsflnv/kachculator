@@ -92,6 +92,7 @@
     "cooperBad":"Bad",
     "cooperTerrible":"Terrible",
     "cooperDistanse":"Distanse (m)",
+    "cooperDistanseValidation":"Please, enter the distanse in meters.",
     "isAthlete":"Are you professional athlete?",
 
     "mcrobertPageTitle":"Body proportions (McRobert)",

@@ -93,6 +93,7 @@
     "cooperBad":"Плохо",
     "cooperTerrible":"Ужасно",
     "cooperDistanse":"Дистанция (м)",
+    "cooperDistanseValidation":"Пожалуйста, введите дистанцию в метрах.",
     "isAthlete":"Вы профессиональный спортсмен?",
 
     "mcrobertPageTitle":"Пропорциии тела (МакРоберт)",

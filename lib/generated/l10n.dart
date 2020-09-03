@@ -883,6 +883,16 @@ class S {
     );
   }
 
+  /// `Пожалуйста, введите дистанцию в метрах.`
+  String get cooperDistanseValidation {
+    return Intl.message(
+      'Пожалуйста, введите дистанцию в метрах.',
+      name: 'cooperDistanseValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Вы профессиональный спортсмен?`
   String get isAthlete {
     return Intl.message(
