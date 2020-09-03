@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
-import 'package:kachculator/generated/l10n.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ResultPage extends StatelessWidget {

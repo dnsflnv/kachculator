@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
