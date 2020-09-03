@@ -1,4 +1,4 @@
-## Kachkulator — opensource fitnes, bodybuilding and powerlifting calculator.
+## Kachkulator — opensource fitness, bodybuilding and powerlifting calculator.
 
 You can use the [Web version](https://kachculator.ru).
 
