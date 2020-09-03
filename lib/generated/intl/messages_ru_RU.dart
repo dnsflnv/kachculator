@@ -90,7 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "mcForearm" : MessageLookupByLibrary.simpleMessage("Обхват предплечья"),
     "mcNeck" : MessageLookupByLibrary.simpleMessage("Обхват шеи"),
     "mcPageDesc" : MessageLookupByLibrary.simpleMessage("Расчёт идеальных пропорций тела по МакКаллуму для натурального бодибилдера."),
-    "mcPageTitle" : MessageLookupByLibrary.simpleMessage("Пропорциии тела (МакКаллум)"),
+    "mcPageTitle" : MessageLookupByLibrary.simpleMessage("Пропорции тела (МакКаллум)"),
     "mcPart" : MessageLookupByLibrary.simpleMessage("Часть тела"),
     "mcThigh" : MessageLookupByLibrary.simpleMessage("Обхват бедра"),
     "mcWaist" : MessageLookupByLibrary.simpleMessage("Обхват талии"),
