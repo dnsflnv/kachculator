@@ -264,6 +264,10 @@ class HomePage extends StatelessWidget {
                       children: [
                         Linkify(
                           onOpen: _onOpen,
+                          text: 'Contacts: https://filonov.pro',
+                        ),
+                        Linkify(
+                          onOpen: _onOpen,
                           text: 'Icons by https://icons8.com',
                         ),
                         Linkify(
