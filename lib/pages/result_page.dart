@@ -17,10 +17,15 @@ class ResultPage extends StatelessWidget {
     return Scaffold(
       appBar: mpAppBar(title: Text(this.title)),
       body: SafeArea(
-        child: Markdown(
-          data: this.result,
-          controller: controller,
-          selectable: false,
+        child: Center(
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 800.0),
+            child: Markdown(
+              data: this.result,
+              controller: controller,
+              selectable: false,
+            ),
+          ),
         ),
       ),
     );
