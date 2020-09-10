@@ -1,7 +1,7 @@
 # Kachculator
 Calculator for fitness, bodybuilding and powerlifting.
 
-Avalable calculations: 
+Available calculations: 
 - Body Mass Index (BMI);
 - A body shape index (ABSI);
 - Body fat percentage (BFP);
