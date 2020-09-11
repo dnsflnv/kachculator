@@ -45,10 +45,14 @@ class App extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       onGenerateTitle: (BuildContext context) => S.of(context).title,
-      //title: 'Kachculator',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.teal,
       ),
       initialRoute: HomePage.id,
       routes: {

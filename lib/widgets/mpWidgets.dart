@@ -16,8 +16,8 @@ Widget mpButton({BuildContext context, String label, Function onPressed}) {
       onPressed: onPressed,
     );
   else
-    return MaterialButton(
-      color: Colors.blue,
+    return RaisedButton(
+      //color: Theme.of(context).primaryColor, //Colors.blue,
       child: Text(
         label,
         style: TextStyle(color: Colors.white),
