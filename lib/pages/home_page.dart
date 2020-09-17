@@ -30,9 +30,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mpAppBar(
-        title: Text(S.of(context).title),
-      ),
+      appBar: mpAppBar(title: Text(S.of(context).title), context: context),
       body: Center(
         child: Container(
           constraints: BoxConstraints(maxWidth: 800.0),

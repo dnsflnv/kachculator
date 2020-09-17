@@ -70,3 +70,38 @@ class App extends StatelessWidget {
     );
   }
 }
+
+// class App2 extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     var brightness = SchedulerBinding.instance.window.platformBrightness;
+//     bool darkModeOn = brightness == Brightness.dark;
+
+//     return CupertinoApp(
+//       localizationsDelegates: [
+//         S.delegate,
+//         GlobalMaterialLocalizations.delegate,
+//         GlobalWidgetsLocalizations.delegate,
+//         GlobalCupertinoLocalizations.delegate,
+//       ],
+//       supportedLocales: S.delegate.supportedLocales,
+//       onGenerateTitle: (BuildContext context) => S.of(context).title,
+//       theme: CupertinoThemeData(
+//         brightness: darkModeOn ? Brightness.dark : Brightness.light,
+//       ),
+//       initialRoute: HomePage.id,
+//       routes: {
+//         HomePage.id: (context) => HomePage(),
+//         BmiPage.id: (context) => BmiPage(),
+//         RmPage.id: (context) => RmPage(),
+//         AbsiPage.id: (context) => AbsiPage(),
+//         RfmPage.id: (context) => RfmPage(),
+//         BfpPage.id: (context) => BfpPage(),
+//         McPage.id: (context) => McPage(),
+//         McRobertPage.id: (context) => McRobertPage(),
+//         CooperPage.id: (context) => CooperPage(),
+//         CooperStrongPage.id: (context) => CooperStrongPage(),
+//       },
+//     );
+//   }
+// }
