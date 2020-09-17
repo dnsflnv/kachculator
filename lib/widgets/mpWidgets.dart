@@ -17,7 +17,6 @@ Widget mpButton({BuildContext context, String label, Function onPressed}) {
     );
   else
     return RaisedButton(
-      //color: Theme.of(context).primaryColor, //Colors.blue,
       child: Text(
         label,
         style: TextStyle(color: Colors.white),
@@ -72,56 +71,3 @@ PreferredSizeWidget mpAppBar({Widget title}) {
       title: title,
     );
 }
-
-/// Switch
-/*class MpSwitch extends StatefulWidget {
-  @override
-  _MpSwitchState createState() => _MpSwitchState();
-}
-
-class _MpSwitchState extends State<MpSwitch> {
-  @override
-  Widget build(BuildContext context) {
-    if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
-      return ListTile(
-        title: Text('isAthlete'),
-        trailing: CupertinoSwitch(
-          value: isAthlete,
-          onChanged: (bool value) {
-            setState(() {
-              isAthlete = value;
-            });
-          },
-        ),
-        onTap: () {
-          setState(() {
-            isAthlete = !isAthlete;
-          });
-        },
-      );
-    else
-      return ListTile(
-        title: Text('isAthlete'),
-        trailing: Switch(
-          value: isAthlete,
-          onChanged: (bool value) {
-            setState(() {
-              isAthlete = value;
-            });
-          },
-        ),
-        onTap: () {
-          setState(() {
-            isAthlete = !isAthlete;
-          });
-        },
-      );
-  }
-}*/
-
-// Widget mpPageRoute({Function(BuildContext) builder}) {
-//   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
-//     return CupertinoPageRoute(builder:  builder);
-//   else
-//     return MaterialPageRoute(builder: builder);
-// }
