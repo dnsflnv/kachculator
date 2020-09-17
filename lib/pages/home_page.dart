@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-bmi-96.png'),
+                              Image.asset('assets/icons/icons8-bmi-96.png'),
                               Text(
                                 S.of(context).bmiPageTitle,
                                 textAlign: TextAlign.center,
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Image.asset(
-                                  'icons/icons8-dead-man-in-a-coffin-96.png'),
+                                  'assets/icons/icons8-dead-man-in-a-coffin-96.png'),
                               Text(
                                 S.of(context).absiPageTitle,
                                 textAlign: TextAlign.center,
@@ -108,7 +108,8 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-fat-man-cry-96.png'),
+                              Image.asset(
+                                  'assets/icons/icons8-fat-man-cry-96.png'),
                               Text(
                                 S.of(context).bfpPageTitle,
                                 textAlign: TextAlign.center,
@@ -129,7 +130,7 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-sumo-96.png'),
+                              Image.asset('assets/icons/icons8-sumo-96.png'),
                               Text(
                                 S.of(context).rfmPageTitle,
                                 textAlign: TextAlign.center,
@@ -163,7 +164,8 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-bodybuilder-96.png'),
+                              Image.asset(
+                                  'assets/icons/icons8-bodybuilder-96.png'),
                               Text(
                                 S.of(context).mcPageTitle,
                                 textAlign: TextAlign.center,
@@ -184,7 +186,7 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-torso-96.png'),
+                              Image.asset('assets/icons/icons8-torso-96.png'),
                               Text(
                                 S.of(context).mcrobertPageTitle,
                                 textAlign: TextAlign.center,
@@ -218,7 +220,8 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-deadlift-96.png'),
+                              Image.asset(
+                                  'assets/icons/icons8-deadlift-96.png'),
                               Text(
                                 S.of(context).rmPageTitle,
                                 textAlign: TextAlign.center,
@@ -239,7 +242,7 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-running-96.png'),
+                              Image.asset('assets/icons/icons8-running-96.png'),
                               Text(
                                 S.of(context).cooperPageTitle,
                                 textAlign: TextAlign.center,
@@ -264,7 +267,7 @@ class HomePage extends StatelessWidget {
                           },
                           child: Column(
                             children: [
-                              Image.asset('icons/icons8-pushups-96.png'),
+                              Image.asset('assets/icons/icons8-pushups-96.png'),
                               Text(
                                 S.of(context).cooperStrongPageTitle,
                                 textAlign: TextAlign.center,
@@ -284,7 +287,8 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     showAboutDialog(
                       context: context,
-                      applicationIcon: Image.asset('icons/icons8-torso-96.png'),
+                      applicationIcon:
+                          Image.asset('assets/icons/icons8-torso-96.png'),
                       applicationName: S.of(context).title,
                       applicationVersion: '1.1',
                       applicationLegalese: '© 2020 Denis Filonov',

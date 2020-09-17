@@ -41,6 +41,14 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
                     SizedBox(
                       height: 8.0,
                     ),
+                    Container(
+                      height: 360.0,
+                      child: Image.asset(
+                        'assets/images/cooper.png',
+                        fit: BoxFit.none,
+                        //filterQuality: FilterQuality.low,
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: TextFormField(
@@ -59,10 +67,6 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
                           return null;
                         },
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: Image.asset('/images/cooper.jpg'),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
