@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/models/calc_bfp.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:kachculator/models/calc.dart';
@@ -144,19 +145,16 @@ class _BfpPageState extends State<BfpPage> {
                           double height = double.parse(tcHeight.text);
                           int age = int.parse(tcAge.text);
                           if (age > 85) age = 85;
-                          Calc calc = Calc.bfp(
-                              context: context,
+                          double bfp = calcBFP(
                               weightAthlete: weight,
                               heightAthleteCm: height,
                               gender: gender,
                               age: age);
 
                           String res = """
-**${S.of(context).bfpPageTitle}:** ${calc.bfp.toStringAsFixed(2)}%
+**${S.of(context).bfpPageTitle}:** ${bfp.toStringAsFixed(2)}%
 
-**${S.of(context).bmiPageTitle}:** ${calc.bmi.toStringAsFixed(2)}
-
-**${S.of(context).bfpCategory}:** ${calc.bodyFat(calc.bfp)}
+**${S.of(context).bfpCategory}:** ${bodyFat(context: context, persent: bfp, gender: gender)}
 """; //
                           Navigator.push(
                             context,

@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/models/calc_bmi.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
-import 'package:kachculator/models/calc.dart';
 
 class BmiPage extends StatefulWidget {
   static String id = '/bmi';
@@ -86,13 +86,12 @@ class _BmiPageState extends State<BmiPage> {
                         if (_formKey.currentState.validate()) {
                           double weight = double.parse(tcWeight.text);
                           double height = double.parse(tcHeight.text);
-                          Calc calc = Calc.bmi(
-                              weightAthlete: weight,
-                              heightAthleteCm: height,
-                              context: context);
 
-                          bmi = calc.bmi;
-                          result = calc.bmiInterpretation(bmi);
+                          double bmi = calcBmi(
+                              weightAthlete: weight, heightAthleteCm: height);
+
+                          result =
+                              bmiInterpretation(bmi: bmi, context: context);
 
                           String res = """
 **${S.of(context).bmi}:** ${bmi.toStringAsFixed(3)}

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/models/calc_rfm.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:kachculator/models/calc.dart';
@@ -130,16 +131,15 @@ class _RfmPageState extends State<RfmPage> {
                           if (age > 85) age = 85;
                           double waistCircumference =
                               double.parse(tcWaistCircumference.text);
-                          Calc calc = Calc.rfm(
-                              context: this.context,
+                          double rfm = calcRFM(
                               heightAthleteCm: height,
                               gender: gender,
                               waistCircumferenceCm: waistCircumference);
 
                           String res = """
-**${S.of(context).rfmPageTitle}**: ${calc.rfm.toStringAsFixed(1)}%
+**${S.of(context).rfmPageTitle}**: ${rfm.toStringAsFixed(1)}%
 
-**${S.of(context).bfpCategory}:** ${calc.bodyFat(calc.rfm)}
+**${S.of(context).bfpCategory}:** ${bodyFat(context: context, persent: rfm, gender: gender)}
 """; //
                           Navigator.push(
                             context,

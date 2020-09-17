@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/models/calc.dart';
+import 'package:kachculator/models/calc_rm.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:kachculator/generated/l10n.dart';
@@ -142,8 +143,7 @@ class _RmPageState extends State<RmPage> {
                         label: S.of(context).calculate,
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
-                            Calc rm = Calc.rm(
-                                context: context,
+                            CalcRm rm = CalcRm(
                                 weightAthlete:
                                     double.parse(tcWeightAthlete.text),
                                 weight: double.parse(tcWeight.text),

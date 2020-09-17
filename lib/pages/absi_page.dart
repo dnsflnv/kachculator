@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/models/calc.dart';
+import 'package:kachculator/models/calc_absi.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
-import 'package:kachculator/models/calc.dart';
 
 class AbsiPage extends StatefulWidget {
   static String id = '/absi';
@@ -172,7 +173,7 @@ class _AbsiPageState extends State<AbsiPage> {
                           if (age > 85) age = 85;
                           double waistCircumference =
                               double.parse(tcWaistCircumference.text);
-                          Calc calc = Calc.absi(
+                          CalcABSI calc = CalcABSI(
                             context: context,
                             weightAthlete: weight,
                             heightAthleteCm: height,
