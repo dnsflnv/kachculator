@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/scheduler.dart';
 import 'dart:io' show Platform;
 
 import 'package:flutter/services.dart';
@@ -61,13 +62,24 @@ Widget mpTextField(
 }
 
 /// AppBar.
-PreferredSizeWidget mpAppBar({Widget title}) {
-  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
-    return CupertinoNavigationBar(
-      middle: title,
-    );
-  else
-    return AppBar(
-      title: title,
-    );
+PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
+  return AppBar(
+    title: title,
+  );
 }
+
+// PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
+//   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+//     var brightness = MediaQuery.of(context).platformBrightness;
+//     bool darkModeOn = brightness == Brightness.dark;
+//     print(darkModeOn);
+
+//     return CupertinoNavigationBar(
+//       middle: title,
+//       brightness: darkModeOn ? Brightness.dark : Brightness.light,
+//     );
+//   } else
+//     return AppBar(
+//       title: title,
+//     );
+// }
