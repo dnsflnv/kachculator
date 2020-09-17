@@ -62,12 +62,13 @@ Widget mpTextField(
 }
 
 /// AppBar.
-PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
+PreferredSizeWidget mpAppBar({@required Widget title}) {
   return AppBar(
     title: title,
   );
 }
 
+//TODO: Make universal AppBar
 // PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
 //   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
 //     var brightness = MediaQuery.of(context).platformBrightness;
