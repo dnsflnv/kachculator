@@ -13,6 +13,8 @@ import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 
+import 'cooper_strong_page.dart';
+
 class HomePage extends StatelessWidget {
   static String id = '/';
   final controller = ScrollController();
@@ -240,6 +242,31 @@ class HomePage extends StatelessWidget {
                               Image.asset('icons/icons8-running-96.png'),
                               Text(
                                 S.of(context).cooperPageTitle,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: FlatButton(
+                          padding: EdgeInsets.all(8.0),
+                          onPressed: () {
+                            Navigator.pushNamed(context, CooperStrongPage.id);
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset('icons/icons8-pushups-96.png'),
+                              Text(
+                                S.of(context).cooperStrongPageTitle,
                                 textAlign: TextAlign.center,
                               ),
                             ],

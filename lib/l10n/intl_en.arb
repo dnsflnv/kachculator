@@ -94,9 +94,15 @@
     "cooperDistanse":"Distanse (m)",
     "cooperDistanseValidation":"Please, enter the distanse in meters.",
     "isAthlete":"Are you professional athlete?",
+    "cooperMark":"Mark",
 
     "mcrobertPageTitle":"Body proportions (McRobert)",
     "mcrobertPageDesc":"Ideal Body Proportions Formula For the Natural Athlete (McRobert).",
     "mcrobertMin":"Minimum",
-    "mcrobertMax":"Maximum"
+    "mcrobertMax":"Maximum",
+
+    "cooperStrongPageTitle":"Cooper army test",
+    "cooperStrongMinutes":"UNTRANSLATED",
+    "cooperStrongMinutesValidation":"Please, enter number.",
+    "cooperStrongPageDesc":"UNTRANSLATED"
 }

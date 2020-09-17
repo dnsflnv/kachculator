@@ -166,9 +166,9 @@ class _CooperPageState extends State<CooperPage> {
                                     distanse: double.parse(tcDistanse.text))
                                 .toStringAsFixed(2);
                             res = '''
-**Оценка подготовленности организма:** $run 
+**${S.of(context).cooperMark}:** $run 
 
-**VO2max =** $vo''';
+**VO2 max =** $vo''';
                             Navigator.push(
                               context,
                               MaterialPageRoute(
