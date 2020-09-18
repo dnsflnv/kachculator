@@ -26,8 +26,8 @@ class _RmPageState extends State<RmPage> {
   void initState() {
     super.initState();
     tcWeightAthlete = TextEditingController(text: '90');
-    tcWeight = TextEditingController(text: '100');
-    tcRepeat = TextEditingController(text: '8');
+    tcWeight = TextEditingController(text: '134');
+    tcRepeat = TextEditingController(text: '3');
     gender = Gender.male;
     isUS = false;
   }
@@ -56,7 +56,8 @@ class _RmPageState extends State<RmPage> {
                           labelText: S.of(context).bmiWeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -80,7 +81,8 @@ class _RmPageState extends State<RmPage> {
                             labelText: S.of(context).rmBarebellWeight,
                           ),
                           inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.allow(
+                                RegExp("[0-9]*\.?[0-9]*"))
                           ],
                           validator: (value) {
                             if (value.isEmpty) {
@@ -157,9 +159,9 @@ class _RmPageState extends State<RmPage> {
                             weight = lbsToKg(weight);
                             weightAthlete = lbsToKg(weightAthlete);
                           }
-                          tcWeight.text = weight.toStringAsFixed(2);
+                          tcWeight.text = weight.toStringAsFixed(3);
                           tcWeightAthlete.text =
-                              weightAthlete.toStringAsFixed(2);
+                              weightAthlete.toStringAsFixed(3);
                         });
                       },
                       onTap: () {
