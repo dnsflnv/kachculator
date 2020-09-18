@@ -50,30 +50,6 @@ class _CooperPageState extends State<CooperPage> {
                     SizedBox(
                       height: 8.0,
                     ),
-                    Row(
-                      children: [
-                        Radio(
-                          value: Gender.female,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value;
-                            });
-                          },
-                        ),
-                        Text(S.of(context).female),
-                        Radio(
-                          value: Gender.male,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value;
-                            });
-                          },
-                        ),
-                        Text(S.of(context).male),
-                      ],
-                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: TextFormField(
@@ -112,6 +88,30 @@ class _CooperPageState extends State<CooperPage> {
                           return null;
                         },
                       ),
+                    ),
+                    Row(
+                      children: [
+                        Radio(
+                          value: Gender.female,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).female),
+                        Radio(
+                          value: Gender.male,
+                          groupValue: gender,
+                          onChanged: (value) {
+                            setState(() {
+                              gender = value;
+                            });
+                          },
+                        ),
+                        Text(S.of(context).male),
+                      ],
                     ),
                     mpSwitch(
                       context: this.context,
