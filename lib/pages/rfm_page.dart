@@ -55,7 +55,8 @@ class _RfmPageState extends State<RfmPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -77,7 +78,8 @@ class _RfmPageState extends State<RfmPage> {
                           labelText: S.of(context).absiWaistCircumference,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
