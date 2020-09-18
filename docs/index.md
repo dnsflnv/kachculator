@@ -1,7 +1,10 @@
 # Kachkulator — opensource fitness, bodybuilding and powerlifting calculator.
 
-You can use the [Web version](https://kachculator.ru). Mobile apps in AppStore and Google.Play coming soon.
-
+Android: **[Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator)**
+iOS: Coming soon, after Big Sur release.
+MacOS: Coming soon.
+Web: **[kachculator.ru](https://kachculator.ru)** (only for test, unsupported).
+Windows: Coming soon.
 
 ## Support or Contact
 
@@ -11,6 +14,13 @@ or create issure [here](https://github.com/filonov/kachculator/issues).
 ---
 
 ## History
+
+### 1.1
+- Fixed some bugs with translation.
+- Added Cooper army test.
+- Dark theme avaliable.
+- Added UK/US units (with automatic conversion).
+
 ### 1.0.1
 First public version. Available calculations: 
 - Body Mass Index (BMI);
