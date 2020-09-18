@@ -11,6 +11,8 @@
     "female":"Female",
     "age":"Age",
     "useImperialUS":"Use Imperial/US system (lbs, in)?",
+    "cm":"cm",
+    "inch":"in",
     
     "bmiPageTitle":"Body Mass Index (BMI)",
     "bmiPageDesc":"Calculate your Body Mass Index (WHO).",

@@ -143,6 +143,26 @@ class S {
     );
   }
 
+  /// `см`
+  String get cm {
+    return Intl.message(
+      'см',
+      name: 'cm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `дюймы`
+  String get inch {
+    return Intl.message(
+      'дюймы',
+      name: 'inch',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Индекс массы тела (BMI)`
   String get bmiPageTitle {
     return Intl.message(
