@@ -22,6 +22,7 @@ class _BfpPageState extends State<BfpPage> {
   double bmi = 0;
   Gender gender;
   String result = '';
+  bool isUS;
 
   @override
   void initState() {
@@ -30,6 +31,7 @@ class _BfpPageState extends State<BfpPage> {
     tcHeight = TextEditingController(text: '184');
     tcAge = TextEditingController(text: '41');
     gender = Gender.male;
+    isUS = false;
   }
 
   @override
@@ -137,6 +139,32 @@ class _BfpPageState extends State<BfpPage> {
                         Text(S.of(context).male),
                       ],
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double weight = double.parse(tcWeight.text);
+                          double height = double.parse(tcHeight.text);
+                          if (isUS) {
+                            weight = kgToLbs(weight);
+                            height = cmToInch(height);
+                          } else {
+                            weight = lbsToKg(weight);
+                            height = inchToCm(height);
+                          }
+                          tcWeight.text = weight.toStringAsFixed(2);
+                          tcHeight.text = height.toStringAsFixed(2);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
@@ -145,6 +173,12 @@ class _BfpPageState extends State<BfpPage> {
                           double height = double.parse(tcHeight.text);
                           int age = int.parse(tcAge.text);
                           if (age > 85) age = 85;
+
+                          if (isUS) {
+                            weight = lbsToKg(weight);
+                            height = inchToCm(height);
+                          }
+
                           double bfp = calcBFP(
                               weightAthlete: weight,
                               heightAthleteCm: height,
