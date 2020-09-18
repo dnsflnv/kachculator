@@ -44,7 +44,7 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
                     Container(
                       height: 360.0,
                       child: Image.asset(
-                        'assets/images/cooper.png',
+                        'images/cooper.png',
                         fit: BoxFit.none,
                         //filterQuality: FilterQuality.low,
                       ),
