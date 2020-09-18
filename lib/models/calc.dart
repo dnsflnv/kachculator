@@ -11,6 +11,9 @@ double cmToInch(double cm) => cm / 2.54;
 double lbsToKg(double lbs) => lbs / 2.20462262185;
 double kgToLbs(double kg) => kg * 2.20462262185;
 
+double mileTokm(double mile) => mile * 1.609344;
+double kmToMile(double km) => km / 1.609344;
+
 /// BFP and RFM interpretation
 String bodyFat({double persent, Gender gender, BuildContext context}) {
   String result = '';

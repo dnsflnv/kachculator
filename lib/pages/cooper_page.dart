@@ -20,14 +20,16 @@ class _CooperPageState extends State<CooperPage> {
   TextEditingController tcAge;
   bool isAthlete;
   Gender gender;
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
     tcDistanse = TextEditingController(text: '2700');
-    tcAge = TextEditingController(text: '27');
+    tcAge = TextEditingController(text: '41');
     gender = Gender.male;
     isAthlete = false;
+    isUS = false;
   }
 
   @override
