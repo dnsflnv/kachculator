@@ -100,7 +100,7 @@ class _McCallumPageState extends State<McCallumPage> {
 ''';
                           mac.forEach((key, value) {
                             res += '''
-|  $key  |  ${isUS ? cmToInch(value).toStringAsFixed(2) : value.toStringAsFixed(1)}  |
+|  $key  |  ${isUS ? cmToInch(value).toStringAsFixed(1) : value.toStringAsFixed(1)}  |
 ''';
                           });
                           Navigator.push(
