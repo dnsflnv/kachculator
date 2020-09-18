@@ -2,26 +2,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 import 'package:kachculator/models/calc_mccallum.dart';
 
-class McPage extends StatefulWidget {
+class McCallumPage extends StatefulWidget {
   static String id = '/mc';
 
   @override
-  _McPageState createState() => _McPageState();
+  _McCallumPageState createState() => _McCallumPageState();
 }
 
-class _McPageState extends State<McPage> {
+class _McCallumPageState extends State<McCallumPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController tcWrist;
   String result = '';
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
-    tcWrist = TextEditingController(text: '17');
+    tcWrist = TextEditingController(text: '17.5');
+    isUS = false;
   }
 
   @override
@@ -48,7 +51,8 @@ class _McPageState extends State<McPage> {
                           labelText: S.of(context).mcWrist,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -58,20 +62,45 @@ class _McPageState extends State<McPage> {
                         },
                       ),
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double wrist = double.parse(tcWrist.text);
+                          if (isUS) {
+                            wrist = cmToInch(wrist);
+                          } else {
+                            wrist = inchToCm(wrist);
+                          }
+                          tcWrist.text = wrist.toStringAsFixed(1);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           double wrist = double.parse(tcWrist.text);
+                          if (isUS) {
+                            wrist = inchToCm(wrist);
+                          }
                           Map<String, double> mac =
                               mcCallum(wristCm: wrist, context: context);
                           String res = '''
-|**${S.of(context).mcPart}**|**cm**|
+|**${S.of(context).mcPart}**|**${isUS ? S.of(context).inch : S.of(context).cm}**|
 |---|---|
 ''';
                           mac.forEach((key, value) {
                             res += '''
-|  $key  |  ${value.toStringAsFixed(2)}  |
+|  $key  |  ${isUS ? cmToInch(value).toStringAsFixed(1) : value.toStringAsFixed(1)}  |
 ''';
                           });
                           Navigator.push(

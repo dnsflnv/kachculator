@@ -6,10 +6,10 @@ import 'package:meta/meta.dart';
 /// BFP
 /// https://en.wikipedia.org/wiki/Body_fat_percentage
 double calcBFP(
-    {@required weightAthlete,
-    @required heightAthleteCm,
-    @required gender,
-    @required age}) {
+    {@required double weightAthlete,
+    @required double heightAthleteCm,
+    @required Gender gender,
+    @required int age}) {
   double res = 0;
   double sex = 0.0;
   if (gender == Gender.male) sex = 1.0;

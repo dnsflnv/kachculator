@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc_bmi.dart';
+import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
 
@@ -19,12 +20,14 @@ class _BmiPageState extends State<BmiPage> {
   TextEditingController tcHeight;
   double bmi = 0;
   String result = '';
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
     tcWeight = TextEditingController(text: '90');
     tcHeight = TextEditingController(text: '184');
+    isUS = false;
   }
 
   @override
@@ -51,7 +54,8 @@ class _BmiPageState extends State<BmiPage> {
                           labelText: S.of(context).bmiWeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -70,7 +74,8 @@ class _BmiPageState extends State<BmiPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -80,12 +85,43 @@ class _BmiPageState extends State<BmiPage> {
                         },
                       ),
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double weight = double.parse(tcWeight.text);
+                          double height = double.parse(tcHeight.text);
+                          if (isUS) {
+                            weight = kgToLbs(weight);
+                            height = cmToInch(height);
+                          } else {
+                            weight = lbsToKg(weight);
+                            height = inchToCm(height);
+                          }
+                          tcWeight.text = weight.toStringAsFixed(3);
+                          tcHeight.text = height.toStringAsFixed(1);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           double weight = double.parse(tcWeight.text);
                           double height = double.parse(tcHeight.text);
+
+                          if (isUS) {
+                            weight = lbsToKg(weight);
+                            height = inchToCm(height);
+                          }
 
                           double bmi = calcBmi(
                               weightAthlete: weight, heightAthleteCm: height);

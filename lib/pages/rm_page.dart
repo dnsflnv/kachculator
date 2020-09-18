@@ -20,14 +20,16 @@ class _RmPageState extends State<RmPage> {
   TextEditingController tcWeight;
   TextEditingController tcRepeat;
   Gender gender;
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
     tcWeightAthlete = TextEditingController(text: '90');
-    tcWeight = TextEditingController(text: '100');
-    tcRepeat = TextEditingController(text: '8');
+    tcWeight = TextEditingController(text: '134');
+    tcRepeat = TextEditingController(text: '3');
     gender = Gender.male;
+    isUS = false;
   }
 
   @override
@@ -54,7 +56,8 @@ class _RmPageState extends State<RmPage> {
                           labelText: S.of(context).bmiWeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -78,7 +81,8 @@ class _RmPageState extends State<RmPage> {
                             labelText: S.of(context).rmBarebellWeight,
                           ),
                           inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.allow(
+                                RegExp("[0-9]*\.?[0-9]*"))
                           ],
                           validator: (value) {
                             if (value.isEmpty) {
@@ -138,28 +142,62 @@ class _RmPageState extends State<RmPage> {
                         Text(S.of(context).male),
                       ],
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double weight = double.parse(tcWeight.text);
+                          double weightAthlete =
+                              double.parse(tcWeightAthlete.text);
+                          if (isUS) {
+                            weight = kgToLbs(weight);
+                            weightAthlete = kgToLbs(weightAthlete);
+                          } else {
+                            weight = lbsToKg(weight);
+                            weightAthlete = lbsToKg(weightAthlete);
+                          }
+                          tcWeight.text = weight.toStringAsFixed(3);
+                          tcWeightAthlete.text =
+                              weightAthlete.toStringAsFixed(3);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                         context: context,
                         label: S.of(context).calculate,
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
+                            double weightAthlete =
+                                double.parse(tcWeightAthlete.text);
+                            double weight = double.parse(tcWeight.text);
+                            if (isUS) {
+                              weight = lbsToKg(weight);
+                              weightAthlete = lbsToKg(weightAthlete);
+                            }
                             CalcRm rm = CalcRm(
-                                weightAthlete:
-                                    double.parse(tcWeightAthlete.text),
-                                weight: double.parse(tcWeight.text),
+                                weightAthlete: weightAthlete,
+                                weight: weight,
                                 repeat: int.parse(tcRepeat.text),
                                 gender: gender);
                             String res = ''' 
 |**${S.of(context).rmMethod}**|**${S.of(context).rmResult}**|
 |---|---|
-|${S.of(context).Brzycki}|${rm.oneRmBrzycki.toStringAsFixed(3)}|
-|${S.of(context).Epley}|${rm.oneRmEpley.toStringAsFixed(3)}|
-|${S.of(context).Lander}|${rm.oneRmLander.toStringAsFixed(3)}|
-|${S.of(context).Lombardi}|${rm.oneRmLombardi.toStringAsFixed(3)}|
-|${S.of(context).Mayhew}|${rm.oneRmMayhew.toStringAsFixed(3)}|
-|${S.of(context).OConner}|${rm.oneRmOConner.toStringAsFixed(3)}|
-|${S.of(context).Wathan}|${rm.oneRmWathan.toStringAsFixed(3)}|
-|${S.of(context).Wilks}|${rm.oneRmWilks.toStringAsFixed(3)}|
+|${S.of(context).Brzycki}|${isUS ? kgToLbs(rm.oneRmBrzycki).toStringAsFixed(3) : rm.oneRmBrzycki.toStringAsFixed(3)}|
+|${S.of(context).Epley}|${isUS ? kgToLbs(rm.oneRmEpley).toStringAsFixed(3) : rm.oneRmEpley.toStringAsFixed(3)}|
+|${S.of(context).Lander}|${isUS ? kgToLbs(rm.oneRmLander).toStringAsFixed(3) : rm.oneRmLander.toStringAsFixed(3)}|
+|${S.of(context).Lombardi}|${isUS ? kgToLbs(rm.oneRmLombardi).toStringAsFixed(3) : rm.oneRmLombardi.toStringAsFixed(3)}|
+|${S.of(context).Mayhew}|${isUS ? kgToLbs(rm.oneRmMayhew).toStringAsFixed(3) : rm.oneRmMayhew.toStringAsFixed(3)}|
+|${S.of(context).OConner}|${isUS ? kgToLbs(rm.oneRmOConner).toStringAsFixed(3) : rm.oneRmOConner.toStringAsFixed(3)}|
+|${S.of(context).Wathan}|${isUS ? kgToLbs(rm.oneRmWathan).toStringAsFixed(3) : rm.oneRmWathan.toStringAsFixed(3)}|
+|${S.of(context).Wilks}|${isUS ? kgToLbs(rm.oneRmWilks).toStringAsFixed(3) : rm.oneRmWilks.toStringAsFixed(3)}|
 ''';
                             Navigator.push(
                               context,

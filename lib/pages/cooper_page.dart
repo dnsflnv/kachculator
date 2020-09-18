@@ -1,6 +1,4 @@
-import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
@@ -22,14 +20,16 @@ class _CooperPageState extends State<CooperPage> {
   TextEditingController tcAge;
   bool isAthlete;
   Gender gender;
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
     tcDistanse = TextEditingController(text: '2700');
-    tcAge = TextEditingController(text: '27');
+    tcAge = TextEditingController(text: '41');
     gender = Gender.male;
     isAthlete = false;
+    isUS = false;
   }
 
   @override
@@ -49,30 +49,6 @@ class _CooperPageState extends State<CooperPage> {
                     Text(S.of(context).cooperPageDesc),
                     SizedBox(
                       height: 8.0,
-                    ),
-                    Row(
-                      children: [
-                        Radio(
-                          value: Gender.female,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value;
-                            });
-                          },
-                        ),
-                        Text(S.of(context).female),
-                        Radio(
-                          value: Gender.male,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value;
-                            });
-                          },
-                        ),
-                        Text(S.of(context).male),
-                      ],
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -102,7 +78,8 @@ class _CooperPageState extends State<CooperPage> {
                           labelText: S.of(context).cooperDistanse,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*")),
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -112,41 +89,67 @@ class _CooperPageState extends State<CooperPage> {
                         },
                       ),
                     ),
-                    //TODO: move this 2 mpWidgets.dart
-                    if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
-                      ListTile(
-                        title: Text(S.of(context).isAthlete),
-                        trailing: CupertinoSwitch(
-                          value: isAthlete,
-                          onChanged: (bool value) {
+                    Row(
+                      children: [
+                        Radio(
+                          value: Gender.female,
+                          groupValue: gender,
+                          onChanged: (value) {
                             setState(() {
-                              isAthlete = value;
+                              gender = value;
                             });
                           },
                         ),
-                        onTap: () {
-                          setState(() {
-                            isAthlete = !isAthlete;
-                          });
-                        },
-                      ),
-                    if (!(!kIsWeb && (Platform.isMacOS || Platform.isIOS)))
-                      ListTile(
-                        title: Text(S.of(context).isAthlete),
-                        trailing: Switch(
-                          value: isAthlete,
-                          onChanged: (bool value) {
+                        Text(S.of(context).female),
+                        Radio(
+                          value: Gender.male,
+                          groupValue: gender,
+                          onChanged: (value) {
                             setState(() {
-                              isAthlete = value;
+                              gender = value;
                             });
                           },
                         ),
-                        onTap: () {
-                          setState(() {
-                            isAthlete = !isAthlete;
-                          });
-                        },
-                      ),
+                        Text(S.of(context).male),
+                      ],
+                    ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).isAthlete,
+                      value: isAthlete,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isAthlete = value;
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isAthlete = !isAthlete;
+                        });
+                      },
+                    ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double distanse = double.parse(tcDistanse.text);
+                          if (isUS) {
+                            distanse = mererToMile(distanse);
+                          } else {
+                            distanse = mileToMeter(distanse);
+                          }
+                          tcDistanse.text = distanse.toStringAsFixed(3);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 16.0, left: 32.0, right: 32.0),
@@ -155,15 +158,19 @@ class _CooperPageState extends State<CooperPage> {
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             String res = '';
+                            double distanse = double.parse(tcDistanse.text);
+                            if (isUS) {
+                              distanse = mileToMeter(distanse);
+                            }
+
                             String run = cooperRun(
-                              distanse: int.parse(tcDistanse.text),
+                              distanse: distanse.toInt(),
                               gender: gender,
                               age: int.parse(tcAge.text),
                               isAthlete: this.isAthlete,
                               context: context,
                             );
-                            String vo = cooperVoMax(
-                                    distanse: double.parse(tcDistanse.text))
+                            String vo = cooperVoMax(distanse: distanse)
                                 .toStringAsFixed(2);
                             res = '''
 **${S.of(context).cooperMark}:** $run 

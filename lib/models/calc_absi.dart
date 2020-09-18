@@ -5,14 +5,13 @@ import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/models/calc_bmi.dart';
 import 'package:meta/meta.dart';
 
+/// ABSI calculation
+/// https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
 class CalcABSI {
   BuildContext context; // For localization
   double weightAthlete;
   double heightAthleteCm;
   double waistCircumferenceCm;
-
-  int repeat;
-  double weight;
   Gender gender;
   int age;
 

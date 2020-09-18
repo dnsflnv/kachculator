@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/models/calc_mcrobert.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mpWidgets.dart';
@@ -17,11 +18,13 @@ class _McRobertPageState extends State<McRobertPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController tcHeight;
   String result = '';
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
-    tcHeight = TextEditingController(text: '180');
+    tcHeight = TextEditingController(text: '184');
+    isUS = false;
   }
 
   @override
@@ -48,7 +51,8 @@ class _McRobertPageState extends State<McRobertPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -58,11 +62,36 @@ class _McRobertPageState extends State<McRobertPage> {
                         },
                       ),
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double height = double.parse(tcHeight.text);
+                          if (isUS) {
+                            height = cmToInch(height);
+                          } else {
+                            height = inchToCm(height);
+                          }
+                          tcHeight.text = height.toStringAsFixed(1);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           double height = double.parse(tcHeight.text);
+                          if (isUS) {
+                            height = inchToCm(height);
+                          }
                           Map<String, List<double>> mac =
                               mcRobert(context: context, heightCm: height);
                           String res = '''
@@ -71,7 +100,7 @@ class _McRobertPageState extends State<McRobertPage> {
 ''';
                           mac.forEach((key, value) {
                             res += '''
-|  $key  |  ${value[0].toStringAsFixed(1)}  |${value[1].toStringAsFixed(1)}  |
+|  $key  |  ${isUS ? cmToInch(value[0]).toStringAsFixed(1) : value[0].toStringAsFixed(1)}  |${isUS ? cmToInch(value[1]).toStringAsFixed(1) : value[1].toStringAsFixed(1)}  |
 ''';
                           });
                           Navigator.push(

@@ -16,23 +16,19 @@ class RfmPage extends StatefulWidget {
 
 class _RfmPageState extends State<RfmPage> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController tcWeight;
   TextEditingController tcHeight;
   TextEditingController tcWaistCircumference;
-  TextEditingController tcAge;
-  double bmi;
   Gender gender;
   String result = '';
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
-    bmi = 0;
-    tcWeight = TextEditingController(text: '90');
     tcHeight = TextEditingController(text: '184');
-    tcWaistCircumference = TextEditingController(text: '96');
-    tcAge = TextEditingController(text: '41');
+    tcWaistCircumference = TextEditingController(text: '86');
     gender = Gender.male;
+    isUS = false;
   }
 
   @override
@@ -59,7 +55,8 @@ class _RfmPageState extends State<RfmPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -81,7 +78,8 @@ class _RfmPageState extends State<RfmPage> {
                           labelText: S.of(context).absiWaistCircumference,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -122,15 +120,47 @@ class _RfmPageState extends State<RfmPage> {
                         Text(S.of(context).male),
                       ],
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double waistCircumference =
+                              double.parse(tcWaistCircumference.text);
+                          double height = double.parse(tcHeight.text);
+                          if (isUS) {
+                            waistCircumference = cmToInch(waistCircumference);
+                            height = cmToInch(height);
+                          } else {
+                            waistCircumference = inchToCm(waistCircumference);
+                            height = inchToCm(height);
+                          }
+                          tcWaistCircumference.text =
+                              waistCircumference.toStringAsFixed(1);
+                          tcHeight.text = height.toStringAsFixed(1);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           double height = double.parse(tcHeight.text);
-                          int age = int.parse(tcAge.text);
-                          if (age > 85) age = 85;
                           double waistCircumference =
                               double.parse(tcWaistCircumference.text);
+
+                          if (isUS) {
+                            waistCircumference = inchToCm(waistCircumference);
+                            height = inchToCm(height);
+                          }
+
                           double rfm = calcRFM(
                               heightAthleteCm: height,
                               gender: gender,
