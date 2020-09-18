@@ -173,10 +173,10 @@ class S {
     );
   }
 
-  /// `Пожалуйста, введите ваш вес в килограммах`
+  /// `Пожалуйста, введите ваш вес`
   String get bmiWeightValidation {
     return Intl.message(
-      'Пожалуйста, введите ваш вес в килограммах',
+      'Пожалуйста, введите ваш вес',
       name: 'bmiWeightValidation',
       desc: '',
       args: [],
@@ -193,10 +193,10 @@ class S {
     );
   }
 
-  /// `Пожалуйста, введите ваш рост в сантиметрах`
+  /// `Пожалуйста, введите ваш рост`
   String get bmiHeightValidation {
     return Intl.message(
-      'Пожалуйста, введите ваш рост в сантиметрах',
+      'Пожалуйста, введите ваш рост',
       name: 'bmiHeightValidation',
       desc: '',
       args: [],
@@ -453,10 +453,10 @@ class S {
     );
   }
 
-  /// `Введите вес снаряда в килограммах.`
+  /// `Введите вес снаряда.`
   String get rmBarebellWeightValidation {
     return Intl.message(
-      'Введите вес снаряда в килограммах.',
+      'Введите вес снаряда.',
       name: 'rmBarebellWeightValidation',
       desc: '',
       args: [],
@@ -503,10 +503,10 @@ class S {
     );
   }
 
-  /// `Пожалуйста, введите окружность талии в сантиметрах.`
+  /// `Пожалуйста, введите окружность талии.`
   String get absiWaistCircumferenceValidation {
     return Intl.message(
-      'Пожалуйста, введите окружность талии в сантиметрах.',
+      'Пожалуйста, введите окружность талии.',
       name: 'absiWaistCircumferenceValidation',
       desc: '',
       args: [],
@@ -723,10 +723,10 @@ class S {
     );
   }
 
-  /// `Введите обхват запястья в сантиметрах.`
+  /// `Введите обхват запястья.`
   String get mcWristValidation {
     return Intl.message(
-      'Введите обхват запястья в сантиметрах.',
+      'Введите обхват запястья.',
       name: 'mcWristValidation',
       desc: '',
       args: [],
@@ -883,20 +883,20 @@ class S {
     );
   }
 
-  /// `Дистанция (м)`
+  /// `Дистанция`
   String get cooperDistanse {
     return Intl.message(
-      'Дистанция (м)',
+      'Дистанция',
       name: 'cooperDistanse',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите дистанцию в метрах.`
+  /// `Пожалуйста, введите дистанцию.`
   String get cooperDistanseValidation {
     return Intl.message(
-      'Пожалуйста, введите дистанцию в метрах.',
+      'Пожалуйста, введите дистанцию.',
       name: 'cooperDistanseValidation',
       desc: '',
       args: [],
