@@ -133,6 +133,16 @@ class S {
     );
   }
 
+  /// `Использовать английскую систему мер (фунты, дюймы)?`
+  String get useImperialUS {
+    return Intl.message(
+      'Использовать английскую систему мер (фунты, дюймы)?',
+      name: 'useImperialUS',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Индекс массы тела (BMI)`
   String get bmiPageTitle {
     return Intl.message(

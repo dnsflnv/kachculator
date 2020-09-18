@@ -88,12 +88,11 @@ PreferredSizeWidget mpAppBar({@required Widget title}) {
 /// Switch
 
 Widget mpSwitch(
-    {BuildContext context,
-    String title,
-    bool value,
-    ValueChanged<bool> onChanged,
-    //Function onChanged(bool value),
-    Function onTap}) {
+    {@required BuildContext context,
+    @required String title,
+    @required bool value,
+    @required ValueChanged<bool> onChanged,
+    @required Function onTap}) {
   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
     return ListTile(
       title: Text(title),

@@ -6,7 +6,10 @@ enum Coeff { a, b, c, d, e, f }
 enum Units { metric, imperial }
 
 double inchToCm(double inches) => inches * 2.54;
+double cmToInch(double cm) => cm / 2.54;
+
 double lbsToKg(double lbs) => lbs / 2.20462262185;
+double kgToLbs(double kg) => kg * 2.20462262185;
 
 /// BFP and RFM interpretation
 String bodyFat({double persent, Gender gender, BuildContext context}) {

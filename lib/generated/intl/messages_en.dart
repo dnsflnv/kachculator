@@ -116,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rmRepeatValidation" : MessageLookupByLibrary.simpleMessage("Enter repeats."),
     "rmRepeats" : MessageLookupByLibrary.simpleMessage("Repeats"),
     "rmResult" : MessageLookupByLibrary.simpleMessage("Result"),
-    "title" : MessageLookupByLibrary.simpleMessage("Kachculator")
+    "title" : MessageLookupByLibrary.simpleMessage("Kachculator"),
+    "useImperialUS" : MessageLookupByLibrary.simpleMessage("Use Imperial/US system (lbs, in)?")
   };
 }
