@@ -58,7 +58,8 @@ class _BfpPageState extends State<BfpPage> {
                           labelText: S.of(context).bmiWeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -80,7 +81,8 @@ class _BfpPageState extends State<BfpPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -155,7 +157,7 @@ class _BfpPageState extends State<BfpPage> {
                             weight = lbsToKg(weight);
                             height = inchToCm(height);
                           }
-                          tcWeight.text = weight.toStringAsFixed(2);
+                          tcWeight.text = weight.toStringAsFixed(3);
                           tcHeight.text = height.toStringAsFixed(2);
                         });
                       },
