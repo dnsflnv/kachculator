@@ -1,9 +1,13 @@
 # Kachkulator — opensource fitness, bodybuilding and powerlifting calculator.
 
 Android: **[Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator)** or **[APK](https://github.com/filonov/kachculator/releases/download/v.1.1/app-release.apk)**
+
 iOS: Coming soon, after Big Sur release.
+
 MacOS: **[Download Zip](https://github.com/filonov/kachculator/releases/download/v.1.1/macos-1.1.zip)**.
+
 Web: **[kachculator.ru](https://kachculator.ru)** (only for test, unsupported).
+
 Windows: Coming soon, or may be not...
 
 ## Support or Contact
