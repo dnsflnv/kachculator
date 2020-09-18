@@ -12,9 +12,6 @@ class CalcABSI {
   double weightAthlete;
   double heightAthleteCm;
   double waistCircumferenceCm;
-
-  int repeat;
-  double weight;
   Gender gender;
   int age;
 

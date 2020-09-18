@@ -61,7 +61,8 @@ class _AbsiPageState extends State<AbsiPage> {
                           labelText: S.of(context).bmiWeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -80,7 +81,8 @@ class _AbsiPageState extends State<AbsiPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -102,7 +104,8 @@ class _AbsiPageState extends State<AbsiPage> {
                           labelText: S.of(context).absiWaistCircumference,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty) {
@@ -185,7 +188,7 @@ class _AbsiPageState extends State<AbsiPage> {
                             height = inchToCm(height);
                             waistCircumference = inchToCm(waistCircumference);
                           }
-                          tcWeight.text = weight.toStringAsFixed(2);
+                          tcWeight.text = weight.toStringAsFixed(3);
                           tcHeight.text = height.toStringAsFixed(2);
                           tcWaistCircumference.text =
                               waistCircumference.toStringAsFixed(2);
