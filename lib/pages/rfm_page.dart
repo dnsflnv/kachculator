@@ -138,8 +138,8 @@ class _RfmPageState extends State<RfmPage> {
                             height = inchToCm(height);
                           }
                           tcWaistCircumference.text =
-                              waistCircumference.toStringAsFixed(2);
-                          tcHeight.text = height.toStringAsFixed(2);
+                              waistCircumference.toStringAsFixed(1);
+                          tcHeight.text = height.toStringAsFixed(1);
                         });
                       },
                       onTap: () {

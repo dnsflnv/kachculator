@@ -102,7 +102,7 @@ class _BmiPageState extends State<BmiPage> {
                             height = inchToCm(height);
                           }
                           tcWeight.text = weight.toStringAsFixed(3);
-                          tcHeight.text = height.toStringAsFixed(3);
+                          tcHeight.text = height.toStringAsFixed(1);
                         });
                       },
                       onTap: () {

@@ -158,7 +158,7 @@ class _BfpPageState extends State<BfpPage> {
                             height = inchToCm(height);
                           }
                           tcWeight.text = weight.toStringAsFixed(3);
-                          tcHeight.text = height.toStringAsFixed(2);
+                          tcHeight.text = height.toStringAsFixed(1);
                         });
                       },
                       onTap: () {

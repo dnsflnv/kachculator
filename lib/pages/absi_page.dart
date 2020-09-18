@@ -189,9 +189,9 @@ class _AbsiPageState extends State<AbsiPage> {
                             waistCircumference = inchToCm(waistCircumference);
                           }
                           tcWeight.text = weight.toStringAsFixed(3);
-                          tcHeight.text = height.toStringAsFixed(2);
+                          tcHeight.text = height.toStringAsFixed(1);
                           tcWaistCircumference.text =
-                              waistCircumference.toStringAsFixed(2);
+                              waistCircumference.toStringAsFixed(1);
                         });
                       },
                       onTap: () {
