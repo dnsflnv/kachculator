@@ -23,15 +23,17 @@ class _AbsiPageState extends State<AbsiPage> {
   double bmi = 0;
   Gender gender;
   String result = '';
+  bool isUS;
 
   @override
   void initState() {
     super.initState();
     tcWeight = TextEditingController(text: '90');
     tcHeight = TextEditingController(text: '184');
-    tcWaistCircumference = TextEditingController(text: '100');
+    tcWaistCircumference = TextEditingController(text: '84');
     tcAge = TextEditingController(text: '41');
     gender = Gender.male;
+    isUS = false;
   }
 
   @override
@@ -163,6 +165,38 @@ class _AbsiPageState extends State<AbsiPage> {
                         Text(S.of(context).male),
                       ],
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double weight = double.parse(tcWeight.text);
+                          double height = double.parse(tcHeight.text);
+                          double waistCircumference =
+                              double.parse(tcWaistCircumference.text);
+                          if (isUS) {
+                            weight = kgToLbs(weight);
+                            height = cmToInch(height);
+                            waistCircumference = cmToInch(waistCircumference);
+                          } else {
+                            weight = lbsToKg(weight);
+                            height = inchToCm(height);
+                            waistCircumference = inchToCm(waistCircumference);
+                          }
+                          tcWeight.text = weight.toStringAsFixed(2);
+                          tcHeight.text = height.toStringAsFixed(2);
+                          tcWaistCircumference.text =
+                              waistCircumference.toStringAsFixed(2);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     mpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
@@ -173,6 +207,13 @@ class _AbsiPageState extends State<AbsiPage> {
                           if (age > 85) age = 85;
                           double waistCircumference =
                               double.parse(tcWaistCircumference.text);
+
+                          if (isUS) {
+                            weight = lbsToKg(weight);
+                            height = inchToCm(height);
+                            waistCircumference = inchToCm(waistCircumference);
+                          }
+
                           CalcABSI calc = CalcABSI(
                             context: context,
                             weightAthlete: weight,
@@ -181,7 +222,7 @@ class _AbsiPageState extends State<AbsiPage> {
                             age: age,
                             waistCircumferenceCm: waistCircumference,
                           );
-                          // https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
+
                           String sGender = (gender == Gender.male)
                               ? S.of(context).male
                               : S.of(context).female;
