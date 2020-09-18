@@ -84,3 +84,33 @@ PreferredSizeWidget mpAppBar({@required Widget title}) {
 //       title: title,
 //     );
 // }
+
+/// Switch
+
+Widget mpSwitch(
+    {BuildContext context,
+    String title,
+    bool value,
+    ValueChanged<bool> onChanged,
+    //Function onChanged(bool value),
+    Function onTap}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+    return ListTile(
+      title: Text(title),
+      trailing: CupertinoSwitch(
+        value: value,
+        onChanged: onChanged,
+      ),
+      onTap: onTap,
+    );
+  } else {
+    return ListTile(
+      title: Text(title),
+      trailing: Switch(
+        value: value,
+        onChanged: onChanged,
+      ),
+      onTap: onTap,
+    );
+  }
+}

@@ -112,41 +112,21 @@ class _CooperPageState extends State<CooperPage> {
                         },
                       ),
                     ),
-                    //TODO: move this 2 mpWidgets.dart
-                    if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
-                      ListTile(
-                        title: Text(S.of(context).isAthlete),
-                        trailing: CupertinoSwitch(
-                          value: isAthlete,
-                          onChanged: (bool value) {
-                            setState(() {
-                              isAthlete = value;
-                            });
-                          },
-                        ),
-                        onTap: () {
-                          setState(() {
-                            isAthlete = !isAthlete;
-                          });
-                        },
-                      ),
-                    if (!(!kIsWeb && (Platform.isMacOS || Platform.isIOS)))
-                      ListTile(
-                        title: Text(S.of(context).isAthlete),
-                        trailing: Switch(
-                          value: isAthlete,
-                          onChanged: (bool value) {
-                            setState(() {
-                              isAthlete = value;
-                            });
-                          },
-                        ),
-                        onTap: () {
-                          setState(() {
-                            isAthlete = !isAthlete;
-                          });
-                        },
-                      ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).isAthlete,
+                      value: isAthlete,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isAthlete = value;
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isAthlete = !isAthlete;
+                        });
+                      },
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 16.0, left: 32.0, right: 32.0),

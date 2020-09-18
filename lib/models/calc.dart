@@ -3,6 +3,10 @@ import 'package:kachculator/generated/l10n.dart';
 
 enum Gender { male, female }
 enum Coeff { a, b, c, d, e, f }
+enum Units { metric, imperial }
+
+double inchToCm(double inches) => inches * 2.54;
+double lbsToKg(double lbs) => lbs / 2.20462262185;
 
 /// BFP and RFM interpretation
 String bodyFat({double persent, Gender gender, BuildContext context}) {
