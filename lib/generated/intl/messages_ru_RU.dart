@@ -119,6 +119,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "rmRepeats" : MessageLookupByLibrary.simpleMessage("Количество повторов"),
     "rmResult" : MessageLookupByLibrary.simpleMessage("Результат"),
     "title" : MessageLookupByLibrary.simpleMessage("Качкулятор"),
-    "useImperialUS" : MessageLookupByLibrary.simpleMessage("Использовать английскую систему мер (фунты, дюймы)?")
+    "useImperialUS" : MessageLookupByLibrary.simpleMessage("Использовать английскую систему мер (фунты, дюймы, мили)?")
   };
 }

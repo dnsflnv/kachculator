@@ -102,7 +102,8 @@ class _CooperPageState extends State<CooperPage> {
                           labelText: S.of(context).cooperDistanse,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*")),
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -127,6 +128,28 @@ class _CooperPageState extends State<CooperPage> {
                         });
                       },
                     ),
+                    mpSwitch(
+                      context: this.context,
+                      title: S.of(context).useImperialUS,
+                      value: isUS,
+                      onChanged: (bool value) {
+                        setState(() {
+                          isUS = value;
+                          double distanse = double.parse(tcDistanse.text);
+                          if (isUS) {
+                            distanse = mererToMile(distanse);
+                          } else {
+                            distanse = mileToMeter(distanse);
+                          }
+                          tcDistanse.text = distanse.toStringAsFixed(3);
+                        });
+                      },
+                      onTap: () {
+                        setState(() {
+                          isUS = !isUS;
+                        });
+                      },
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 16.0, left: 32.0, right: 32.0),
@@ -135,15 +158,19 @@ class _CooperPageState extends State<CooperPage> {
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             String res = '';
+                            double distanse = double.parse(tcDistanse.text);
+                            if (isUS) {
+                              distanse = mileToMeter(distanse);
+                            }
+
                             String run = cooperRun(
-                              distanse: int.parse(tcDistanse.text),
+                              distanse: distanse.toInt(),
                               gender: gender,
                               age: int.parse(tcAge.text),
                               isAthlete: this.isAthlete,
                               context: context,
                             );
-                            String vo = cooperVoMax(
-                                    distanse: double.parse(tcDistanse.text))
+                            String vo = cooperVoMax(distanse: distanse)
                                 .toStringAsFixed(2);
                             res = '''
 **${S.of(context).cooperMark}:** $run 

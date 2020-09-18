@@ -10,7 +10,7 @@
     "male":"Male",
     "female":"Female",
     "age":"Age",
-    "useImperialUS":"Use Imperial/US system (lbs, in)?",
+    "useImperialUS":"Use Imperial/US system (lbs, in, miles)?",
     "cm":"cm",
     "inch":"in",
     
