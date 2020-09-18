@@ -51,7 +51,8 @@ class _McCallumPageState extends State<McCallumPage> {
                           labelText: S.of(context).mcWrist,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -74,7 +75,7 @@ class _McCallumPageState extends State<McCallumPage> {
                           } else {
                             wrist = inchToCm(wrist);
                           }
-                          tcWrist.text = wrist.toStringAsFixed(2);
+                          tcWrist.text = wrist.toStringAsFixed(1);
                         });
                       },
                       onTap: () {
