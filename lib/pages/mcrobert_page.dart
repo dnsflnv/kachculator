@@ -51,7 +51,8 @@ class _McRobertPageState extends State<McRobertPage> {
                           labelText: S.of(context).bmiHeight,
                         ),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(
+                              RegExp("[0-9]*\.?[0-9]*"))
                         ],
                         validator: (value) {
                           if (value.isEmpty || double.parse(value) <= 0) {
@@ -74,7 +75,7 @@ class _McRobertPageState extends State<McRobertPage> {
                           } else {
                             height = inchToCm(height);
                           }
-                          tcHeight.text = height.toStringAsFixed(2);
+                          tcHeight.text = height.toStringAsFixed(1);
                         });
                       },
                       onTap: () {
@@ -99,7 +100,7 @@ class _McRobertPageState extends State<McRobertPage> {
 ''';
                           mac.forEach((key, value) {
                             res += '''
-|  $key  |  ${isUS ? cmToInch(value[0]).toStringAsFixed(2) : value[0].toStringAsFixed(2)}  |${isUS ? cmToInch(value[1]).toStringAsFixed(2) : value[1].toStringAsFixed(2)}  |
+|  $key  |  ${isUS ? cmToInch(value[0]).toStringAsFixed(1) : value[0].toStringAsFixed(1)}  |${isUS ? cmToInch(value[1]).toStringAsFixed(1) : value[1].toStringAsFixed(1)}  |
 ''';
                           });
                           Navigator.push(
