@@ -47,6 +47,7 @@ class App extends StatelessWidget {
       onGenerateTitle: (BuildContext context) => S.of(context).title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        buttonColor: Colors.blue,
         brightness: Brightness.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
