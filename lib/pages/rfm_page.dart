@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc_rfm.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 import 'package:kachculator/models/calc.dart';
 
 class RfmPage extends StatefulWidget {
@@ -33,8 +33,12 @@ class _RfmPageState extends State<RfmPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).rfmPageTitle)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+        title: Text(S.of(context).rfmPageTitle),
+        context: context,
+      ),
       body: SafeArea(
         child: Center(
           child: Container(

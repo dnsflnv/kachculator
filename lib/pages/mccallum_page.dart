@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 import 'package:kachculator/models/calc_mccallum.dart';
 
 class McCallumPage extends StatefulWidget {
@@ -29,8 +29,12 @@ class _McCallumPageState extends State<McCallumPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).mcPageTitle)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+        title: Text(S.of(context).mcPageTitle),
+        context: context,
+      ),
       body: SafeArea(
         child: Center(
           child: Container(

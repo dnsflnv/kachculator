@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc_cooper_strong.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 
 class CooperStrongPage extends StatefulWidget {
   static String id = '/cooperStrong';
@@ -25,8 +25,12 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).cooperStrongPageTitle)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+        title: Text(S.of(context).cooperStrongPageTitle),
+        context: context,
+      ),
       body: SafeArea(
         child: Center(
           child: Container(

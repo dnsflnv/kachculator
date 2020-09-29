@@ -61,31 +61,19 @@ Widget mpTextField(
 }
 
 /// AppBar.
-PreferredSizeWidget mpAppBar({@required Widget title}) {
-  return AppBar(
-    title: title,
-  );
+PreferredSizeWidget mpNavigationBar(
+    {@required Widget title, BuildContext context}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+    return CupertinoNavigationBar(
+      middle: title,
+    );
+  } else
+    return AppBar(
+      title: title,
+    );
 }
 
-//TODO: Make universal AppBar
-// PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
-//   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
-//     var brightness = MediaQuery.of(context).platformBrightness;
-//     bool darkModeOn = brightness == Brightness.dark;
-//     print(darkModeOn);
-
-//     return CupertinoNavigationBar(
-//       middle: title,
-//       brightness: darkModeOn ? Brightness.dark : Brightness.light,
-//     );
-//   } else
-//     return AppBar(
-//       title: title,
-//     );
-// }
-
 /// Switch
-
 Widget mpSwitch(
     {@required BuildContext context,
     @required String title,
@@ -109,6 +97,24 @@ Widget mpSwitch(
         onChanged: onChanged,
       ),
       onTap: onTap,
+    );
+  }
+}
+
+/// Scaffold
+Widget mpScaffold(
+    {@required BuildContext context,
+    PreferredSizeWidget navigationBar,
+    @required Widget body}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+    return CupertinoPageScaffold(
+      navigationBar: navigationBar,
+      child: body,
+    );
+  } else {
+    return Scaffold(
+      appBar: navigationBar,
+      body: body,
     );
   }
 }

@@ -9,7 +9,7 @@ import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 
@@ -29,8 +29,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).title)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+        title: Text(S.of(context).title),
+        context: context,
+      ),
       body: SafeArea(
         child: Center(
           child: Container(

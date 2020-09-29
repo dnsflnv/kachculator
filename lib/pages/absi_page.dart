@@ -5,7 +5,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/models/calc_absi.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 
 class AbsiPage extends StatefulWidget {
   static String id = '/absi';
@@ -38,8 +38,9 @@ class _AbsiPageState extends State<AbsiPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).absiPageTitle)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(title: Text(S.of(context).absiPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ResultPage extends StatelessWidget {
@@ -13,8 +13,12 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(this.title)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+        title: Text(this.title),
+        context: context,
+      ),
       body: SafeArea(
         child: Center(
           child: Container(

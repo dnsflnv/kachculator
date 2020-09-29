@@ -5,7 +5,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc_bmi.dart';
 import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 
 class BmiPage extends StatefulWidget {
   static String id = '/bmi';
@@ -32,8 +32,10 @@ class _BmiPageState extends State<BmiPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).bmiPageTitle)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+          title: Text(S.of(context).bmiPageTitle), context: context),
       body: SafeArea(
         child: Center(
           child: Container(

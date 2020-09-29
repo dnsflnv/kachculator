@@ -5,7 +5,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/models/calc_mcrobert.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mpWidgets.dart';
+import 'package:kachculator/widgets/mp_widgets.dart';
 
 class McRobertPage extends StatefulWidget {
   static String id = '/mcrobert';
@@ -29,8 +29,12 @@ class _McRobertPageState extends State<McRobertPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: mpAppBar(title: Text(S.of(context).mcrobertPageTitle)),
+    return mpScaffold(
+      context: context,
+      navigationBar: mpNavigationBar(
+        title: Text(S.of(context).mcrobertPageTitle),
+        context: context,
+      ),
       body: SafeArea(
         child: Center(
           child: Container(
