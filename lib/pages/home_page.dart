@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return mpScaffold(
+      appBar: mpAppBar(
         title: Text(S.of(context).title),
       ),
       body: SafeArea(
@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, BmiPage.id);
@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, AbsiPage.id);
@@ -103,7 +103,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, BfpPage.id);
@@ -124,7 +124,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, RfmPage.id);
@@ -158,7 +158,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, McCallumPage.id);
@@ -179,7 +179,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, McRobertPage.id);
@@ -213,7 +213,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, RmPage.id);
@@ -234,7 +234,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, CooperPage.id);
@@ -259,7 +259,7 @@ class HomePage extends StatelessWidget {
                       flex: 1,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FlatButton(
+                        child: mpFlatButton(
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             Navigator.pushNamed(context, CooperStrongPage.id);

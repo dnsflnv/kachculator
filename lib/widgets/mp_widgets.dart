@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
-import 'package:kachculator/widgets/cupertino_text_form_field.dart';
 import 'package:flutter/services.dart';
 
 // ignore: todo
@@ -22,6 +21,27 @@ Widget mpButton({BuildContext context, String label, Function onPressed}) {
         style: TextStyle(color: Colors.white),
       ),
       onPressed: onPressed,
+    );
+}
+
+/// FlatButton
+Widget mpFlatButton({
+  BuildContext context,
+  EdgeInsetsGeometry padding,
+  Function onPressed,
+  Widget child,
+}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
+    return CupertinoButton(
+      padding: padding,
+      onPressed: onPressed,
+      child: child,
+    );
+  else
+    return FlatButton(
+      padding: padding,
+      onPressed: onPressed,
+      child: child,
     );
 }
 
@@ -57,45 +77,43 @@ Widget mpTextField(
   }
 }
 
-/// Text FORM field
-Widget mpTextFormField({
-  BuildContext context,
-  TextEditingController controller,
-  String labelText,
-  List<TextInputFormatter> inputFormatters,
-  String Function(String) validator,
-}) {
-  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(labelText),
-        SizedBox(
-          height: 8.0,
-        ),
-        CupertinoTextFormField(
-          controller: controller,
-          inputFormatters: inputFormatters,
-          validator: validator,
-        ),
-      ],
-    );
-  } else {
-    return TextFormField(
-      controller: controller,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: labelText,
-      ),
-      inputFormatters: inputFormatters,
-      validator: validator,
-    );
-  }
-}
+// Text FORM field
+// Widget mpTextFormField({
+//   BuildContext context,
+//   TextEditingController controller,
+//   String labelText,
+//   List<TextInputFormatter> inputFormatters,
+//   String Function(String) validator,
+// }) {
+//   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+//     return Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: <Widget>[
+//         Text(labelText),
+//         SizedBox(
+//           height: 8.0,
+//         ),
+//         CupertinoTextField(
+//           controller: controller,
+//           inputFormatters: inputFormatters,
+//         ),
+//       ],
+//     );
+//   } else {
+//     return TextFormField(
+//       controller: controller,
+//       decoration: InputDecoration(
+//         border: OutlineInputBorder(),
+//         labelText: labelText,
+//       ),
+//       inputFormatters: inputFormatters,
+//       validator: validator,
+//     );
+//   }
+// }
 
 /// AppBar.
-PreferredSizeWidget mpNavigationBar(
-    {@required Widget title, BuildContext context}) {
+PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
     return CupertinoNavigationBar(
       middle: title,
@@ -108,7 +126,7 @@ PreferredSizeWidget mpNavigationBar(
 
 /// Switch
 Widget mpSwitch(
-    {@required BuildContext context,
+    {BuildContext context,
     @required String title,
     @required bool value,
     @required ValueChanged<bool> onChanged,
@@ -143,17 +161,15 @@ Widget mpSwitch(
 
 /// Scaffold
 Widget mpScaffold(
-    {@required BuildContext context,
-    PreferredSizeWidget navigationBar,
-    @required Widget body}) {
+    {BuildContext context, PreferredSizeWidget appBar, @required Widget body}) {
   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
     return CupertinoPageScaffold(
-      navigationBar: navigationBar,
+      navigationBar: appBar,
       child: body,
     );
   } else {
     return Scaffold(
-      appBar: navigationBar,
+      appBar: appBar,
       body: body,
     );
   }

@@ -20,6 +20,7 @@ CupertinoThemeData cupertinoTheme() {
   var brightness = SchedulerBinding.instance.window.platformBrightness;
   bool darkModeOn = brightness == Brightness.dark;
   return CupertinoThemeData(
+    //textTheme: CupertinoTextThemeData(brightness: darkModeOn ? Brightness.dark : Brightness.light,),
     brightness: darkModeOn ? Brightness.dark : Brightness.light,
   );
 }
