@@ -24,6 +24,22 @@ class _BmiPageState extends State<BmiPage> {
   String result = '';
   bool isUS;
 
+  bool _validation() {
+    if (tcHeight.text.isEmpty) {
+      setState(() {
+        heightError = true;
+      });
+      return true;
+    }
+    if (tcWeight.text.isEmpty) {
+      setState(() {
+        weightError = true;
+      });
+      return true;
+    }
+    return false;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -56,17 +72,8 @@ class _BmiPageState extends State<BmiPage> {
                     ),
                   ),
                   if (weightError)
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 4.0),
-                      child: Row(
-                        children: [
-                          Text(
-                            S.of(context).bmiWeightValidation,
-                            textScaleFactor: 0.8,
-                            style: TextStyle(color: Colors.redAccent),
-                          ),
-                        ],
-                      ),
+                    MpValidationMessage(
+                      message: S.of(context).bmiWeightValidation,
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -78,12 +85,17 @@ class _BmiPageState extends State<BmiPage> {
                       ],
                     ),
                   ),
+                  if (heightError)
+                    MpValidationMessage(
+                      message: S.of(context).bmiHeightValidation,
+                    ),
                   mpSwitch(
                     context: this.context,
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
                       setState(() {
+                        if (_validation()) return null;
                         isUS = value;
                         double weight = double.parse(tcWeight.text);
                         double height = double.parse(tcHeight.text);
@@ -107,19 +119,7 @@ class _BmiPageState extends State<BmiPage> {
                   mpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
-                      // Validation
-                      if (tcHeight.text.isEmpty) {
-                        setState(() {
-                          heightError = true;
-                        });
-                        return;
-                      }
-                      if (tcWeight.text.isEmpty) {
-                        setState(() {
-                          weightError = true;
-                        });
-                        return;
-                      }
+                      if (_validation()) return null;
 
                       double weight = double.parse(tcWeight.text);
                       double height = double.parse(tcHeight.text);

@@ -17,7 +17,9 @@ class AbsiPage extends StatefulWidget {
 class _AbsiPageState extends State<AbsiPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController tcWeight;
+  bool weightError;
   TextEditingController tcHeight;
+  bool heightError;
   TextEditingController tcWaistCircumference;
   TextEditingController tcAge;
   double bmi = 0;

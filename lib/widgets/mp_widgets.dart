@@ -187,3 +187,26 @@ PageRoute mpPageRoute({Widget Function(BuildContext) builder}) {
     );
   }
 }
+
+/// For validation.
+class MpValidationMessage extends StatelessWidget {
+  final String message;
+
+  MpValidationMessage({@required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 2.0),
+      child: Row(
+        children: [
+          Text(
+            this.message,
+            textScaleFactor: 0.8,
+            style: TextStyle(color: Colors.redAccent),
+          ),
+        ],
+      ),
+    );
+  }
+}
