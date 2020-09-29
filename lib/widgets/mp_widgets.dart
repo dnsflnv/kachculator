@@ -174,3 +174,16 @@ Widget mpScaffold(
     );
   }
 }
+
+/// Page router.
+PageRoute mpPageRoute({Widget Function(BuildContext) builder}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+    return CupertinoPageRoute(
+      builder: builder,
+    );
+  } else {
+    return MaterialPageRoute(
+      builder: builder,
+    );
+  }
+}

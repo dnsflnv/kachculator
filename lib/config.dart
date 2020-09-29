@@ -24,3 +24,5 @@ CupertinoThemeData cupertinoTheme() {
     brightness: darkModeOn ? Brightness.dark : Brightness.light,
   );
 }
+
+const String demicalRegExp = "^\$|^(0|([1-9][0-9]{0,}))(\\.[0-9]{0,})?\$";

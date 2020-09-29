@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc_bmi.dart';
 import 'package:kachculator/models/calc.dart';
@@ -15,9 +16,10 @@ class BmiPage extends StatefulWidget {
 }
 
 class _BmiPageState extends State<BmiPage> {
-  final _formKey = GlobalKey<FormState>();
   TextEditingController tcWeight;
+  bool weightError;
   TextEditingController tcHeight;
+  bool heightError;
   double bmi = 0;
   String result = '';
   bool isUS;
@@ -25,131 +27,130 @@ class _BmiPageState extends State<BmiPage> {
   @override
   void initState() {
     super.initState();
-    tcWeight = TextEditingController(text: '90');
-    tcHeight = TextEditingController(text: '184');
-    isUS = false;
+    tcWeight = TextEditingController(text: '89.6');
+    tcHeight = TextEditingController(text: '183.5');
+    isUS = heightError = weightError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).bmiPageTitle)),
+    return mpScaffold(
+      appBar: mpAppBar(title: Text(S.of(context).bmiPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
             constraints: BoxConstraints(maxWidth: 800.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    Text(S.of(context).bmiPageDesc),
+              child: Column(
+                children: [
+                  Text(S.of(context).bmiPageDesc),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: mpTextField(
+                      controller: tcWeight,
+                      labelText: S.of(context).bmiWeight,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                      ],
+                    ),
+                  ),
+                  if (weightError)
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: TextFormField(
-                        controller: tcWeight,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: S.of(context).bmiWeight,
-                        ),
-                        //labelText: S.of(context).bmiWeight,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(
-                              RegExp("[0-9]*\.?[0-9]*"))
+                      padding: EdgeInsets.symmetric(vertical: 4.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            S.of(context).bmiWeightValidation,
+                            textScaleFactor: 0.8,
+                            style: TextStyle(color: Colors.redAccent),
+                          ),
                         ],
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return S.of(context).bmiWeightValidation;
-                          }
-                          return null;
-                        },
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: TextFormField(
-                        controller: tcHeight,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: S.of(context).bmiHeight,
-                        ),
-                        //labelText: S.of(context).bmiHeight,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(
-                              RegExp("[0-9]*\.?[0-9]*"))
-                        ],
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return S.of(context).bmiHeightValidation;
-                          }
-                          return null;
-                        },
-                      ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: mpTextField(
+                      controller: tcHeight,
+                      labelText: S.of(context).bmiHeight,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                      ],
                     ),
-                    mpSwitch(
-                      context: this.context,
-                      title: S.of(context).useImperialUS,
-                      value: isUS,
-                      onChanged: (bool value) {
+                  ),
+                  mpSwitch(
+                    context: this.context,
+                    title: S.of(context).useImperialUS,
+                    value: isUS,
+                    onChanged: (bool value) {
+                      setState(() {
+                        isUS = value;
+                        double weight = double.parse(tcWeight.text);
+                        double height = double.parse(tcHeight.text);
+                        if (isUS) {
+                          weight = kgToLbs(weight);
+                          height = cmToInch(height);
+                        } else {
+                          weight = lbsToKg(weight);
+                          height = inchToCm(height);
+                        }
+                        tcWeight.text = weight.toStringAsFixed(3);
+                        tcHeight.text = height.toStringAsFixed(1);
+                      });
+                    },
+                    onTap: () {
+                      setState(() {
+                        isUS = !isUS;
+                      });
+                    },
+                  ),
+                  mpButton(
+                    label: S.of(context).calculate,
+                    onPressed: () {
+                      // Validation
+                      if (tcHeight.text.isEmpty) {
                         setState(() {
-                          isUS = value;
-                          double weight = double.parse(tcWeight.text);
-                          double height = double.parse(tcHeight.text);
-                          if (isUS) {
-                            weight = kgToLbs(weight);
-                            height = cmToInch(height);
-                          } else {
-                            weight = lbsToKg(weight);
-                            height = inchToCm(height);
-                          }
-                          tcWeight.text = weight.toStringAsFixed(3);
-                          tcHeight.text = height.toStringAsFixed(1);
+                          heightError = true;
                         });
-                      },
-                      onTap: () {
+                        return;
+                      }
+                      if (tcWeight.text.isEmpty) {
                         setState(() {
-                          isUS = !isUS;
+                          weightError = true;
                         });
-                      },
-                    ),
-                    mpButton(
-                      label: S.of(context).calculate,
-                      onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          double weight = double.parse(tcWeight.text);
-                          double height = double.parse(tcHeight.text);
+                        return;
+                      }
 
-                          if (isUS) {
-                            weight = lbsToKg(weight);
-                            height = inchToCm(height);
-                          }
+                      double weight = double.parse(tcWeight.text);
+                      double height = double.parse(tcHeight.text);
 
-                          double bmi = calcBmi(
-                              weightAthlete: weight, heightAthleteCm: height);
+                      if (isUS) {
+                        weight = lbsToKg(weight);
+                        height = inchToCm(height);
+                      }
 
-                          result =
-                              bmiInterpretation(bmi: bmi, context: context);
+                      double bmi = calcBmi(
+                          weightAthlete: weight, heightAthleteCm: height);
 
-                          String res = """
+                      result = bmiInterpretation(bmi: bmi, context: context);
+
+                      String res = """
 **${S.of(context).bmi}:** ${bmi.toStringAsFixed(3)}
 
 $result
-                          """;
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ResultPage(
-                                result: res,
-                                title: S.of(context).bmiPageTitle,
-                              ),
-                            ),
-                          );
-                        }
-                      },
-                    ),
-                  ],
-                ),
+                        """;
+                      Navigator.push(
+                        context,
+                        mpPageRoute(
+                          builder: (context) => ResultPage(
+                            result: res,
+                            title: S.of(context).bmiPageTitle,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
             ),
           ),
