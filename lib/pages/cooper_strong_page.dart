@@ -25,11 +25,9 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(S.of(context).cooperStrongPageTitle),
-        context: context,
       ),
       body: SafeArea(
         child: Center(

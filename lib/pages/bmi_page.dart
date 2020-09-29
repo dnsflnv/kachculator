@@ -32,10 +32,8 @@ class _BmiPageState extends State<BmiPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
-          title: Text(S.of(context).bmiPageTitle), context: context),
+    return Scaffold(
+      appBar: AppBar(title: Text(S.of(context).bmiPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -55,6 +53,7 @@ class _BmiPageState extends State<BmiPage> {
                           border: OutlineInputBorder(),
                           labelText: S.of(context).bmiWeight,
                         ),
+                        //labelText: S.of(context).bmiWeight,
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(
                               RegExp("[0-9]*\.?[0-9]*"))
@@ -75,6 +74,7 @@ class _BmiPageState extends State<BmiPage> {
                           border: OutlineInputBorder(),
                           labelText: S.of(context).bmiHeight,
                         ),
+                        //labelText: S.of(context).bmiHeight,
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(
                               RegExp("[0-9]*\.?[0-9]*"))

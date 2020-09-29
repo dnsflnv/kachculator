@@ -29,11 +29,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(S.of(context).title),
-        context: context,
       ),
       body: SafeArea(
         child: Center(
@@ -46,8 +44,10 @@ class HomePage extends StatelessWidget {
                 Center(
                   child: Text(
                     S.of(context).homePageBody,
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
                   ),
                 ),
                 Row(

@@ -29,11 +29,9 @@ class _McRobertPageState extends State<McRobertPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(S.of(context).mcrobertPageTitle),
-        context: context,
       ),
       body: SafeArea(
         child: Center(

@@ -34,11 +34,9 @@ class _RmPageState extends State<RmPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(S.of(context).rmPageTitle),
-        context: context,
       ),
       body: SafeArea(
         child: Center(

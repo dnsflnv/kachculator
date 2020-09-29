@@ -38,9 +38,8 @@ class _AbsiPageState extends State<AbsiPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(title: Text(S.of(context).absiPageTitle)),
+    return Scaffold(
+      appBar: AppBar(title: Text(S.of(context).absiPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(

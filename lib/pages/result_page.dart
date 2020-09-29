@@ -13,11 +13,9 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(this.title),
-        context: context,
       ),
       body: SafeArea(
         child: Center(

@@ -11,19 +11,33 @@ import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart';
+//import 'dart:io' show Platform;
+//import 'package:flutter/foundation.dart';
 // Localization
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 
 void main() {
-  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
-    runApp(AppCupertino());
-  } else {
-    runApp(AppMaterial());
-  }
+  // if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+  //   runApp(AppCupertino());
+  // } else {
+  //   runApp(AppMaterial());
+  // }
+  runApp(AppMaterial());
 }
+
+Map<String, Widget Function(BuildContext)> appRoutes = {
+  HomePage.id: (context) => HomePage(),
+  BmiPage.id: (context) => BmiPage(),
+  RmPage.id: (context) => RmPage(),
+  AbsiPage.id: (context) => AbsiPage(),
+  RfmPage.id: (context) => RfmPage(),
+  BfpPage.id: (context) => BfpPage(),
+  McCallumPage.id: (context) => McCallumPage(),
+  McRobertPage.id: (context) => McRobertPage(),
+  CooperPage.id: (context) => CooperPage(),
+  CooperStrongPage.id: (context) => CooperStrongPage(),
+};
 
 class AppMaterial extends StatelessWidget {
   @override
@@ -48,18 +62,7 @@ class AppMaterial extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       initialRoute: HomePage.id,
-      routes: {
-        HomePage.id: (context) => HomePage(),
-        BmiPage.id: (context) => BmiPage(),
-        RmPage.id: (context) => RmPage(),
-        AbsiPage.id: (context) => AbsiPage(),
-        RfmPage.id: (context) => RfmPage(),
-        BfpPage.id: (context) => BfpPage(),
-        McCallumPage.id: (context) => McCallumPage(),
-        McRobertPage.id: (context) => McRobertPage(),
-        CooperPage.id: (context) => CooperPage(),
-        CooperStrongPage.id: (context) => CooperStrongPage(),
-      },
+      routes: appRoutes,
     );
   }
 }
@@ -78,18 +81,7 @@ class AppCupertino extends StatelessWidget {
       onGenerateTitle: (BuildContext context) => S.of(context).title,
       theme: cupertinoTheme(),
       initialRoute: HomePage.id,
-      routes: {
-        HomePage.id: (context) => HomePage(),
-        BmiPage.id: (context) => BmiPage(),
-        RmPage.id: (context) => RmPage(),
-        AbsiPage.id: (context) => AbsiPage(),
-        RfmPage.id: (context) => RfmPage(),
-        BfpPage.id: (context) => BfpPage(),
-        McCallumPage.id: (context) => McCallumPage(),
-        McRobertPage.id: (context) => McRobertPage(),
-        CooperPage.id: (context) => CooperPage(),
-        CooperStrongPage.id: (context) => CooperStrongPage(),
-      },
+      routes: appRoutes,
     );
   }
 }

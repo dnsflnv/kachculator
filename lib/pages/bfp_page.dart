@@ -36,10 +36,8 @@ class _BfpPageState extends State<BfpPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      context: context,
-      navigationBar: mpNavigationBar(
-          title: Text(S.of(context).bfpPageTitle), context: context),
+    return Scaffold(
+      appBar: AppBar(title: Text(S.of(context).bfpPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
