@@ -25,13 +25,13 @@ class _BmiPageState extends State<BmiPage> {
   bool isUS;
 
   bool _validation() {
-    if (tcHeight.text.isEmpty) {
+    if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
       setState(() {
         heightError = true;
       });
       return true;
     }
-    if (tcWeight.text.isEmpty) {
+    if (tcWeight.text.isEmpty || double.parse(tcWeight.text) <= 0) {
       setState(() {
         weightError = true;
       });

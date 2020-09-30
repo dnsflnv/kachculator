@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/services.dart';
+import 'package:kachculator/widgets/cupertino_radio_choice.dart';
 
 // ignore: todo
 //TODO: One detection of targetPlatform on start.
@@ -207,6 +208,43 @@ class MpValidationMessage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+// Radio selector
+// ignore: todo
+//TODO: Refactor to dynamic amount of radios.
+Widget mpSelectFromTwo({
+  BuildContext context,
+  @required dynamic value1,
+  @required dynamic value2,
+  @required dynamic groupValue,
+  @required void Function(dynamic) onChanged,
+  @required String itemText1,
+  @required String itemText2,
+}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+    return CupertinoRadioChoiceDynamic(
+        choices: {value1: itemText1, value2: itemText2},
+        onChange: onChanged,
+        initialKeyValue: groupValue);
+  } else {
+    return Row(
+      children: [
+        Radio(
+          value: value1,
+          groupValue: groupValue,
+          onChanged: onChanged,
+        ),
+        Text(itemText1),
+        Radio(
+          value: value2,
+          groupValue: groupValue,
+          onChanged: onChanged,
+        ),
+        Text(itemText2),
+      ],
     );
   }
 }
