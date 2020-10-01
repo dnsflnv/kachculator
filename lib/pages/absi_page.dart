@@ -30,6 +30,35 @@ class _AbsiPageState extends State<AbsiPage> {
   String result = '';
   bool isUS;
 
+  bool _validation() {
+    if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
+      setState(() {
+        heightError = true;
+      });
+      return true;
+    }
+    if (tcWeight.text.isEmpty || double.parse(tcWeight.text) <= 0) {
+      setState(() {
+        weightError = true;
+      });
+      return true;
+    }
+    if (tcAge.text.isEmpty || double.parse(tcAge.text) <= 0) {
+      setState(() {
+        ageError = true;
+      });
+      return true;
+    }
+    if (tcWaistCircumference.text.isEmpty ||
+        double.parse(tcWaistCircumference.text) <= 0) {
+      setState(() {
+        ageError = true;
+      });
+      return true;
+    }
+    return false;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -66,6 +95,10 @@ class _AbsiPageState extends State<AbsiPage> {
                       ],
                     ),
                   ),
+                  if (weightError)
+                    MpValidationMessage(
+                      message: S.of(context).bmiWeightValidation,
+                    ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: mpTextField(
@@ -76,6 +109,10 @@ class _AbsiPageState extends State<AbsiPage> {
                       ],
                     ),
                   ),
+                  if (heightError)
+                    MpValidationMessage(
+                      message: S.of(context).bmiHeightValidation,
+                    ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: mpTextField(
@@ -86,6 +123,10 @@ class _AbsiPageState extends State<AbsiPage> {
                       ],
                     ),
                   ),
+                  if (waistCircumferenceError)
+                    MpValidationMessage(
+                      message: S.of(context).absiWaistCircumferenceValidation,
+                    ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: mpTextField(
@@ -94,6 +135,10 @@ class _AbsiPageState extends State<AbsiPage> {
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                     ),
                   ),
+                  if (ageError)
+                    MpValidationMessage(
+                      message: S.of(context).absiAgeValidation,
+                    ),
                   mpSelectFromTwo(
                     value1: Gender.female,
                     value2: Gender.male,
@@ -107,36 +152,13 @@ class _AbsiPageState extends State<AbsiPage> {
                       });
                     },
                   ),
-                  // Row(
-                  //   children: [
-                  //     Radio(
-                  //       value: Gender.female,
-                  //       groupValue: gender,
-                  //       onChanged: (value) {
-                  //         setState(() {
-                  //           gender = value;
-                  //         });
-                  //       },
-                  //     ),
-                  //     Text(S.of(context).female), ththtyh
-                  //     Radio(
-                  //       value: Gender.male,
-                  //       groupValue: gender,
-                  //       onChanged: (value) {
-                  //         setState(() {
-                  //           gender = value;
-                  //         });
-                  //       },
-                  //     ),
-                  //     Text(S.of(context).male),
-                  //   ],
-                  // ),
                   mpSwitch(
                     context: this.context,
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
                       setState(() {
+                        if (_validation()) return null;
                         isUS = value;
                         double weight = double.parse(tcWeight.text);
                         double height = double.parse(tcHeight.text);
@@ -166,6 +188,7 @@ class _AbsiPageState extends State<AbsiPage> {
                   mpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
+                      if (_validation()) return null;
                       double weight = double.parse(tcWeight.text);
                       double height = double.parse(tcHeight.text);
                       int age = int.parse(tcAge.text);
