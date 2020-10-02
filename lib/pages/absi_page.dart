@@ -17,12 +17,12 @@ class AbsiPage extends StatefulWidget {
 
 class _AbsiPageState extends State<AbsiPage> {
   TextEditingController tcWeight;
-  bool weightError;
   TextEditingController tcHeight;
-  bool heightError;
   TextEditingController tcWaistCircumference;
-  bool waistCircumferenceError;
   TextEditingController tcAge;
+  bool heightError;
+  bool weightError;
+  bool waistCircumferenceError;
   bool ageError;
 
   double bmi = 0;
@@ -52,7 +52,7 @@ class _AbsiPageState extends State<AbsiPage> {
     if (tcWaistCircumference.text.isEmpty ||
         double.parse(tcWaistCircumference.text) <= 0) {
       setState(() {
-        ageError = true;
+        waistCircumferenceError = true;
       });
       return true;
     }
@@ -148,7 +148,6 @@ class _AbsiPageState extends State<AbsiPage> {
                     onChanged: (value) {
                       setState(() {
                         gender = value;
-                        print(gender);
                       });
                     },
                   ),
@@ -157,8 +156,8 @@ class _AbsiPageState extends State<AbsiPage> {
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
+                      if (_validation()) return null;
                       setState(() {
-                        if (_validation()) return null;
                         isUS = value;
                         double weight = double.parse(tcWeight.text);
                         double height = double.parse(tcHeight.text);

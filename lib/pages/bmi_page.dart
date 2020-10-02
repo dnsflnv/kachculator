@@ -94,8 +94,8 @@ class _BmiPageState extends State<BmiPage> {
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
+                      if (_validation()) return null;
                       setState(() {
-                        if (_validation()) return null;
                         isUS = value;
                         double weight = double.parse(tcWeight.text);
                         double height = double.parse(tcHeight.text);
