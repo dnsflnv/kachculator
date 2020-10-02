@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc_bfp.dart';
 import 'package:kachculator/pages/result_page.dart';
@@ -18,10 +19,35 @@ class _BfpPageState extends State<BfpPage> {
   TextEditingController tcWeight;
   TextEditingController tcHeight;
   TextEditingController tcAge;
+  bool weightError;
+  bool heightError;
+  bool ageError;
   double bmi = 0;
   Gender gender;
   String result = '';
   bool isUS;
+
+  bool _validation() {
+    if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
+      setState(() {
+        heightError = true;
+      });
+      return true;
+    }
+    if (tcWeight.text.isEmpty || double.parse(tcWeight.text) <= 0) {
+      setState(() {
+        weightError = true;
+      });
+      return true;
+    }
+    if (tcAge.text.isEmpty || double.parse(tcAge.text) <= 0) {
+      setState(() {
+        ageError = true;
+      });
+      return true;
+    }
+    return false;
+  }
 
   @override
   void initState() {
@@ -30,7 +56,7 @@ class _BfpPageState extends State<BfpPage> {
     tcHeight = TextEditingController(text: '184');
     tcAge = TextEditingController(text: '41');
     gender = Gender.male;
-    isUS = false;
+    isUS = weightError = heightError = ageError = false;
   }
 
   @override
@@ -48,93 +74,56 @@ class _BfpPageState extends State<BfpPage> {
                   //Text(S.of(context).b),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: TextFormField(
+                    child: mpTextField(
                       controller: tcWeight,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: S.of(context).bmiWeight,
-                      ),
+                      labelText: S.of(context).bmiWeight,
                       inputFormatters: [
-                        FilteringTextInputFormatter.allow(
-                            RegExp("[0-9]*\.?[0-9]*"))
+                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
                       ],
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return S.of(context).bmiWeightValidation;
-                        }
-                        if (double.parse(value) <= 0) {
-                          return S.of(context).bmiWeightValidation;
-                        }
-                        return null;
-                      },
                     ),
                   ),
+                  if (weightError)
+                    MpValidationMessage(
+                      message: S.of(context).bmiWeightValidation,
+                    ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: TextFormField(
+                    child: mpTextField(
                       controller: tcHeight,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: S.of(context).bmiHeight,
-                      ),
+                      labelText: S.of(context).bmiHeight,
                       inputFormatters: [
-                        FilteringTextInputFormatter.allow(
-                            RegExp("[0-9]*\.?[0-9]*"))
+                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
                       ],
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return S.of(context).bmiHeightValidation;
-                        }
-                        if (double.parse(value) <= 0) {
-                          return S.of(context).bmiHeightValidation;
-                        }
-                        return null;
-                      },
                     ),
                   ),
+                  if (heightError)
+                    MpValidationMessage(
+                      message: S.of(context).bmiHeightValidation,
+                    ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: TextFormField(
+                    child: mpTextField(
                       controller: tcAge,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: S.of(context).age,
-                      ),
+                      labelText: S.of(context).age,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return S.of(context).ageValidation;
-                        }
-                        if (double.parse(value) <= 2) {
-                          return S.of(context).absiAgeValidation;
-                        }
-                        return null;
-                      },
                     ),
                   ),
-                  Row(
-                    children: [
-                      Radio(
-                        value: Gender.female,
-                        groupValue: gender,
-                        onChanged: (value) {
-                          setState(() {
-                            gender = value;
-                          });
-                        },
-                      ),
-                      Text(S.of(context).female),
-                      Radio(
-                        value: Gender.male,
-                        groupValue: gender,
-                        onChanged: (value) {
-                          setState(() {
-                            gender = value;
-                          });
-                        },
-                      ),
-                      Text(S.of(context).male),
-                    ],
+                  if (ageError)
+                    MpValidationMessage(
+                      message: S.of(context).ageValidation,
+                    ),
+                  mpSelectFromTwo(
+                    value1: Gender.female,
+                    value2: Gender.male,
+                    itemText1: S.of(context).female,
+                    itemText2: S.of(context).male,
+                    groupValue: gender,
+                    onChanged: (value) {
+                      setState(() {
+                        gender = value;
+                        print(gender);
+                      });
+                    },
                   ),
                   mpSwitch(
                     context: this.context,
@@ -142,6 +131,7 @@ class _BfpPageState extends State<BfpPage> {
                     value: isUS,
                     onChanged: (bool value) {
                       setState(() {
+                        if (_validation()) return null;
                         isUS = value;
                         double weight = double.parse(tcWeight.text);
                         double height = double.parse(tcHeight.text);
@@ -165,6 +155,7 @@ class _BfpPageState extends State<BfpPage> {
                   mpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
+                      if (_validation()) return null;
                       double weight = double.parse(tcWeight.text);
                       double height = double.parse(tcHeight.text);
                       int age = int.parse(tcAge.text);
@@ -188,7 +179,7 @@ class _BfpPageState extends State<BfpPage> {
 """; //
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        mpPageRoute(
                           builder: (context) => ResultPage(
                             result: res,
                             title: S.of(context).bfpPageTitle,
