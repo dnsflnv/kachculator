@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/models/calc.dart';
 import 'package:kachculator/models/calc_mcrobert.dart';
@@ -15,22 +16,32 @@ class McRobertPage extends StatefulWidget {
 }
 
 class _McRobertPageState extends State<McRobertPage> {
-  final _formKey = GlobalKey<FormState>();
   TextEditingController tcHeight;
+  bool heightError;
   String result = '';
   bool isUS;
+
+  bool _validation() {
+    if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
+      setState(() {
+        heightError = true;
+      });
+      return true;
+    }
+    return false;
+  }
 
   @override
   void initState() {
     super.initState();
     tcHeight = TextEditingController(text: '184');
-    isUS = false;
+    isUS = heightError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return mpScaffold(
+      appBar: mpAppBar(
         title: Text(S.of(context).mcrobertPageTitle),
       ),
       body: SafeArea(
@@ -39,86 +50,77 @@ class _McRobertPageState extends State<McRobertPage> {
             constraints: BoxConstraints(maxWidth: 800.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    Text(S.of(context).mcrobertPageDesc),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: TextFormField(
-                        controller: tcHeight,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: S.of(context).bmiHeight,
-                        ),
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(
-                              RegExp("[0-9]*\.?[0-9]*"))
-                        ],
-                        validator: (value) {
-                          if (value.isEmpty || double.parse(value) <= 0) {
-                            return S.of(context).bmiHeightValidation;
-                          }
-                          return null;
-                        },
-                      ),
+              child: Column(
+                children: [
+                  Text(S.of(context).mcrobertPageDesc),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: mpTextField(
+                      controller: tcHeight,
+                      labelText: S.of(context).bmiHeight,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                      ],
                     ),
-                    mpSwitch(
-                      context: this.context,
-                      title: S.of(context).useImperialUS,
-                      value: isUS,
-                      onChanged: (bool value) {
-                        setState(() {
-                          isUS = value;
-                          double height = double.parse(tcHeight.text);
-                          if (isUS) {
-                            height = cmToInch(height);
-                          } else {
-                            height = inchToCm(height);
-                          }
-                          tcHeight.text = height.toStringAsFixed(1);
-                        });
-                      },
-                      onTap: () {
-                        setState(() {
-                          isUS = !isUS;
-                        });
-                      },
+                  ),
+                  if (heightError)
+                    MpValidationMessage(
+                      message: S.of(context).bmiHeightValidation,
                     ),
-                    mpButton(
-                      label: S.of(context).calculate,
-                      onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          double height = double.parse(tcHeight.text);
-                          if (isUS) {
-                            height = inchToCm(height);
-                          }
-                          Map<String, List<double>> mac =
-                              mcRobert(context: context, heightCm: height);
-                          String res = '''
+                  mpSwitch(
+                    context: this.context,
+                    title: S.of(context).useImperialUS,
+                    value: isUS,
+                    onChanged: (bool value) {
+                      if (_validation()) return null;
+                      setState(() {
+                        isUS = value;
+                        double height = double.parse(tcHeight.text);
+                        if (isUS) {
+                          height = cmToInch(height);
+                        } else {
+                          height = inchToCm(height);
+                        }
+                        tcHeight.text = height.toStringAsFixed(1);
+                      });
+                    },
+                    onTap: () {
+                      setState(() {
+                        isUS = !isUS;
+                      });
+                    },
+                  ),
+                  mpButton(
+                    label: S.of(context).calculate,
+                    onPressed: () {
+                      if (_validation()) return null;
+                      double height = double.parse(tcHeight.text);
+                      if (isUS) {
+                        height = inchToCm(height);
+                      }
+                      Map<String, List<double>> mac =
+                          mcRobert(context: context, heightCm: height);
+                      String res = '''
 |**${S.of(context).mcPart}**|**${S.of(context).mcrobertMin}**|**${S.of(context).mcrobertMax}**|
 |---|---|---|
 ''';
-                          mac.forEach((key, value) {
-                            res += '''
+                      mac.forEach((key, value) {
+                        res += '''
 |  $key  |  ${isUS ? cmToInch(value[0]).toStringAsFixed(1) : value[0].toStringAsFixed(1)}  |${isUS ? cmToInch(value[1]).toStringAsFixed(1) : value[1].toStringAsFixed(1)}  |
 ''';
-                          });
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ResultPage(
-                                result: res,
-                                title: S.of(context).mcrobertPageTitle,
-                              ),
-                            ),
-                          );
-                        }
-                      },
-                    ),
-                  ],
-                ),
+                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResultPage(
+                            result: res,
+                            title: S.of(context).mcrobertPageTitle,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
             ),
           ),

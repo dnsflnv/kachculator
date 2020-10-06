@@ -133,6 +133,16 @@ class S {
     );
   }
 
+  /// `Пожалуйста, введите возраст.`
+  String get ageValidation {
+    return Intl.message(
+      'Пожалуйста, введите возраст.',
+      name: 'ageValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Использовать английскую систему мер (фунты, дюймы, мили)?`
   String get useImperialUS {
     return Intl.message(
@@ -378,16 +388,6 @@ class S {
     return Intl.message(
       'Результат',
       name: 'rmResult',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Пожалуйста, введите возраст.`
-  String get ageValidation {
-    return Intl.message(
-      'Пожалуйста, введите возраст.',
-      name: 'ageValidation',
       desc: '',
       args: [],
     );

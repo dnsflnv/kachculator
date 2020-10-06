@@ -11,19 +11,18 @@ import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
-//import 'dart:io' show Platform;
-//import 'package:flutter/foundation.dart';
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart';
 // Localization
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 
 void main() {
-  // if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
-  //   runApp(AppCupertino());
-  // } else {
-  //   runApp(AppMaterial());
-  // }
-  runApp(AppMaterial());
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
+    runApp(AppCupertino());
+  } else {
+    runApp(AppMaterial());
+  }
 }
 
 Map<String, Widget Function(BuildContext)> appRoutes = {

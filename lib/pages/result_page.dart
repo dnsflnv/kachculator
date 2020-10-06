@@ -13,8 +13,8 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return mpScaffold(
+      appBar: mpAppBar(
         title: Text(this.title),
       ),
       body: SafeArea(
@@ -25,6 +25,7 @@ class ResultPage extends StatelessWidget {
               data: this.result,
               controller: controller,
               selectable: false,
+              styleSheetTheme: MarkdownStyleSheetBaseTheme.platform,
             ),
           ),
         ),
