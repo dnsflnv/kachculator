@@ -25,6 +25,20 @@ Widget mpButton({BuildContext context, String label, Function onPressed}) {
     );
 }
 
+Widget mpLinkButton({BuildContext context, String label, Function onPressed}) {
+  if (!kIsWeb && (Platform.isMacOS || Platform.isIOS))
+    return CupertinoButton(
+      padding: EdgeInsetsDirectional.zero,
+      child: Text(label),
+      onPressed: onPressed,
+    );
+  else
+    return FlatButton(
+      child: Text(label),
+      onPressed: onPressed,
+    );
+}
+
 /// FlatButton
 Widget mpFlatButton({
   BuildContext context,
@@ -114,14 +128,19 @@ Widget mpTextField(
 // }
 
 /// AppBar.
-PreferredSizeWidget mpAppBar({@required Widget title, BuildContext context}) {
+PreferredSizeWidget mpAppBar(
+    {@required Widget title, Widget button, BuildContext context}) {
   if (!kIsWeb && (Platform.isMacOS || Platform.isIOS)) {
     return CupertinoNavigationBar(
       middle: title,
+      trailing: (button != null) ? button : SizedBox(),
     );
   } else
     return AppBar(
       title: title,
+      actions: [
+        (button != null) ? button : SizedBox(),
+      ],
     );
 }
 
