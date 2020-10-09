@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kachculator/config.dart';
+import 'package:kachculator/pages/about_page.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
@@ -27,6 +28,7 @@ void main() {
 
 Map<String, Widget Function(BuildContext)> appRoutes = {
   HomePage.id: (context) => HomePage(),
+  AboutPage.id: (context) => AboutPage(),
   BmiPage.id: (context) => BmiPage(),
   RmPage.id: (context) => RmPage(),
   AbsiPage.id: (context) => AbsiPage(),

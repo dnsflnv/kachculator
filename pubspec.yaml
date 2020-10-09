@@ -27,6 +27,9 @@ flutter:
   assets:
     - icons/
     - images/
+    - text/en/
+    - text/ru_RU/
+    - docs/history.md
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/pages/about_page.dart';
 import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
@@ -10,21 +12,31 @@ import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mp_widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
-
 import 'cooper_strong_page.dart';
 
 class HomePage extends StatelessWidget {
   static String id = '/';
   final controller = ScrollController();
 
-  Future<void> _onOpen(LinkableElement link) async {
-    if (await canLaunch(link.url)) {
-      await launch(link.url);
-    } else {
-      throw 'Could not launch $link';
-    }
+  Future<String> _loadAsset(String path) async {
+    return await rootBundle.loadString(path);
+  }
+
+  void getAboutPage(BuildContext context) async {
+    Locale myLocale = Localizations.localeOf(context);
+    String about = await _loadAsset("text/$myLocale/about.md");
+    String history = await _loadAsset("docs/history.md");
+    Navigator.push(
+      context,
+      mpPageRoute(
+        builder: (context) {
+          return AboutPage(
+            about: about,
+            history: history,
+          );
+        },
+      ),
+    );
   }
 
   @override
@@ -39,7 +51,6 @@ class HomePage extends StatelessWidget {
             constraints: BoxConstraints(maxWidth: 800.0),
             padding: const EdgeInsets.all(8.0),
             child: ListView(
-              //mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Center(
                   child: Text(
@@ -284,27 +295,29 @@ class HomePage extends StatelessWidget {
                   context: context,
                   label: S.of(context).about,
                   onPressed: () {
-                    showAboutDialog(
-                      context: context,
-                      applicationIcon: Image.asset('icons/icons8-torso-96.png'),
-                      applicationName: S.of(context).title,
-                      applicationVersion: '1.1',
-                      applicationLegalese: '© 2020 Denis Filonov',
-                      children: [
-                        Linkify(
-                          onOpen: _onOpen,
-                          text: 'Contacts: https://filonov.pro',
-                        ),
-                        Linkify(
-                          onOpen: _onOpen,
-                          text: 'Icons by https://icons8.com',
-                        ),
-                        Linkify(
-                          onOpen: _onOpen,
-                          text: 'Logo by https://canva.com',
-                        ),
-                      ],
-                    );
+                    // Navigator.pushNamed(context, AboutPage.id);
+                    getAboutPage(context);
+                    // showAboutDialog(
+                    //   context: context,
+                    //   applicationIcon: Image.asset('icons/icons8-torso-96.png'),
+                    //   applicationName: S.of(context).title,
+                    //   applicationVersion: '1.1',
+                    //   applicationLegalese: '© 2020 Denis Filonov',
+                    //   children: [
+                    //     // Linkify(
+                    //     //   onOpen: _onOpen,
+                    //     //   text: 'Contacts: https://filonov.pro',
+                    //     // ),
+                    //     // Linkify(
+                    //     //   onOpen: _onOpen,
+                    //     //   text: 'Icons by https://icons8.com',
+                    //     // ),
+                    //     // Linkify(
+                    //     //   onOpen: _onOpen,
+                    //     //   text: 'Logo by https://canva.com',
+                    //     // ),
+                    //   ],
+                    // );
                   },
                 ),
               ],
