@@ -22,6 +22,15 @@ class _LbmPageState extends State<LbmPage> {
   String result = '';
   bool isUS;
 
+  @override
+  void initState() {
+    super.initState();
+    tcWeight = TextEditingController(text: '90');
+    tcHeight = TextEditingController(text: '184');
+    gender = Gender.male;
+    isUS = weightError = heightError = false;
+  }
+
   bool _validation() {
     if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
       setState(() {

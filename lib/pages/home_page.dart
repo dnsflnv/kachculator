@@ -7,6 +7,7 @@ import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/cooper_page.dart';
+import 'package:kachculator/pages/lbm_page.dart';
 import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
@@ -64,192 +65,173 @@ class HomePage extends StatelessWidget {
             mainAxisSpacing: 10,
             maxCrossAxisExtent: 350.0,
             children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, BmiPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-bmi-96.png'),
-                        Text(
-                          S.of(context).bmiPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, AbsiPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-dead-man-in-a-coffin-96.png'),
-                        Text(
-                          S.of(context).absiPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Padding(
+              Container(
+                child: mpFlatButton(
                   padding: EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, BfpPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-fat-man-cry-96.png'),
-                        Text(
-                          S.of(context).bfpPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, BmiPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-bmi-96.png'),
+                      Text(
+                        S.of(context).bmiPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Padding(
+              Container(
+                child: mpFlatButton(
                   padding: EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, RfmPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-sumo-96.png'),
-                        Text(
-                          S.of(context).rfmPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, AbsiPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-dead-man-in-a-coffin-96.png'),
+                      Text(
+                        S.of(context).absiPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Padding(
+              Container(
+                child: mpFlatButton(
                   padding: EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, McCallumPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-bodybuilder-96.png'),
-                        Text(
-                          S.of(context).mcPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, BfpPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-fat-man-cry-96.png'),
+                      Text(
+                        S.of(context).bfpPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Padding(
+              Container(
+                child: mpFlatButton(
                   padding: EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, McRobertPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-torso-96.png'),
-                        Text(
-                          S.of(context).mcrobertPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, RfmPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-sumo-96.png'),
+                      Text(
+                        S.of(context).rfmPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, RmPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-deadlift-96.png'),
-                        Text(
-                          S.of(context).rmPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, LbmPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-sumo-96.png'),
+                      Text(
+                        'LBM', //S.of(context).rfmPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, CooperPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-running-96.png'),
-                        Text(
-                          S.of(context).cooperPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, McCallumPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-bodybuilder-96.png'),
+                      Text(
+                        S.of(context).mcPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: mpFlatButton(
-                    padding: EdgeInsets.all(8.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, CooperStrongPage.id);
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset('icons/icons8-pushups-96.png'),
-                        Text(
-                          S.of(context).cooperStrongPageTitle,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, McRobertPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-torso-96.png'),
+                      Text(
+                        S.of(context).mcrobertPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, RmPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-deadlift-96.png'),
+                      Text(
+                        S.of(context).rmPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, CooperPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-running-96.png'),
+                      Text(
+                        S.of(context).cooperPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, CooperStrongPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-pushups-96.png'),
+                      Text(
+                        S.of(context).cooperStrongPageTitle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
