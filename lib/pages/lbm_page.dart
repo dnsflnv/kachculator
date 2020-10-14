@@ -53,38 +53,42 @@ class _LbmPageState extends State<LbmPage> {
       appBar: mpAppBar(title: Text(S.of(context).lbmPageTitle)),
       body: SafeArea(
         child: Center(
-          child: ListView(
-            children: <Widget>[
-              Text(S.of(context).lbmPageDescription),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
-                child: mpTextField(
-                  controller: tcWeight,
-                  labelText: S.of(context).bmiWeight,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
-                  ],
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 800.0),
+            padding: EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Text(S.of(context).lbmPageDescription),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: mpTextField(
+                    controller: tcWeight,
+                    labelText: S.of(context).bmiWeight,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                    ],
+                  ),
                 ),
-              ),
-              if (weightError)
-                MpValidationMessage(
-                  message: S.of(context).bmiWeightValidation,
+                if (weightError)
+                  MpValidationMessage(
+                    message: S.of(context).bmiWeightValidation,
+                  ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: mpTextField(
+                    controller: tcHeight,
+                    labelText: S.of(context).bmiHeight,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                    ],
+                  ),
                 ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
-                child: mpTextField(
-                  controller: tcHeight,
-                  labelText: S.of(context).bmiHeight,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
-                  ],
-                ),
-              ),
-              if (heightError)
-                MpValidationMessage(
-                  message: S.of(context).bmiHeightValidation,
-                ),
-            ],
+                if (heightError)
+                  MpValidationMessage(
+                    message: S.of(context).bmiHeightValidation,
+                  ),
+              ],
+            ),
           ),
         ),
       ),

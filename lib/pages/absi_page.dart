@@ -79,141 +79,140 @@ class _AbsiPageState extends State<AbsiPage> {
         child: Center(
           child: Container(
             constraints: BoxConstraints(maxWidth: 800.0),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView(
-                children: [
-                  // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
-                  Text(S.of(context).absiPageDesc),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
-                      controller: tcWeight,
-                      labelText: S.of(context).bmiWeight,
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
-                      ],
-                    ),
+            padding: EdgeInsets.all(8.0),
+            child: ListView(
+              children: [
+                // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
+                Text(S.of(context).absiPageDesc),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: mpTextField(
+                    controller: tcWeight,
+                    labelText: S.of(context).bmiWeight,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                    ],
                   ),
-                  if (weightError)
-                    MpValidationMessage(
-                      message: S.of(context).bmiWeightValidation,
-                    ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
-                      controller: tcHeight,
-                      labelText: S.of(context).bmiHeight,
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
-                      ],
-                    ),
+                ),
+                if (weightError)
+                  MpValidationMessage(
+                    message: S.of(context).bmiWeightValidation,
                   ),
-                  if (heightError)
-                    MpValidationMessage(
-                      message: S.of(context).bmiHeightValidation,
-                    ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
-                      controller: tcWaistCircumference,
-                      labelText: S.of(context).absiWaistCircumference,
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
-                      ],
-                    ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: mpTextField(
+                    controller: tcHeight,
+                    labelText: S.of(context).bmiHeight,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                    ],
                   ),
-                  if (waistCircumferenceError)
-                    MpValidationMessage(
-                      message: S.of(context).absiWaistCircumferenceValidation,
-                    ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
-                      controller: tcAge,
-                      labelText: S.of(context).age,
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    ),
+                ),
+                if (heightError)
+                  MpValidationMessage(
+                    message: S.of(context).bmiHeightValidation,
                   ),
-                  if (ageError)
-                    MpValidationMessage(
-                      message: S.of(context).absiAgeValidation,
-                    ),
-                  mpSelectFromTwo(
-                    value1: Gender.female,
-                    value2: Gender.male,
-                    itemText1: S.of(context).female,
-                    itemText2: S.of(context).male,
-                    groupValue: gender,
-                    onChanged: (value) {
-                      setState(() {
-                        gender = value;
-                      });
-                    },
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: mpTextField(
+                    controller: tcWaistCircumference,
+                    labelText: S.of(context).absiWaistCircumference,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                    ],
                   ),
-                  mpSwitch(
-                    context: this.context,
-                    title: S.of(context).useImperialUS,
-                    value: isUS,
-                    onChanged: (bool value) {
-                      if (_validation()) return null;
-                      setState(() {
-                        isUS = value;
-                        double weight = double.parse(tcWeight.text);
-                        double height = double.parse(tcHeight.text);
-                        double waistCircumference =
-                            double.parse(tcWaistCircumference.text);
-                        if (isUS) {
-                          weight = kgToLbs(weight);
-                          height = cmToInch(height);
-                          waistCircumference = cmToInch(waistCircumference);
-                        } else {
-                          weight = lbsToKg(weight);
-                          height = inchToCm(height);
-                          waistCircumference = inchToCm(waistCircumference);
-                        }
-                        tcWeight.text = weight.toStringAsFixed(3);
-                        tcHeight.text = height.toStringAsFixed(1);
-                        tcWaistCircumference.text =
-                            waistCircumference.toStringAsFixed(1);
-                      });
-                    },
-                    onTap: () {
-                      setState(() {
-                        isUS = !isUS;
-                      });
-                    },
+                ),
+                if (waistCircumferenceError)
+                  MpValidationMessage(
+                    message: S.of(context).absiWaistCircumferenceValidation,
                   ),
-                  mpButton(
-                    label: S.of(context).calculate,
-                    onPressed: () {
-                      if (_validation()) return null;
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: mpTextField(
+                    controller: tcAge,
+                    labelText: S.of(context).age,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  ),
+                ),
+                if (ageError)
+                  MpValidationMessage(
+                    message: S.of(context).absiAgeValidation,
+                  ),
+                mpSelectFromTwo(
+                  value1: Gender.female,
+                  value2: Gender.male,
+                  itemText1: S.of(context).female,
+                  itemText2: S.of(context).male,
+                  groupValue: gender,
+                  onChanged: (value) {
+                    setState(() {
+                      gender = value;
+                    });
+                  },
+                ),
+                mpSwitch(
+                  context: this.context,
+                  title: S.of(context).useImperialUS,
+                  value: isUS,
+                  onChanged: (bool value) {
+                    if (_validation()) return null;
+                    setState(() {
+                      isUS = value;
                       double weight = double.parse(tcWeight.text);
                       double height = double.parse(tcHeight.text);
-                      int age = int.parse(tcAge.text);
-                      if (age > 85) age = 85;
                       double waistCircumference =
                           double.parse(tcWaistCircumference.text);
-
                       if (isUS) {
+                        weight = kgToLbs(weight);
+                        height = cmToInch(height);
+                        waistCircumference = cmToInch(waistCircumference);
+                      } else {
                         weight = lbsToKg(weight);
                         height = inchToCm(height);
                         waistCircumference = inchToCm(waistCircumference);
                       }
+                      tcWeight.text = weight.toStringAsFixed(3);
+                      tcHeight.text = height.toStringAsFixed(1);
+                      tcWaistCircumference.text =
+                          waistCircumference.toStringAsFixed(1);
+                    });
+                  },
+                  onTap: () {
+                    setState(() {
+                      isUS = !isUS;
+                    });
+                  },
+                ),
+                mpButton(
+                  label: S.of(context).calculate,
+                  onPressed: () {
+                    if (_validation()) return null;
+                    double weight = double.parse(tcWeight.text);
+                    double height = double.parse(tcHeight.text);
+                    int age = int.parse(tcAge.text);
+                    if (age > 85) age = 85;
+                    double waistCircumference =
+                        double.parse(tcWaistCircumference.text);
 
-                      CalcABSI calc = CalcABSI(
-                        context: context,
-                        weightAthlete: weight,
-                        heightAthleteCm: height,
-                        gender: gender,
-                        age: age,
-                        waistCircumferenceCm: waistCircumference,
-                      );
+                    if (isUS) {
+                      weight = lbsToKg(weight);
+                      height = inchToCm(height);
+                      waistCircumference = inchToCm(waistCircumference);
+                    }
 
-                      String sGender = (gender == Gender.male)
-                          ? S.of(context).male
-                          : S.of(context).female;
-                      String res = """
+                    CalcABSI calc = CalcABSI(
+                      context: context,
+                      weightAthlete: weight,
+                      heightAthleteCm: height,
+                      gender: gender,
+                      age: age,
+                      waistCircumferenceCm: waistCircumference,
+                    );
+
+                    String sGender = (gender == Gender.male)
+                        ? S.of(context).male
+                        : S.of(context).female;
+                    String res = """
 **${S.of(context).age}:** $age
 
 **${S.of(context).gender}**: $sGender
@@ -230,19 +229,18 @@ class _AbsiPageState extends State<AbsiPage> {
 
 **${S.of(context).absiRisk}**: ${calc.absiRisk}
 """; //
-                      Navigator.push(
-                        context,
-                        mpPageRoute(
-                          builder: (context) => ResultPage(
-                            result: res,
-                            title: S.of(context).absiPageTitle,
-                          ),
+                    Navigator.push(
+                      context,
+                      mpPageRoute(
+                        builder: (context) => ResultPage(
+                          result: res,
+                          title: S.of(context).absiPageTitle,
                         ),
-                      );
-                    },
-                  ),
-                ],
-              ),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
         ),

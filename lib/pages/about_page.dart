@@ -8,8 +8,9 @@ class AboutPage extends StatelessWidget {
   static String id = '/about';
   final String about;
   final String history;
+  final String version;
 
-  AboutPage({this.about, this.history});
+  AboutPage({this.about, this.history, this.version});
 
   final controller = ScrollController();
 
@@ -23,7 +24,10 @@ class AboutPage extends StatelessWidget {
           title: Text('About'),
           button: mpLinkButton(
             label: 'Licenses',
-            onPressed: () => showLicensePage(context: context),
+            onPressed: () => showLicensePage(
+                context: context,
+                applicationVersion: this.version,
+                applicationLegalese: '© Denis Filonov'),
           )),
       body: SafeArea(
         child: Markdown(

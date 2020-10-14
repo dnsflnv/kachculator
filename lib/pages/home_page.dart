@@ -14,6 +14,7 @@ import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
 import 'package:kachculator/widgets/mp_widgets.dart';
 import 'cooper_strong_page.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class HomePage extends StatelessWidget {
   static String id = '/';
@@ -27,7 +28,14 @@ class HomePage extends StatelessWidget {
   /// TODO: Change to FutureBuilder
   void getAboutPage(BuildContext context) async {
     Locale myLocale = Localizations.localeOf(context);
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    //String appName = packageInfo.appName;
+    //String packageName = packageInfo.packageName;
+    String version = packageInfo.version;
+    //String buildNumber = packageInfo.buildNumber;
+
     String about = await _loadAsset("text/$myLocale/about.md");
+    about = about.replaceAll('%version%', version);
     String history = await _loadAsset("docs/history.md");
     Navigator.push(
       context,
@@ -36,6 +44,7 @@ class HomePage extends StatelessWidget {
           return AboutPage(
             about: about,
             history: history,
+            version: version,
           );
         },
       ),
