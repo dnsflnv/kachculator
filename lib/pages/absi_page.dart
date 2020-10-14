@@ -81,7 +81,7 @@ class _AbsiPageState extends State<AbsiPage> {
             constraints: BoxConstraints(maxWidth: 800.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
+              child: ListView(
                 children: [
                   // http://www.myhealthywaist.org/fileadmin/pdf/WCMG-Self-Measurement.pdf
                   Text(S.of(context).absiPageDesc),

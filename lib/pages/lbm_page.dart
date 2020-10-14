@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:kachculator/calculators/calc.dart';
+import 'package:kachculator/config.dart';
+import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/widgets/mp_widgets.dart';
 
 class LbmPage extends StatefulWidget {
@@ -44,7 +47,34 @@ class _LbmPageState extends State<LbmPage> {
           child: ListView(
             children: <Widget>[
               Text('Description of this'),
-              mpTextField(),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: mpTextField(
+                  controller: tcWeight,
+                  labelText: S.of(context).bmiWeight,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                  ],
+                ),
+              ),
+              if (weightError)
+                MpValidationMessage(
+                  message: S.of(context).bmiWeightValidation,
+                ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: mpTextField(
+                  controller: tcHeight,
+                  labelText: S.of(context).bmiHeight,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(demicalRegExp))
+                  ],
+                ),
+              ),
+              if (heightError)
+                MpValidationMessage(
+                  message: S.of(context).bmiHeightValidation,
+                ),
             ],
           ),
         ),
