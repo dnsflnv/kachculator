@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:kachculator/models/calc.dart';
-import 'package:kachculator/models/calc_bmi.dart';
+import 'package:kachculator/calculators/calc.dart';
+import 'package:kachculator/calculators/calc_bmi.dart';
 import 'package:meta/meta.dart';
 
 /// BFP

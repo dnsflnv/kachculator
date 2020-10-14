@@ -22,6 +22,8 @@ class HomePage extends StatelessWidget {
     return await rootBundle.loadString(path);
   }
 
+  /// Preparing data for "About" page
+  /// TODO: Change to FutureBuilder
   void getAboutPage(BuildContext context) async {
     Locale myLocale = Localizations.localeOf(context);
     String about = await _loadAsset("text/$myLocale/about.md");

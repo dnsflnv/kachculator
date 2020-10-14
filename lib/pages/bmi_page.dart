@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
-import 'package:kachculator/models/calc_bmi.dart';
-import 'package:kachculator/models/calc.dart';
+import 'package:kachculator/calculators/calc_bmi.dart';
+import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mp_widgets.dart';
 
