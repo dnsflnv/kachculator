@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kachculator/models/calc.dart';
+import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/generated/l10n.dart';
 
 double cooperVoMax({double distanse}) => (distanse - 504.9) / 44.73;
