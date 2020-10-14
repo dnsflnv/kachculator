@@ -1,6 +1,6 @@
 ## History
 
-### 1.2
+### 1.2 (dev)
 - Grey buttons with gray text fixed.
 - Home page refactored.
 - New about and licenses pages.
