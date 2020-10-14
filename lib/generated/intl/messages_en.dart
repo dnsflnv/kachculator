@@ -90,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "homePageProportions" : MessageLookupByLibrary.simpleMessage("Body proportions"),
     "inch" : MessageLookupByLibrary.simpleMessage("in"),
     "isAthlete" : MessageLookupByLibrary.simpleMessage("Are you professional athlete?"),
+    "lbmPageDescription" : MessageLookupByLibrary.simpleMessage("Fat-free body mass."),
+    "lbmPageTitle" : MessageLookupByLibrary.simpleMessage("Lean Body mass"),
     "male" : MessageLookupByLibrary.simpleMessage("Male"),
     "mcBicep" : MessageLookupByLibrary.simpleMessage("Bicep girth"),
     "mcButt" : MessageLookupByLibrary.simpleMessage("Girth of the buttocks"),

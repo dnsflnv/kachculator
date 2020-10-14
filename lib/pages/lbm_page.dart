@@ -50,12 +50,12 @@ class _LbmPageState extends State<LbmPage> {
   @override
   Widget build(BuildContext context) {
     return mpScaffold(
-      appBar: mpAppBar(title: Text('lbm')),
+      appBar: mpAppBar(title: Text(S.of(context).lbmPageTitle)),
       body: SafeArea(
         child: Center(
           child: ListView(
             children: <Widget>[
-              Text('Description of this'),
+              Text(S.of(context).lbmPageDescription),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: mpTextField(

@@ -1022,6 +1022,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Мышечная масса`
+  String get lbmPageTitle {
+    return Intl.message(
+      'Мышечная масса',
+      name: 'lbmPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Масса тела без учёта жира.`
+  String get lbmPageDescription {
+    return Intl.message(
+      'Масса тела без учёта жира.',
+      name: 'lbmPageDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

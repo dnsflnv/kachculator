@@ -90,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "homePageProportions" : MessageLookupByLibrary.simpleMessage("Пропорции тела"),
     "inch" : MessageLookupByLibrary.simpleMessage("дюймы"),
     "isAthlete" : MessageLookupByLibrary.simpleMessage("Вы профессиональный спортсмен?"),
+    "lbmPageDescription" : MessageLookupByLibrary.simpleMessage("Масса тела без учёта жира."),
+    "lbmPageTitle" : MessageLookupByLibrary.simpleMessage("Мышечная масса"),
     "male" : MessageLookupByLibrary.simpleMessage("Мужской"),
     "mcBicep" : MessageLookupByLibrary.simpleMessage("Обхват бицепса"),
     "mcButt" : MessageLookupByLibrary.simpleMessage("Обхват ягодиц"),

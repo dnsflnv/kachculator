@@ -107,5 +107,8 @@
     "cooperStrongPageTitle":"Cooper army test",
     "cooperStrongMinutes":"The number of whole minutes to complete 4 cycles",
     "cooperStrongMinutesValidation":"Please, enter number.",
-    "cooperStrongPageDesc":"Another type of Cooper's strength endurance test, also no less common (originally created for the US military, but also used by sportsmen and military personnel of other countries, including the Russian Federation), includes 4 repetitions of the following set of exercises:\n\n - do 10 push-ups and stay in support lying;\n - leaning on our hands with a jump, we bring our legs to our hands, squatting and then back 10 times;\n - we turn on our back and put our legs behind our heads 10 times (the exercise is performed lying on our back);\n - 10 jumps with a change of legs and touching the knee to the ground."
+    "cooperStrongPageDesc":"Another type of Cooper's strength endurance test, also no less common (originally created for the US military, but also used by sportsmen and military personnel of other countries, including the Russian Federation), includes 4 repetitions of the following set of exercises:\n\n - do 10 push-ups and stay in support lying;\n - leaning on our hands with a jump, we bring our legs to our hands, squatting and then back 10 times;\n - we turn on our back and put our legs behind our heads 10 times (the exercise is performed lying on our back);\n - 10 jumps with a change of legs and touching the knee to the ground.",
+
+    "lbmPageTitle":"Lean Body mass",
+    "lbmPageDescription":"Fat-free body mass."
 }

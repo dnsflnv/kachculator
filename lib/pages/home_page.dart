@@ -77,6 +77,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).bmiPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -94,6 +95,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).absiPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -111,6 +113,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).bfpPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -141,10 +144,11 @@ class HomePage extends StatelessWidget {
                   },
                   child: Column(
                     children: [
-                      Image.asset('icons/icons8-sumo-96.png'),
+                      Image.asset('icons/icons8-thriller-96.png'),
                       Text(
-                        'LBM', //S.of(context).rfmPageTitle,
+                        S.of(context).lbmPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -162,6 +166,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).mcPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -179,6 +184,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).mcrobertPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -196,6 +202,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).rmPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -213,6 +220,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).cooperPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
@@ -230,6 +238,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         S.of(context).cooperStrongPageTitle,
                         textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
                       ),
                     ],
                   ),
