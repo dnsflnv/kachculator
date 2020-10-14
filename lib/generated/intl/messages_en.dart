@@ -91,7 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "inch" : MessageLookupByLibrary.simpleMessage("in"),
     "isAthlete" : MessageLookupByLibrary.simpleMessage("Are you professional athlete?"),
     "lbmPageDescription" : MessageLookupByLibrary.simpleMessage("Fat-free body mass."),
-    "lbmPageTitle" : MessageLookupByLibrary.simpleMessage("Lean Body mass"),
+    "lbmPageTitle" : MessageLookupByLibrary.simpleMessage("Lean Body Mass"),
     "male" : MessageLookupByLibrary.simpleMessage("Male"),
     "mcBicep" : MessageLookupByLibrary.simpleMessage("Bicep girth"),
     "mcButt" : MessageLookupByLibrary.simpleMessage("Girth of the buttocks"),

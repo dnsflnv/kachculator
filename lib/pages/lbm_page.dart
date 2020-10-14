@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kachculator/calculators/calc.dart';
+import 'package:kachculator/calculators/calc_lbm.dart';
 import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
+import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/widgets/mp_widgets.dart';
 
 class LbmPage extends StatefulWidget {
@@ -87,6 +89,91 @@ class _LbmPageState extends State<LbmPage> {
                   MpValidationMessage(
                     message: S.of(context).bmiHeightValidation,
                   ),
+                mpSelectFromTwo(
+                  value1: Gender.female,
+                  value2: Gender.male,
+                  itemText1: S.of(context).female,
+                  itemText2: S.of(context).male,
+                  groupValue: gender,
+                  onChanged: (value) {
+                    setState(() {
+                      gender = value;
+                    });
+                  },
+                ),
+                mpSwitch(
+                  context: this.context,
+                  title: S.of(context).useImperialUS,
+                  value: isUS,
+                  onChanged: (bool value) {
+                    if (_validation()) return null;
+                    setState(() {
+                      isUS = value;
+                      double weight = double.parse(tcWeight.text);
+                      double height = double.parse(tcHeight.text);
+
+                      if (isUS) {
+                        weight = kgToLbs(weight);
+                        height = cmToInch(height);
+                      } else {
+                        weight = lbsToKg(weight);
+                        height = inchToCm(height);
+                      }
+                      tcWeight.text = weight.toStringAsFixed(3);
+                      tcHeight.text = height.toStringAsFixed(1);
+                    });
+                  },
+                  onTap: () {
+                    setState(() {
+                      isUS = !isUS;
+                    });
+                  },
+                ),
+                mpButton(
+                  label: S.of(context).calculate,
+                  onPressed: () {
+                    if (_validation()) return null;
+                    double weight = double.parse(tcWeight.text);
+                    double height = double.parse(tcHeight.text);
+
+                    if (isUS) {
+                      weight = lbsToKg(weight);
+                      height = inchToCm(height);
+                    }
+
+                    double boer = calcLbmBoer(
+                      weight: weight,
+                      gender: gender,
+                      heightCm: height,
+                    );
+
+                    double hume = calcLbmBoer(
+                      weight: weight,
+                      gender: gender,
+                      heightCm: height,
+                    );
+
+                    if (isUS) {
+                      boer = kgToLbs(boer);
+                      hume = kgToLbs(hume);
+                    }
+
+                    String res = """
+**${S.of(context).lbmPageTitle} Boer**: ${boer.toStringAsFixed(3)}
+
+**${S.of(context).lbmPageTitle} Hume**: ${hume.toStringAsFixed(3)}
+"""; //
+                    Navigator.push(
+                      context,
+                      mpPageRoute(
+                        builder: (context) => ResultPage(
+                          result: res,
+                          title: S.of(context).lbmPageTitle,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),
