@@ -1,8 +1,10 @@
-# Качкулятор
+# Качкулятор %version%
 
 ![Logo](resource:icons/icons8-deadlift-96.png)
 
 Калькулятор для бодибилдинга, пауэрлифтинга, фитнеса.
+
+Иконки [icons8.com](https://icons8.com).
 
 ## Поддержка и контакты
 

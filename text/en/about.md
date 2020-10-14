@@ -3,6 +3,7 @@
 ![Logo](resource:icons/icons8-deadlift-96.png)
 
 Calculator for fitness, bodybuilding and powerlifting.
+
 Icons by [icons8.com](https://icons8.com).
 
 ## Support or Contact
