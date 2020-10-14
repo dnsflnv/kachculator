@@ -1,5 +1,11 @@
 ## History
 
+### 1.2
+- Grey buttons with gray text fixed.
+- Home page refactored.
+- New about and licenses pages.
+- Added lean body mass (LBM) calculation.
+
 ### 1.1
 - Fixed some bugs with translation.
 - Added Cooper army test.
