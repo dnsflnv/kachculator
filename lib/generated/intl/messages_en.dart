@@ -88,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Food"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Strength and endurance"),
     "homePageProportions" : MessageLookupByLibrary.simpleMessage("Body proportions"),
+    "ifpPageTitle" : MessageLookupByLibrary.simpleMessage("IPF Points"),
     "inch" : MessageLookupByLibrary.simpleMessage("in"),
     "isAthlete" : MessageLookupByLibrary.simpleMessage("Are you professional athlete?"),
     "lbmPageDescription" : MessageLookupByLibrary.simpleMessage("Fat-free body mass."),

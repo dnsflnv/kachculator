@@ -6,6 +6,8 @@
 
 Иконки [icons8.com](https://icons8.com).
 
+IFP Points calculator algorythm: [IPF Points Calculator](https://gitlab.com/openpowerlifting/ipf-points-calculator).
+
 ## Поддержка и контакты
 
 Написать можно сюда: [denis@filonov.pro](mailto://denis@filonov.pro),

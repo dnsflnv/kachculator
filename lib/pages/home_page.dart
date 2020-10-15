@@ -7,6 +7,7 @@ import 'package:kachculator/pages/absi_page.dart';
 import 'package:kachculator/pages/bfp_page.dart';
 import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/cooper_page.dart';
+import 'package:kachculator/pages/ifp_page.dart';
 import 'package:kachculator/pages/lbm_page.dart';
 import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
@@ -51,7 +52,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  @override
+  //@override
   Widget build(BuildContext context) {
     return mpScaffold(
       appBar: mpAppBar(
@@ -210,6 +211,24 @@ class HomePage extends StatelessWidget {
                       Image.asset('icons/icons8-deadlift-96.png'),
                       Text(
                         S.of(context).rmPageTitle,
+                        textAlign: TextAlign.center,
+                        textScaleFactor: 0.9,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: mpFlatButton(
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, IfpPage.id);
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset('icons/icons8-deadlift-96.png'),
+                      Text(
+                        S.of(context).ifpPageTitle,
                         textAlign: TextAlign.center,
                         textScaleFactor: 0.9,
                       ),

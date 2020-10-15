@@ -1042,6 +1042,16 @@ class S {
       args: [],
     );
   }
+
+  /// `IPF Points`
+  String get ifpPageTitle {
+    return Intl.message(
+      'IPF Points',
+      name: 'ifpPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

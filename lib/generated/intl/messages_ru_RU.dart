@@ -88,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "homePageFood" : MessageLookupByLibrary.simpleMessage("Еда"),
     "homePagePower" : MessageLookupByLibrary.simpleMessage("Сила и выносливость"),
     "homePageProportions" : MessageLookupByLibrary.simpleMessage("Пропорции тела"),
+    "ifpPageTitle" : MessageLookupByLibrary.simpleMessage("IPF Points"),
     "inch" : MessageLookupByLibrary.simpleMessage("дюймы"),
     "isAthlete" : MessageLookupByLibrary.simpleMessage("Вы профессиональный спортсмен?"),
     "lbmPageDescription" : MessageLookupByLibrary.simpleMessage("Масса тела без учёта жира."),
