@@ -9,6 +9,8 @@ import 'intl/messages_all.dart';
 // **************************************************************************
 
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values
 
 class S {
   S();
@@ -1038,6 +1040,76 @@ class S {
     return Intl.message(
       'Масса тела без учёта жира.',
       name: 'lbmPageDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IPF Points`
+  String get ifpPageTitle {
+    return Intl.message(
+      'IPF Points',
+      name: 'ifpPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IFP Goodlift Calculator.`
+  String get ifpPageDescription {
+    return Intl.message(
+      'IFP Goodlift Calculator.',
+      name: 'ifpPageDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Общий вес`
+  String get ifpTotalWeight {
+    return Intl.message(
+      'Общий вес',
+      name: 'ifpTotalWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Raw`
+  String get ifpRaw {
+    return Intl.message(
+      'Raw',
+      name: 'ifpRaw',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Single-ply`
+  String get ifpSingleply {
+    return Intl.message(
+      'Single-ply',
+      name: 'ifpSingleply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3-Lift`
+  String get ifp3Lift {
+    return Intl.message(
+      '3-Lift',
+      name: 'ifp3Lift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bench`
+  String get ifpBench {
+    return Intl.message(
+      'Bench',
+      name: 'ifpBench',
       desc: '',
       args: [],
     );

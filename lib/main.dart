@@ -8,6 +8,7 @@ import 'package:kachculator/pages/bmi_page.dart';
 import 'package:kachculator/pages/cooper_page.dart';
 import 'package:kachculator/pages/cooper_strong_page.dart';
 import 'package:kachculator/pages/home_page.dart';
+import 'package:kachculator/pages/ifp_page.dart';
 import 'package:kachculator/pages/lbm_page.dart';
 import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
@@ -40,6 +41,7 @@ Map<String, Widget Function(BuildContext)> appRoutes = {
   CooperPage.id: (context) => CooperPage(),
   CooperStrongPage.id: (context) => CooperStrongPage(),
   LbmPage.id: (context) => LbmPage(),
+  IfpPage.id: (context) => IfpPage(),
 };
 
 class AppMaterial extends StatelessWidget {
