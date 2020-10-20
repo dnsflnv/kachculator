@@ -26,6 +26,7 @@ class HomePage extends StatelessWidget {
   }
 
   /// Preparing data for "About" page
+  // ignore: todo
   /// TODO: Change to FutureBuilder
   void getAboutPage(BuildContext context) async {
     Locale myLocale = Localizations.localeOf(context);

@@ -16,7 +16,6 @@ class McCallumPage extends StatefulWidget {
 }
 
 class _McCallumPageState extends State<McCallumPage> {
-  final _formKey = GlobalKey<FormState>();
   TextEditingController tcWrist;
   bool wristError;
   String result = '';

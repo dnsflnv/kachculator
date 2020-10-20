@@ -11,6 +11,7 @@ bool inRange(int x, int a, int b) {
     return false;
 }
 
+// ignore: missing_return
 String cooperRun(
     {@required int distanse,
     @required Gender gender,
