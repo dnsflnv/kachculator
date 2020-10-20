@@ -112,5 +112,11 @@
     "lbmPageTitle":"Lean Body Mass",
     "lbmPageDescription":"Fat-free body mass.",
 
-    "ifpPageTitle":"IPF Points"
+    "ifpPageTitle":"IPF Points",
+    "ifpPageDescription":"IFP Goodlift Calculator.",
+    "ifpTotalWeight":"Total weight",
+    "ifpRaw":"Raw",
+    "ifpSingleply":"Single-ply",
+    "ifp3Lift":"3-Lift",
+    "ifpBench":"Bench"
 }

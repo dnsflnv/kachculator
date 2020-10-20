@@ -112,5 +112,11 @@
     "lbmPageTitle":"Мышечная масса",
     "lbmPageDescription":"Масса тела без учёта жира.",
 
-    "ifpPageTitle":"IPF Points"
+    "ifpPageTitle":"IPF Points",
+    "ifpPageDescription":"IFP Goodlift Calculator.",
+    "ifpTotalWeight":"Общий вес",
+    "ifpRaw":"Raw",
+    "ifpSingleply":"Single-ply",
+    "ifp3Lift":"3-Lift",
+    "ifpBench":"Bench"
 }
