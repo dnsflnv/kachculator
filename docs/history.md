@@ -1,10 +1,11 @@
 ## History
 
-### 1.2 (dev)
+### 1.2
 - Grey buttons with gray text fixed.
 - Home page refactored.
 - New about and licenses pages.
 - Added lean body mass (LBM) calculation.
+- Added IPF GL Points Calculator.
 
 ### 1.1
 - Fixed some bugs with translation.
