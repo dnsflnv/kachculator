@@ -71,10 +71,10 @@ class HomePage extends StatelessWidget {
         child: Center(
           child: GridView.extent(
             primary: false,
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(8),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            maxCrossAxisExtent: 350.0,
+            maxCrossAxisExtent: 200.0,
             children: <Widget>[
               Container(
                 child: mpFlatButton(
