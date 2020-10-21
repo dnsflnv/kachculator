@@ -20,4 +20,5 @@ or create issure [here](https://github.com/filonov/kachculator/issues).
 
 ---
 
-## [History](history.md) 
+- [Version History](history.md) 
+- [Privacy Policy](privacy.md)
