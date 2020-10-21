@@ -1,7 +1,7 @@
 name: kachculator
 description: Calculator for fitness, bodybuilding and powerlifting.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.2.0+4 #version: {versionName}+{versionCode}
+version: 1.2.1+5 #version: {versionName}+{versionCode}
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

@@ -1,5 +1,9 @@
 ## History
 
+### 1.2.1
+First iOS published release.
+- Grid fixed.
+
 ### 1.2
 - Grey buttons with gray text fixed.
 - Home page refactored.
