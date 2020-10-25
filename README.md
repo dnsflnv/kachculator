@@ -10,16 +10,14 @@ Available calculations:
 - Body proportions by McRobert;
 - Repeat maximum (1 RM);
 - Cooper test and VO2 max;
-- Cooper army test.
+- Cooper army test;
+- Lean body mass (LBM) calculation;
+- IPF GL Points Calculator.
 
 ## Download
-Android: **[Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator)** or **[APK](https://github.com/filonov/kachculator/releases/download/v.1.1/app-release.apk)**
+Android: [Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator) or [see attached apk on last release](https://github.com/filonov/kachculator/releases).
 
-iOS: Coming soon, after Big Sur release.
-
-MacOS: **[Download Zip](https://github.com/filonov/kachculator/releases/download/v.1.1/macos-1.1.zip)**.
-
-Web: **[kachculator.ru](https://kachculator.ru)** (only for test, unsupported).
+Web: [kachculator.ru](https://kachculator.ru).
 
 ## Support or Contact
 
