@@ -1,6 +1,6 @@
 # Kachkulator — opensource fitness, bodybuilding and powerlifting calculator.
 
-Android: [Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator)** or [see attached apk on last release](https://github.com/filonov/kachculator/releases).
+Android: [Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator) or [see attached apk on last release](https://github.com/filonov/kachculator/releases).
 
 Web: [kachculator.ru](https://kachculator.ru).
 
