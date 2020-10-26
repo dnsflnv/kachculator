@@ -1,16 +1,24 @@
-# Kachkulator — opensource fitness, bodybuilding and powerlifting calculator.
+# Kachkulator
+Opensource fitness, bodybuilding and powerlifting calculator.
+
+Available calculations: 
+- Body Mass Index (BMI);
+- A body shape index (ABSI);
+- Body fat percentage (BFP);
+- Relative fat mass (RFM);
+- Body proporyions by McCallum;
+- Body proportions by McRobert;
+- Repeat maximum (1 RM);
+- Cooper test and VO2 max;
+- Cooper army test;
+- Lean body mass (LBM) calculation;
+- IPF GL Points Calculator.
+
+iOS: [App Store](https://apps.apple.com/se/app/kachculator/id1537243397?l=en).
 
 Android: [Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator) or [see attached apk on last release](https://github.com/filonov/kachculator/releases).
 
 Web: [kachculator.ru](https://kachculator.ru).
-
-iOS: Coming soon, on review.
-
-MacOS: Coming soon, on review.
-
-Windows: Coming soon, or you can build from sources.
-
-Linux: Coming soon, or you can build from sources.
 
 ## Support or Contact
 
