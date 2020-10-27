@@ -18,6 +18,8 @@ Available calculations:
 
 iOS: [App Store](https://apps.apple.com/se/app/kachculator/id1537243397?l=en).
 
+MacOS:[App Store](https://apps.apple.com/se/app/kachkulator/id1537566668?l=en).
+
 Android: [Google.Play](https://play.google.com/store/apps/details?id=pro.filonov.kachkulator) or [see attached apk on last release](https://github.com/filonov/kachculator/releases).
 
 Web: [kachculator.ru](https://kachculator.ru).
