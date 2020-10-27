@@ -1,6 +1,3 @@
-# Kachkulator
-Opensource fitness, bodybuilding and powerlifting calculator.
-
 Available calculations: 
 - Body Mass Index (BMI);
 - A body shape index (ABSI);
