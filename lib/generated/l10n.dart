@@ -35,1010 +35,1010 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Качкулятор`
+  /// `Kachculator`
   String get title {
     return Intl.message(
-      'Качкулятор',
+      'Kachculator',
       name: 'title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Физическая форма`
+  /// `Body form`
   String get homePageBody {
     return Intl.message(
-      'Физическая форма',
+      'Body form',
       name: 'homePageBody',
       desc: '',
       args: [],
     );
   }
 
-  /// `Сила и выносливость`
+  /// `Strength and endurance`
   String get homePagePower {
     return Intl.message(
-      'Сила и выносливость',
+      'Strength and endurance',
       name: 'homePagePower',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пропорции тела`
+  /// `Body proportions`
   String get homePageProportions {
     return Intl.message(
-      'Пропорции тела',
+      'Body proportions',
       name: 'homePageProportions',
       desc: '',
       args: [],
     );
   }
 
-  /// `Еда`
+  /// `Food`
   String get homePageFood {
     return Intl.message(
-      'Еда',
+      'Food',
       name: 'homePageFood',
       desc: '',
       args: [],
     );
   }
 
-  /// `О приложении`
+  /// `About`
   String get about {
     return Intl.message(
-      'О приложении',
+      'About',
       name: 'about',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пол`
+  /// `Gender`
   String get gender {
     return Intl.message(
-      'Пол',
+      'Gender',
       name: 'gender',
       desc: '',
       args: [],
     );
   }
 
-  /// `Мужской`
+  /// `Male`
   String get male {
     return Intl.message(
-      'Мужской',
+      'Male',
       name: 'male',
       desc: '',
       args: [],
     );
   }
 
-  /// `Женский`
+  /// `Female`
   String get female {
     return Intl.message(
-      'Женский',
+      'Female',
       name: 'female',
       desc: '',
       args: [],
     );
   }
 
-  /// `Возраст`
+  /// `Age`
   String get age {
     return Intl.message(
-      'Возраст',
+      'Age',
       name: 'age',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите возраст.`
+  /// `Please, enter you age.`
   String get ageValidation {
     return Intl.message(
-      'Пожалуйста, введите возраст.',
+      'Please, enter you age.',
       name: 'ageValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Использовать английскую систему мер (фунты, дюймы, мили)?`
+  /// `Use Imperial/US system (lbs, in, miles)?`
   String get useImperialUS {
     return Intl.message(
-      'Использовать английскую систему мер (фунты, дюймы, мили)?',
+      'Use Imperial/US system (lbs, in, miles)?',
       name: 'useImperialUS',
       desc: '',
       args: [],
     );
   }
 
-  /// `см`
+  /// `cm`
   String get cm {
     return Intl.message(
-      'см',
+      'cm',
       name: 'cm',
       desc: '',
       args: [],
     );
   }
 
-  /// `дюймы`
+  /// `in`
   String get inch {
     return Intl.message(
-      'дюймы',
+      'in',
       name: 'inch',
       desc: '',
       args: [],
     );
   }
 
-  /// `Индекс массы тела (BMI)`
+  /// `Body Mass Index (BMI)`
   String get bmiPageTitle {
     return Intl.message(
-      'Индекс массы тела (BMI)',
+      'Body Mass Index (BMI)',
       name: 'bmiPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Расчитайте индекс массы тела (методика ВОЗ).`
+  /// `Calculate your Body Mass Index (WHO).`
   String get bmiPageDesc {
     return Intl.message(
-      'Расчитайте индекс массы тела (методика ВОЗ).',
+      'Calculate your Body Mass Index (WHO).',
       name: 'bmiPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ваш вес`
+  /// `Your weight`
   String get bmiWeight {
     return Intl.message(
-      'Ваш вес',
+      'Your weight',
       name: 'bmiWeight',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите ваш вес`
+  /// `Please enter your weight.`
   String get bmiWeightValidation {
     return Intl.message(
-      'Пожалуйста, введите ваш вес',
+      'Please enter your weight.',
       name: 'bmiWeightValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ваш рост`
+  /// `Your height`
   String get bmiHeight {
     return Intl.message(
-      'Ваш рост',
+      'Your height',
       name: 'bmiHeight',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите ваш рост`
+  /// `Please enter your height.`
   String get bmiHeightValidation {
     return Intl.message(
-      'Пожалуйста, введите ваш рост',
+      'Please enter your height.',
       name: 'bmiHeightValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Рассчитать`
+  /// `Calculate`
   String get calculate {
     return Intl.message(
-      'Рассчитать',
+      'Calculate',
       name: 'calculate',
       desc: '',
       args: [],
     );
   }
 
-  /// `ИМТ`
+  /// `BMI`
   String get bmi {
     return Intl.message(
-      'ИМТ',
+      'BMI',
       name: 'bmi',
       desc: '',
       args: [],
     );
   }
 
-  /// `Выраженный дефицит массы тела.`
+  /// `Very severely underweight.`
   String get bmi15 {
     return Intl.message(
-      'Выраженный дефицит массы тела.',
+      'Very severely underweight.',
       name: 'bmi15',
       desc: '',
       args: [],
     );
   }
 
-  /// `Дефицит массы тела.`
+  /// `Severely underweight.`
   String get bmi15_16 {
     return Intl.message(
-      'Дефицит массы тела.',
+      'Severely underweight.',
       name: 'bmi15_16',
       desc: '',
       args: [],
     );
   }
 
-  /// `Недостаточная (дефицит) масса тела.`
+  /// `Underweight.`
   String get bmi16_18 {
     return Intl.message(
-      'Недостаточная (дефицит) масса тела.',
+      'Underweight.',
       name: 'bmi16_18',
       desc: '',
       args: [],
     );
   }
 
-  /// `Нормальная масса тела.`
+  /// `Normal (healthy weight).`
   String get bmi18_25 {
     return Intl.message(
-      'Нормальная масса тела.',
+      'Normal (healthy weight).',
       name: 'bmi18_25',
       desc: '',
       args: [],
     );
   }
 
-  /// `Избыточная масса тела (1 степень).`
+  /// `Overweight.`
   String get bmi25_30 {
     return Intl.message(
-      'Избыточная масса тела (1 степень).',
+      'Overweight.',
       name: 'bmi25_30',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ожирение (2a степень).`
+  /// `Obese Class I (Moderately obese).`
   String get bmi30_35 {
     return Intl.message(
-      'Ожирение (2a степень).',
+      'Obese Class I (Moderately obese).',
       name: 'bmi30_35',
       desc: '',
       args: [],
     );
   }
 
-  /// `Выраженное ожирение (2b степень).`
+  /// `Obese Class II (Severely obese).`
   String get bmi35_40 {
     return Intl.message(
-      'Выраженное ожирение (2b степень).',
+      'Obese Class II (Severely obese).',
       name: 'bmi35_40',
       desc: '',
       args: [],
     );
   }
 
-  /// `Резко выраженное, морбидное ожирение (3 степень).`
+  /// `Obese Class III (Very severely obese).`
   String get bmi40 {
     return Intl.message(
-      'Резко выраженное, морбидное ожирение (3 степень).',
+      'Obese Class III (Very severely obese).',
       name: 'bmi40',
       desc: '',
       args: [],
     );
   }
 
-  /// `Повторный максимум`
+  /// `1 RM calculation`
   String get rmPageTitle {
     return Intl.message(
-      'Повторный максимум',
+      '1 RM calculation',
       name: 'rmPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Расчёт повторного максимума по разным методикам.`
+  /// `1 RM calculation by different methods.`
   String get rmPageDesc {
     return Intl.message(
-      'Расчёт повторного максимума по разным методикам.',
+      '1 RM calculation by different methods.',
       name: 'rmPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Вес снаряда`
+  /// `Weight of barebell`
   String get rmBarebellWeight {
     return Intl.message(
-      'Вес снаряда',
+      'Weight of barebell',
       name: 'rmBarebellWeight',
       desc: '',
       args: [],
     );
   }
 
-  /// `Количество повторов`
+  /// `Repeats`
   String get rmRepeats {
     return Intl.message(
-      'Количество повторов',
+      'Repeats',
       name: 'rmRepeats',
       desc: '',
       args: [],
     );
   }
 
-  /// `Метод`
+  /// `Method`
   String get rmMethod {
     return Intl.message(
-      'Метод',
+      'Method',
       name: 'rmMethod',
       desc: '',
       args: [],
     );
   }
 
-  /// `Результат`
+  /// `Result`
   String get rmResult {
     return Intl.message(
-      'Результат',
+      'Result',
       name: 'rmResult',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бржицки`
+  /// `Brzycki`
   String get Brzycki {
     return Intl.message(
-      'Бржицки',
+      'Brzycki',
       name: 'Brzycki',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ландер`
+  /// `Lander`
   String get Lander {
     return Intl.message(
-      'Ландер',
+      'Lander',
       name: 'Lander',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ломбарди`
+  /// `Lombardi`
   String get Lombardi {
     return Intl.message(
-      'Ломбарди',
+      'Lombardi',
       name: 'Lombardi',
       desc: '',
       args: [],
     );
   }
 
-  /// `Мэхью`
+  /// `Mayhew`
   String get Mayhew {
     return Intl.message(
-      'Мэхью',
+      'Mayhew',
       name: 'Mayhew',
       desc: '',
       args: [],
     );
   }
 
-  /// `О'Коннор`
+  /// `O'Conner`
   String get OConner {
     return Intl.message(
-      'О`Коннор',
+      'O`Conner',
       name: 'OConner',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ватан`
+  /// `Wathan`
   String get Wathan {
     return Intl.message(
-      'Ватан',
+      'Wathan',
       name: 'Wathan',
       desc: '',
       args: [],
     );
   }
 
-  /// `Вилкс`
+  /// `Wilks`
   String get Wilks {
     return Intl.message(
-      'Вилкс',
+      'Wilks',
       name: 'Wilks',
       desc: '',
       args: [],
     );
   }
 
-  /// `Эпли`
+  /// `Epley`
   String get Epley {
     return Intl.message(
-      'Эпли',
+      'Epley',
       name: 'Epley',
       desc: '',
       args: [],
     );
   }
 
-  /// `Введите вес снаряда.`
+  /// `Please, enter weight of barebell.`
   String get rmBarebellWeightValidation {
     return Intl.message(
-      'Введите вес снаряда.',
+      'Please, enter weight of barebell.',
       name: 'rmBarebellWeightValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Введите количество повторов.`
+  /// `Enter repeats.`
   String get rmRepeatValidation {
     return Intl.message(
-      'Введите количество повторов.',
+      'Enter repeats.',
       name: 'rmRepeatValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Индекс формы тела (ABSI)`
+  /// `A body shape index (ABSI)`
   String get absiPageTitle {
     return Intl.message(
-      'Индекс формы тела (ABSI)',
+      'A body shape index (ABSI)',
       name: 'absiPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Расчёт индекса формы тела и риска преждевременной смерти.`
+  /// `A body shape index and mortality risk calculator.`
   String get absiPageDesc {
     return Intl.message(
-      'Расчёт индекса формы тела и риска преждевременной смерти.',
+      'A body shape index and mortality risk calculator.',
       name: 'absiPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Объём талии`
+  /// `Waist circumference`
   String get absiWaistCircumference {
     return Intl.message(
-      'Объём талии',
+      'Waist circumference',
       name: 'absiWaistCircumference',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите окружность талии.`
+  /// `Please enter your waist circumference in cantimeters.`
   String get absiWaistCircumferenceValidation {
     return Intl.message(
-      'Пожалуйста, введите окружность талии.',
+      'Please enter your waist circumference in cantimeters.',
       name: 'absiWaistCircumferenceValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет.`
+  /// `Please, enter you age. ABSI calculator is only for people 2 or much years old.`
   String get absiAgeValidation {
     return Intl.message(
-      'Пожалуйста, введите возраст. Можно расчитать ABSI только для людей, старше 2 лет.',
+      'Please, enter you age. ABSI calculator is only for people 2 or much years old.',
       name: 'absiAgeValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Риск преждевременной смерти`
+  /// `Premature mortality risk`
   String get absiRisk {
     return Intl.message(
-      'Риск преждевременной смерти',
+      'Premature mortality risk',
       name: 'absiRisk',
       desc: '',
       args: [],
     );
   }
 
-  /// `Очень низкий.`
+  /// `Very Low`
   String get absiRisk1 {
     return Intl.message(
-      'Очень низкий.',
+      'Very Low',
       name: 'absiRisk1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Низкий.`
+  /// `Low`
   String get absiRisk2 {
     return Intl.message(
-      'Низкий.',
+      'Low',
       name: 'absiRisk2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Средний.`
+  /// `Averange`
   String get absiRisk3 {
     return Intl.message(
-      'Средний.',
+      'Averange',
       name: 'absiRisk3',
       desc: '',
       args: [],
     );
   }
 
-  /// `Высокий.`
+  /// `High`
   String get absiRisk4 {
     return Intl.message(
-      'Высокий.',
+      'High',
       name: 'absiRisk4',
       desc: '',
       args: [],
     );
   }
 
-  /// `Очень выскокий.`
+  /// `Very High`
   String get absiRisk5 {
     return Intl.message(
-      'Очень выскокий.',
+      'Very High',
       name: 'absiRisk5',
       desc: '',
       args: [],
     );
   }
 
-  /// `Средний ABSI людей вашего пола и возраста`
+  /// `Averange ABSI of people in your age and same gender`
   String get absiMean {
     return Intl.message(
-      'Средний ABSI людей вашего пола и возраста',
+      'Averange ABSI of people in your age and same gender',
       name: 'absiMean',
       desc: '',
       args: [],
     );
   }
 
-  /// `Относительная масса жира (RFM)`
+  /// `Relative fat mass (RFM)`
   String get rfmPageTitle {
     return Intl.message(
-      'Относительная масса жира (RFM)',
+      'Relative fat mass (RFM)',
       name: 'rfmPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Расчёт относительной массы жира в процентах.`
+  /// `Relative fat mass in % calculation.`
   String get rfmPageDescription {
     return Intl.message(
-      'Расчёт относительной массы жира в процентах.',
+      'Relative fat mass in % calculation.',
       name: 'rfmPageDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Процент жира в теле (BFP)`
+  /// `Body fat percentage (BFP)`
   String get bfpPageTitle {
     return Intl.message(
-      'Процент жира в теле (BFP)',
+      'Body fat percentage (BFP)',
       name: 'bfpPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Необходимый жир`
+  /// `Essential fat`
   String get bfpEssential {
     return Intl.message(
-      'Необходимый жир',
+      'Essential fat',
       name: 'bfpEssential',
       desc: '',
       args: [],
     );
   }
 
-  /// `Атлеты`
+  /// `Athletes`
   String get bfpAthletes {
     return Intl.message(
-      'Атлеты',
+      'Athletes',
       name: 'bfpAthletes',
       desc: '',
       args: [],
     );
   }
 
-  /// `Фитнесс`
+  /// `Fitness`
   String get bfpFitness {
     return Intl.message(
-      'Фитнесс',
+      'Fitness',
       name: 'bfpFitness',
       desc: '',
       args: [],
     );
   }
 
-  /// `Средний`
+  /// `Average`
   String get bfpAverage {
     return Intl.message(
-      'Средний',
+      'Average',
       name: 'bfpAverage',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ожирение`
+  /// `Obese`
   String get bfpObese {
     return Intl.message(
-      'Ожирение',
+      'Obese',
       name: 'bfpObese',
       desc: '',
       args: [],
     );
   }
 
-  /// `Категория`
+  /// `Category`
   String get bfpCategory {
     return Intl.message(
-      'Категория',
+      'Category',
       name: 'bfpCategory',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пропорции тела (МакКаллум)`
+  /// `Body proportions (McCallum)`
   String get mcPageTitle {
     return Intl.message(
-      'Пропорции тела (МакКаллум)',
+      'Body proportions (McCallum)',
       name: 'mcPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Часть тела`
-  String get mcPart {
-    return Intl.message(
-      'Часть тела',
-      name: 'mcPart',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Расчёт идеальных пропорций тела по МакКаллуму для натурального бодибилдера.`
+  /// `Ideal Body Proportions Formula For the Natural Athlete (McCallum).`
   String get mcPageDesc {
     return Intl.message(
-      'Расчёт идеальных пропорций тела по МакКаллуму для натурального бодибилдера.',
+      'Ideal Body Proportions Formula For the Natural Athlete (McCallum).',
       name: 'mcPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват запястья`
+  /// `Body part`
+  String get mcPart {
+    return Intl.message(
+      'Body part',
+      name: 'mcPart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrist girth`
   String get mcWrist {
     return Intl.message(
-      'Обхват запястья',
+      'Wrist girth',
       name: 'mcWrist',
       desc: '',
       args: [],
     );
   }
 
-  /// `Введите обхват запястья.`
+  /// `Enter your wrist circumference.`
   String get mcWristValidation {
     return Intl.message(
-      'Введите обхват запястья.',
+      'Enter your wrist circumference.',
       name: 'mcWristValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват груди`
+  /// `Chest girth`
   String get mcChest {
     return Intl.message(
-      'Обхват груди',
+      'Chest girth',
       name: 'mcChest',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват ягодиц`
+  /// `Girth of the buttocks`
   String get mcButt {
     return Intl.message(
-      'Обхват ягодиц',
+      'Girth of the buttocks',
       name: 'mcButt',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват талии`
+  /// `Waist`
   String get mcWaist {
     return Intl.message(
-      'Обхват талии',
+      'Waist',
       name: 'mcWaist',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват бедра`
+  /// `Thigh girth`
   String get mcThigh {
     return Intl.message(
-      'Обхват бедра',
+      'Thigh girth',
       name: 'mcThigh',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват шеи`
+  /// `Neck girth`
   String get mcNeck {
     return Intl.message(
-      'Обхват шеи',
+      'Neck girth',
       name: 'mcNeck',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват бицепса`
+  /// `Bicep girth`
   String get mcBicep {
     return Intl.message(
-      'Обхват бицепса',
+      'Bicep girth',
       name: 'mcBicep',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват голени`
+  /// `Calf circumference`
   String get mcCalf {
     return Intl.message(
-      'Обхват голени',
+      'Calf circumference',
       name: 'mcCalf',
       desc: '',
       args: [],
     );
   }
 
-  /// `Обхват предплечья`
+  /// `Forearm girth`
   String get mcForearm {
     return Intl.message(
-      'Обхват предплечья',
+      'Forearm girth',
       name: 'mcForearm',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тест Купера + VO max`
+  /// `Cooper test + VO max`
   String get cooperPageTitle {
     return Intl.message(
-      'Тест Купера + VO max',
+      'Cooper test + VO max',
       name: 'cooperPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тест на физическую подготовку, применяется в армии США. Для прохождения придётся побегать. Найдите стадион или беговую дорожку с отмеченным расстоянием (или используйте фитнесс-трекер с GPS) и замерьте, какое расстояние вы пробегаете за 12 минут непрерывного бега с максимально возможным для Вас усилием. Перед выполнением теста проконсультируйтесь с врачом, особенно, если у вас проблемы с сердечно-сосудистой системой.`
+  /// `Run 12 minutes as fast, as you can. And enter the distanse in the field below. You can do it on stadium, or using fitness tracker with GPS.`
   String get cooperPageDesc {
     return Intl.message(
-      'Тест на физическую подготовку, применяется в армии США. Для прохождения придётся побегать. Найдите стадион или беговую дорожку с отмеченным расстоянием (или используйте фитнесс-трекер с GPS) и замерьте, какое расстояние вы пробегаете за 12 минут непрерывного бега с максимально возможным для Вас усилием. Перед выполнением теста проконсультируйтесь с врачом, особенно, если у вас проблемы с сердечно-сосудистой системой.',
+      'Run 12 minutes as fast, as you can. And enter the distanse in the field below. You can do it on stadium, or using fitness tracker with GPS.',
       name: 'cooperPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Отлично`
+  /// `Excellent`
   String get cooperExcellent {
     return Intl.message(
-      'Отлично',
+      'Excellent',
       name: 'cooperExcellent',
       desc: '',
       args: [],
     );
   }
 
-  /// `Хорошо`
+  /// `Good`
   String get cooperGood {
     return Intl.message(
-      'Хорошо',
+      'Good',
       name: 'cooperGood',
       desc: '',
       args: [],
     );
   }
 
-  /// `Удовлетворительно`
+  /// `Average`
   String get cooperAverage {
     return Intl.message(
-      'Удовлетворительно',
+      'Average',
       name: 'cooperAverage',
       desc: '',
       args: [],
     );
   }
 
-  /// `Плохо`
+  /// `Bad`
   String get cooperBad {
     return Intl.message(
-      'Плохо',
+      'Bad',
       name: 'cooperBad',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ужасно`
+  /// `Terrible`
   String get cooperTerrible {
     return Intl.message(
-      'Ужасно',
+      'Terrible',
       name: 'cooperTerrible',
       desc: '',
       args: [],
     );
   }
 
-  /// `Дистанция`
+  /// `Distanse`
   String get cooperDistanse {
     return Intl.message(
-      'Дистанция',
+      'Distanse',
       name: 'cooperDistanse',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите дистанцию.`
+  /// `Please, enter the distanse.`
   String get cooperDistanseValidation {
     return Intl.message(
-      'Пожалуйста, введите дистанцию.',
+      'Please, enter the distanse.',
       name: 'cooperDistanseValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Вы профессиональный спортсмен?`
+  /// `Are you professional athlete?`
   String get isAthlete {
     return Intl.message(
-      'Вы профессиональный спортсмен?',
+      'Are you professional athlete?',
       name: 'isAthlete',
       desc: '',
       args: [],
     );
   }
 
-  /// `Оценка`
+  /// `Mark`
   String get cooperMark {
     return Intl.message(
-      'Оценка',
+      'Mark',
       name: 'cooperMark',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пропорциии тела (МакРоберт)`
+  /// `Body proportions (McRobert)`
   String get mcrobertPageTitle {
     return Intl.message(
-      'Пропорциии тела (МакРоберт)',
+      'Body proportions (McRobert)',
       name: 'mcrobertPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Расчёт идеальных пропорций тела по МакРоберту для натурального бодибилдера.`
+  /// `Ideal Body Proportions Formula For the Natural Athlete (McRobert).`
   String get mcrobertPageDesc {
     return Intl.message(
-      'Расчёт идеальных пропорций тела по МакРоберту для натурального бодибилдера.',
+      'Ideal Body Proportions Formula For the Natural Athlete (McRobert).',
       name: 'mcrobertPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Минимум`
+  /// `Minimum`
   String get mcrobertMin {
     return Intl.message(
-      'Минимум',
+      'Minimum',
       name: 'mcrobertMin',
       desc: '',
       args: [],
     );
   }
 
-  /// `Максимум`
+  /// `Maximum`
   String get mcrobertMax {
     return Intl.message(
-      'Максимум',
+      'Maximum',
       name: 'mcrobertMax',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тест Купера на силовую выносливость`
+  /// `Cooper army test`
   String get cooperStrongPageTitle {
     return Intl.message(
-      'Тест Купера на силовую выносливость',
+      'Cooper army test',
       name: 'cooperStrongPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Количество целых минут на выполнение 4-х циклов`
+  /// `The number of whole minutes to complete 4 cycles`
   String get cooperStrongMinutes {
     return Intl.message(
-      'Количество целых минут на выполнение 4-х циклов',
+      'The number of whole minutes to complete 4 cycles',
       name: 'cooperStrongMinutes',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите число.`
+  /// `Please, enter number.`
   String get cooperStrongMinutesValidation {
     return Intl.message(
-      'Пожалуйста, введите число.',
+      'Please, enter number.',
       name: 'cooperStrongMinutesValidation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ещё один вид теста Купера на силовую выносливость, также не менее распространенный (изначально созданный для военнослужащих армии США, но также используемый спорстменами и военнослужащими других стран, включая РФ), включает в себя 4 повтора следующего комплекса упражнений:\n\n – делаем 10 отжиманий и остаёмся в упоре лёжа;\n – опираясь на руки прыжком ноги подносим к рукам в упор присев и потом обратно 10 раз;\n – переворачиваемся на спину и 10 раз вынос ног за голову (упражнение выполняется лёжа на спине);\n – 10 подпрыгиваний со сменой ног и касаясь коленом земли.`
+  /// `Another type of Cooper's strength endurance test, also no less common (originally created for the US military, but also used by sportsmen and military personnel of other countries, including the Russian Federation), includes 4 repetitions of the following set of exercises:\n\n - do 10 push-ups and stay in support lying;\n - leaning on our hands with a jump, we bring our legs to our hands, squatting and then back 10 times;\n - we turn on our back and put our legs behind our heads 10 times (the exercise is performed lying on our back);\n - 10 jumps with a change of legs and touching the knee to the ground.`
   String get cooperStrongPageDesc {
     return Intl.message(
-      'Ещё один вид теста Купера на силовую выносливость, также не менее распространенный (изначально созданный для военнослужащих армии США, но также используемый спорстменами и военнослужащими других стран, включая РФ), включает в себя 4 повтора следующего комплекса упражнений:\n\n – делаем 10 отжиманий и остаёмся в упоре лёжа;\n – опираясь на руки прыжком ноги подносим к рукам в упор присев и потом обратно 10 раз;\n – переворачиваемся на спину и 10 раз вынос ног за голову (упражнение выполняется лёжа на спине);\n – 10 подпрыгиваний со сменой ног и касаясь коленом земли.',
+      'Another type of Cooper\'s strength endurance test, also no less common (originally created for the US military, but also used by sportsmen and military personnel of other countries, including the Russian Federation), includes 4 repetitions of the following set of exercises:\n\n - do 10 push-ups and stay in support lying;\n - leaning on our hands with a jump, we bring our legs to our hands, squatting and then back 10 times;\n - we turn on our back and put our legs behind our heads 10 times (the exercise is performed lying on our back);\n - 10 jumps with a change of legs and touching the knee to the ground.',
       name: 'cooperStrongPageDesc',
       desc: '',
       args: [],
     );
   }
 
-  /// `Мышечная масса`
+  /// `Lean Body Mass`
   String get lbmPageTitle {
     return Intl.message(
-      'Мышечная масса',
+      'Lean Body Mass',
       name: 'lbmPageTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Масса тела без учёта жира.`
+  /// `Fat-free body mass.`
   String get lbmPageDescription {
     return Intl.message(
-      'Масса тела без учёта жира.',
+      'Fat-free body mass.',
       name: 'lbmPageDescription',
       desc: '',
       args: [],
@@ -1065,10 +1065,10 @@ class S {
     );
   }
 
-  /// `Общий вес`
+  /// `Total weight`
   String get ifpTotalWeight {
     return Intl.message(
-      'Общий вес',
+      'Total weight',
       name: 'ifpTotalWeight',
       desc: '',
       args: [],
@@ -1121,8 +1121,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'ru', countryCode: 'RU'),
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ru', countryCode: 'RU'),
     ];
   }
 
