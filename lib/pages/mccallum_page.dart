@@ -5,7 +5,7 @@ import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 import 'package:kachculator/calculators/calc_mccallum.dart';
 
 class McCallumPage extends StatefulWidget {
@@ -16,10 +16,10 @@ class McCallumPage extends StatefulWidget {
 }
 
 class _McCallumPageState extends State<McCallumPage> {
-  TextEditingController tcWrist;
-  bool wristError;
+  TextEditingController tcWrist = TextEditingController(text: '17.5');
+  bool wristError = false;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   bool _validation() {
     if (tcWrist.text.isEmpty || double.parse(tcWrist.text) <= 0) {
@@ -34,14 +34,12 @@ class _McCallumPageState extends State<McCallumPage> {
   @override
   void initState() {
     super.initState();
-    tcWrist = TextEditingController(text: '17.5');
-    isUS = wristError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).mcPageTitle),
       ),
       body: SafeArea(
@@ -55,7 +53,7 @@ class _McCallumPageState extends State<McCallumPage> {
                   Text(S.of(context).mcPageDesc),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcWrist,
                       labelText: S.of(context).mcWrist,
                       inputFormatters: [
@@ -67,8 +65,7 @@ class _McCallumPageState extends State<McCallumPage> {
                     MpValidationMessage(
                       message: S.of(context).mcWristValidation,
                     ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -90,7 +87,7 @@ class _McCallumPageState extends State<McCallumPage> {
                       });
                     },
                   ),
-                  mpButton(
+                  MpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
                       if (_validation()) return null;

@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
   static String id = '/about';
-  final String about;
-  final String history;
-  final String version;
+  final String? about;
+  final String? history;
+  final String? version;
 
   AboutPage({this.about, this.history, this.version});
 
@@ -18,11 +18,10 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // String about;
 
-    return mpScaffold(
-      appBar: mpAppBar(
-          context: context,
+    return MpScaffold(
+      appBar: MpAppBar(
           title: Text('About'),
-          button: mpLinkButton(
+          trailing: MpLinkButton(
             label: 'Licenses',
             onPressed: () => showLicensePage(
                 context: context,
@@ -31,11 +30,12 @@ class AboutPage extends StatelessWidget {
           )),
       body: SafeArea(
         child: Markdown(
-          data: about + '\n' + history,
+          data: about! + '\n' + history!,
           controller: controller,
           selectable: false,
           styleSheetTheme: MarkdownStyleSheetBaseTheme.platform,
-          onTapLink: (href) => launch(href),
+          onTapLink: ((href) => launch(href)) as void Function(
+              String, String?, String)?,
         ),
       ),
     );

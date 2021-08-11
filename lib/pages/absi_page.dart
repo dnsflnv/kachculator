@@ -6,7 +6,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/calculators/calc_absi.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class AbsiPage extends StatefulWidget {
   static String id = '/absi';
@@ -16,19 +16,20 @@ class AbsiPage extends StatefulWidget {
 }
 
 class _AbsiPageState extends State<AbsiPage> {
-  TextEditingController tcWeight;
-  TextEditingController tcHeight;
-  TextEditingController tcWaistCircumference;
-  TextEditingController tcAge;
-  bool heightError;
-  bool weightError;
-  bool waistCircumferenceError;
-  bool ageError;
+  TextEditingController tcWeight = TextEditingController(text: '90');
+  TextEditingController tcHeight = TextEditingController(text: '184');
+  TextEditingController tcWaistCircumference =
+      TextEditingController(text: '84');
+  TextEditingController tcAge = TextEditingController(text: '41');
+  late bool heightError = false;
+  late bool weightError = false;
+  late bool waistCircumferenceError = false;
+  late bool ageError = false;
 
   double bmi = 0;
-  Gender gender;
+  Gender gender = Gender.male;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   bool _validation() {
     if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
@@ -62,19 +63,12 @@ class _AbsiPageState extends State<AbsiPage> {
   @override
   void initState() {
     super.initState();
-    tcWeight = TextEditingController(text: '90');
-    tcHeight = TextEditingController(text: '184');
-    tcWaistCircumference = TextEditingController(text: '84');
-    tcAge = TextEditingController(text: '41');
-    gender = Gender.male;
-    isUS =
-        weightError = heightError = waistCircumferenceError = ageError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(title: Text(S.of(context).absiPageTitle)),
+    return MpScaffold(
+      appBar: MpAppBar(title: Text(S.of(context).absiPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -86,7 +80,7 @@ class _AbsiPageState extends State<AbsiPage> {
                 Text(S.of(context).absiPageDesc),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcWeight,
                     labelText: S.of(context).bmiWeight,
                     inputFormatters: [
@@ -100,7 +94,7 @@ class _AbsiPageState extends State<AbsiPage> {
                   ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcHeight,
                     labelText: S.of(context).bmiHeight,
                     inputFormatters: [
@@ -114,7 +108,7 @@ class _AbsiPageState extends State<AbsiPage> {
                   ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcWaistCircumference,
                     labelText: S.of(context).absiWaistCircumference,
                     inputFormatters: [
@@ -128,7 +122,7 @@ class _AbsiPageState extends State<AbsiPage> {
                   ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcAge,
                     labelText: S.of(context).age,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -150,8 +144,7 @@ class _AbsiPageState extends State<AbsiPage> {
                     });
                   },
                 ),
-                mpSwitch(
-                  context: this.context,
+                MpSwitch(
                   title: S.of(context).useImperialUS,
                   value: isUS,
                   onChanged: (bool value) {
@@ -183,7 +176,7 @@ class _AbsiPageState extends State<AbsiPage> {
                     });
                   },
                 ),
-                mpButton(
+                MpButton(
                   label: S.of(context).calculate,
                   onPressed: () {
                     if (_validation()) return null;

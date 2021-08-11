@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 
 class CupertinoRadioChoiceDynamic extends StatefulWidget {
   CupertinoRadioChoiceDynamic(
-      {@required this.choices,
-      @required this.onChange,
-      @required this.initialKeyValue,
+      {required this.choices,
+      required this.onChange,
+      required this.initialKeyValue,
       this.selectedColor = CupertinoColors.systemBlue,
       this.notSelectedColor = CupertinoColors.inactiveGray,
       this.enabled = true});
 
-  final Function onChange;
+  final Function? onChange;
   final dynamic initialKeyValue;
-  final Map<dynamic, String> choices;
+  final Map<dynamic, String>? choices;
   final Color selectedColor;
   final Color notSelectedColor;
   final bool enabled;
@@ -32,10 +32,10 @@ class _CupertinoRadioChoiceDynamicState
   @override
   void initState() {
     super.initState();
-    if (widget.choices.keys.contains(widget.initialKeyValue))
+    if (widget.choices!.keys.contains(widget.initialKeyValue))
       _selectedKey = widget.initialKeyValue;
     else
-      _selectedKey = widget.choices.keys.first;
+      _selectedKey = widget.choices!.keys.first;
   }
 
   Widget buildSelectionButton(dynamic key, String value,
@@ -54,15 +54,15 @@ class _CupertinoRadioChoiceDynamicState
                       _selectedKey = key;
                     });
 
-                    widget.onChange(_selectedKey);
+                    widget.onChange!(_selectedKey);
                   }));
   }
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> buttonList = [];
-    for (var key in widget.choices.keys) {
-      buttonList.add(buildSelectionButton(key, widget.choices[key],
+    for (var key in widget.choices!.keys) {
+      buttonList.add(buildSelectionButton(key, widget.choices![key]!,
           selected: _selectedKey == key));
     }
     return Wrap(

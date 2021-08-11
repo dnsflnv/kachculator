@@ -3,7 +3,8 @@ import 'package:kachculator/generated/l10n.dart';
 
 ///  MacRobert fomula of body proportions.
 ///  Part, minimum size and maximum size.
-Map<String, List<double>> mcRobert({double heightCm, BuildContext context}) {
+Map<String, List<double>> mcRobert(
+    {required double heightCm, required BuildContext context}) {
   double delta = heightCm - 157.0;
   if (delta < 0) delta = 0;
 

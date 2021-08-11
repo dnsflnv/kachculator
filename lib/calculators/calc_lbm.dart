@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 /// LBM Boer
 /// https://en.wikipedia.org/wiki/Lean_body_mass
-double calcLbmBoer({@required weight, @required gender, @required heightCm}) {
+double calcLbmBoer({required weight, required gender, required heightCm}) {
   double res = 0;
   switch (gender) {
     case Gender.female:
@@ -20,7 +20,7 @@ double calcLbmBoer({@required weight, @required gender, @required heightCm}) {
 
 /// LBM Hume
 /// https://en.wikipedia.org/wiki/Lean_body_mass
-double calcLbmHume({@required weight, @required gender, @required heightCm}) {
+double calcLbmHume({required weight, required gender, required heightCm}) {
   double res = 0;
   switch (gender) {
     case Gender.female:

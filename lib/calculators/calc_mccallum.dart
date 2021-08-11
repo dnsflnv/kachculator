@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kachculator/generated/l10n.dart';
 
 ///  MacCallum fomula of body proportions
-Map<String, double> mcCallum({double wristCm, BuildContext context}) {
+Map<String, double> mcCallum(
+    {required double wristCm, required BuildContext context}) {
   final double grud = wristCm * 6.5;
   final Map<String, double> res = {
     S.of(context).mcChest: grud,

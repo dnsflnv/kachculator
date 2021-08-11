@@ -47,15 +47,15 @@ double dotsW(double bodyweight) {
 /// https://gitlab.com/openpowerlifting/ipf-points-calculator/-/blob/master/index.html
 /// return {"dots": dots, "glp": glp}
 Map<String, double> calcIFP(
-    {double total,
-    double bodyweight,
-    Gender gender,
-    Equipment equipment,
-    Event event}) {
+    {required double total,
+    required double bodyweight,
+    required Gender? gender,
+    required Equipment? equipment,
+    required Event? event}) {
   double dots =
       total * ((gender == Gender.male) ? dotsM(bodyweight) : dotsW(bodyweight));
 
-  List<double> params = parameters[gender][equipment][event];
+  List<double> params = parameters[gender]![equipment]![event]!;
   double denom = params[0] - (params[1] * exp(-1.0 * params[2] * bodyweight));
   double glp = 0;
 

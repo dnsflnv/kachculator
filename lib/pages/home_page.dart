@@ -13,7 +13,7 @@ import 'package:kachculator/pages/mccallum_page.dart';
 import 'package:kachculator/pages/mcrobert_page.dart';
 import 'package:kachculator/pages/rfm_page.dart';
 import 'package:kachculator/pages/rm_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 import 'cooper_strong_page.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -55,11 +55,10 @@ class HomePage extends StatelessWidget {
 
   //@override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).title),
-        button: mpLinkButton(
-          context: context,
+        trailing: MpLinkButton(
           label: S.of(context).about,
           onPressed: () {
             // Navigator.pushNamed(context, AboutPage.id);
@@ -77,7 +76,7 @@ class HomePage extends StatelessWidget {
             maxCrossAxisExtent: 200.0,
             children: <Widget>[
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, BmiPage.id);
@@ -95,7 +94,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, AbsiPage.id);
@@ -113,7 +112,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, BfpPage.id);
@@ -131,7 +130,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, RfmPage.id);
@@ -148,7 +147,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, LbmPage.id);
@@ -166,7 +165,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, McCallumPage.id);
@@ -184,7 +183,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, McRobertPage.id);
@@ -202,7 +201,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, RmPage.id);
@@ -220,7 +219,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, IfpPage.id);
@@ -238,7 +237,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, CooperPage.id);
@@ -256,7 +255,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                child: mpFlatButton(
+                child: MpFlatButton(
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
                     Navigator.pushNamed(context, CooperStrongPage.id);

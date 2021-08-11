@@ -6,7 +6,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/calculators/calc_mcrobert.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class McRobertPage extends StatefulWidget {
   static String id = '/mcrobert';
@@ -16,10 +16,10 @@ class McRobertPage extends StatefulWidget {
 }
 
 class _McRobertPageState extends State<McRobertPage> {
-  TextEditingController tcHeight;
-  bool heightError;
+  TextEditingController tcHeight = TextEditingController(text: '184');
+  bool heightError = false;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   bool _validation() {
     if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
@@ -34,14 +34,12 @@ class _McRobertPageState extends State<McRobertPage> {
   @override
   void initState() {
     super.initState();
-    tcHeight = TextEditingController(text: '184');
-    isUS = heightError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).mcrobertPageTitle),
       ),
       body: SafeArea(
@@ -55,7 +53,7 @@ class _McRobertPageState extends State<McRobertPage> {
                   Text(S.of(context).mcrobertPageDesc),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcHeight,
                       labelText: S.of(context).bmiHeight,
                       inputFormatters: [
@@ -67,8 +65,7 @@ class _McRobertPageState extends State<McRobertPage> {
                     MpValidationMessage(
                       message: S.of(context).bmiHeightValidation,
                     ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -90,7 +87,7 @@ class _McRobertPageState extends State<McRobertPage> {
                       });
                     },
                   ),
-                  mpButton(
+                  MpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
                       if (_validation()) return null;

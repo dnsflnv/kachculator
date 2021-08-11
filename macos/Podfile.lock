@@ -1,39 +1,28 @@
 PODS:
   - FlutterMacOS (1.0.0)
-  - package_info_plus (0.4.5):
-    - FlutterMacOS
   - package_info_plus_macos (0.0.1):
     - FlutterMacOS
-  - url_launcher (0.0.1)
   - url_launcher_macos (0.0.1):
     - FlutterMacOS
 
 DEPENDENCIES:
-  - FlutterMacOS (from `Flutter/ephemeral/.symlinks/flutter/darwin-x64-release`)
-  - package_info_plus (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
   - package_info_plus_macos (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus_macos/macos`)
-  - url_launcher (from `Flutter/ephemeral/.symlinks/plugins/url_launcher/macos`)
   - url_launcher_macos (from `Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos`)
 
 EXTERNAL SOURCES:
   FlutterMacOS:
-    :path: Flutter/ephemeral/.symlinks/flutter/darwin-x64-release
-  package_info_plus:
-    :path: Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos
+    :path: Flutter/ephemeral
   package_info_plus_macos:
     :path: Flutter/ephemeral/.symlinks/plugins/package_info_plus_macos/macos
-  url_launcher:
-    :path: Flutter/ephemeral/.symlinks/plugins/url_launcher/macos
   url_launcher_macos:
     :path: Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos
 
 SPEC CHECKSUMS:
-  FlutterMacOS: 15bea8a44d2fa024068daa0140371c020b4b6ff9
-  package_info_plus: 6f669407bbeed2ee9da0a1730fd13e0259ce96e2
+  FlutterMacOS: 57701585bf7de1b3fc2bb61f6378d73bbdea8424
   package_info_plus_macos: f010621b07802a241d96d01876d6705f15e77c1c
-  url_launcher: af78307ef9bafff91273b34f1c6c0c86a0004fd7
   url_launcher_macos: 45af3d61de06997666568a7149c1be98b41c95d4
 
-PODFILE CHECKSUM: d8ba9b3e9e93c62c74a660b46c6fcb09f03991a7
+PODFILE CHECKSUM: 6eac6b3292e5142cfc23bdeb71848a40ec51c14c
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.2

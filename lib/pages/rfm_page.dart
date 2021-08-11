@@ -5,7 +5,7 @@ import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc_rfm.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 import 'package:kachculator/calculators/calc.dart';
 
 class RfmPage extends StatefulWidget {
@@ -16,13 +16,14 @@ class RfmPage extends StatefulWidget {
 }
 
 class _RfmPageState extends State<RfmPage> {
-  TextEditingController tcHeight;
-  TextEditingController tcWaistCircumference;
-  bool heightError;
-  bool waistCircumferenceError;
-  Gender gender;
+  TextEditingController tcHeight = TextEditingController(text: '184');
+  TextEditingController tcWaistCircumference =
+      TextEditingController(text: '86');
+  bool heightError = false;
+  bool waistCircumferenceError = false;
+  Gender gender = Gender.male;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   bool _validation() {
     if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
@@ -44,16 +45,12 @@ class _RfmPageState extends State<RfmPage> {
   @override
   void initState() {
     super.initState();
-    tcHeight = TextEditingController(text: '184');
-    tcWaistCircumference = TextEditingController(text: '86');
-    gender = Gender.male;
-    isUS = heightError = waistCircumferenceError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).rfmPageTitle),
       ),
       body: SafeArea(
@@ -67,7 +64,7 @@ class _RfmPageState extends State<RfmPage> {
                   Text(S.of(context).rfmPageDescription),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcHeight,
                       labelText: S.of(context).bmiHeight,
                       inputFormatters: [
@@ -81,7 +78,7 @@ class _RfmPageState extends State<RfmPage> {
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcWaistCircumference,
                       labelText: S.of(context).absiWaistCircumference,
                       inputFormatters: [
@@ -105,8 +102,7 @@ class _RfmPageState extends State<RfmPage> {
                       });
                     },
                   ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -134,7 +130,7 @@ class _RfmPageState extends State<RfmPage> {
                       });
                     },
                   ),
-                  mpButton(
+                  MpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
                       if (_validation()) return null;

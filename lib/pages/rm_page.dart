@@ -5,7 +5,7 @@ import 'package:kachculator/config.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/calculators/calc_rm.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 import 'package:kachculator/generated/l10n.dart';
 
 class RmPage extends StatefulWidget {
@@ -16,23 +16,18 @@ class RmPage extends StatefulWidget {
 }
 
 class _RmPageState extends State<RmPage> {
-  TextEditingController tcWeightAthlete;
-  TextEditingController tcWeight;
-  TextEditingController tcRepeat;
-  bool weightError;
-  bool weightAthleteError;
-  bool repeatError;
-  Gender gender;
-  bool isUS;
+  TextEditingController tcWeightAthlete = TextEditingController(text: '90');
+  TextEditingController tcWeight = TextEditingController(text: '134');
+  TextEditingController tcRepeat = TextEditingController(text: '3');
+  bool weightError = false;
+  bool weightAthleteError = false;
+  bool repeatError = false;
+  Gender gender = Gender.male;
+  bool isUS = false;
 
   @override
   void initState() {
     super.initState();
-    tcWeightAthlete = TextEditingController(text: '90');
-    tcWeight = TextEditingController(text: '134');
-    tcRepeat = TextEditingController(text: '3');
-    gender = Gender.male;
-    isUS = weightError = weightAthleteError = repeatError = false;
   }
 
   bool _validation() {
@@ -60,8 +55,8 @@ class _RmPageState extends State<RmPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).rmPageTitle),
       ),
       body: SafeArea(
@@ -75,7 +70,7 @@ class _RmPageState extends State<RmPage> {
                   Text(S.of(context).rmPageDesc),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcWeightAthlete,
                       labelText: S.of(context).bmiWeight,
                       inputFormatters: [
@@ -91,7 +86,7 @@ class _RmPageState extends State<RmPage> {
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: mpTextField(
+                      child: MpTextField(
                         controller: tcWeight,
                         labelText: S.of(context).rmBarebellWeight,
                         inputFormatters: [
@@ -107,7 +102,7 @@ class _RmPageState extends State<RmPage> {
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcRepeat,
                       labelText: S.of(context).rmRepeats,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -125,8 +120,7 @@ class _RmPageState extends State<RmPage> {
                       });
                     },
                   ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -153,8 +147,7 @@ class _RmPageState extends State<RmPage> {
                       });
                     },
                   ),
-                  mpButton(
-                      context: context,
+                  MpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_validation()) return null;

@@ -15,7 +15,10 @@ double mileToMeter(double mile) => mile * 1.609344 * 1000.0;
 double mererToMile(double km) => km / 1.609344 / 1000.0;
 
 /// BFP and RFM interpretation
-String bodyFat({double persent, Gender gender, BuildContext context}) {
+String bodyFat(
+    {required double persent,
+    required Gender gender,
+    required BuildContext context}) {
   String result = '';
 
   if (gender == Gender.female) {

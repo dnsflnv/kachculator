@@ -6,7 +6,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc_bfp.dart';
 import 'package:kachculator/pages/result_page.dart';
 import 'package:kachculator/calculators/calc.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class BfpPage extends StatefulWidget {
   static String id = '/bfp';
@@ -16,16 +16,16 @@ class BfpPage extends StatefulWidget {
 }
 
 class _BfpPageState extends State<BfpPage> {
-  TextEditingController tcWeight;
-  TextEditingController tcHeight;
-  TextEditingController tcAge;
-  bool weightError;
-  bool heightError;
-  bool ageError;
+  TextEditingController tcWeight = TextEditingController(text: '90');
+  TextEditingController tcHeight = TextEditingController(text: '184');
+  TextEditingController tcAge = TextEditingController(text: '41');
+  bool weightError = false;
+  bool heightError = false;
+  bool ageError = false;
   double bmi = 0;
-  Gender gender;
+  Gender gender = Gender.male;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   bool _validation() {
     if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
@@ -52,17 +52,12 @@ class _BfpPageState extends State<BfpPage> {
   @override
   void initState() {
     super.initState();
-    tcWeight = TextEditingController(text: '90');
-    tcHeight = TextEditingController(text: '184');
-    tcAge = TextEditingController(text: '41');
-    gender = Gender.male;
-    isUS = weightError = heightError = ageError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(title: Text(S.of(context).bfpPageTitle)),
+    return MpScaffold(
+      appBar: MpAppBar(title: Text(S.of(context).bfpPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -74,7 +69,7 @@ class _BfpPageState extends State<BfpPage> {
                   //Text(S.of(context).b),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcWeight,
                       labelText: S.of(context).bmiWeight,
                       inputFormatters: [
@@ -88,7 +83,7 @@ class _BfpPageState extends State<BfpPage> {
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcHeight,
                       labelText: S.of(context).bmiHeight,
                       inputFormatters: [
@@ -102,7 +97,7 @@ class _BfpPageState extends State<BfpPage> {
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcAge,
                       labelText: S.of(context).age,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -124,8 +119,7 @@ class _BfpPageState extends State<BfpPage> {
                       });
                     },
                   ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -151,7 +145,7 @@ class _BfpPageState extends State<BfpPage> {
                       });
                     },
                   ),
-                  mpButton(
+                  MpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
                       if (_validation()) return null;

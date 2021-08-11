@@ -3,49 +3,49 @@ import 'package:flutter/widgets.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/calculators/calc_bmi.dart';
-import 'package:meta/meta.dart';
 
 /// ABSI calculation
 /// https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039504
 class CalcABSI {
-  BuildContext context; // For localization
-  double weightAthlete;
-  double heightAthleteCm;
-  double waistCircumferenceCm;
-  Gender gender;
-  int age;
+  BuildContext? context; // For localization
+  double? weightAthlete;
+  double? heightAthleteCm;
+  double? waistCircumferenceCm;
+  Gender? gender;
+  int? age;
 
   CalcABSI(
-      {@required this.context,
-      @required this.weightAthlete,
-      @required this.heightAthleteCm,
-      @required this.gender,
-      @required this.age,
-      @required this.waistCircumferenceCm});
+      {required this.context,
+      required this.weightAthlete,
+      required this.heightAthleteCm,
+      required this.gender,
+      required this.age,
+      required this.waistCircumferenceCm});
 
   double get bmi => calcBmi(
-      weightAthlete: this.weightAthlete, heightAthleteCm: this.heightAthleteCm);
+      weightAthlete: this.weightAthlete!,
+      heightAthleteCm: this.heightAthleteCm!);
 
   double get absi =>
-      (this.waistCircumferenceCm / 100.0) /
-      (pow(this.bmi, 2.0 / 3.0) * pow(this.heightAthleteCm / 100.0, 0.5));
-  double get absiMean => absiTable[this.gender][this.age][3];
-  double get absiSD => absiTable[this.gender][this.age][4];
+      (this.waistCircumferenceCm! / 100.0) /
+      (pow(this.bmi, 2.0 / 3.0) * pow(this.heightAthleteCm! / 100.0, 0.5));
+  double get absiMean => absiTable[this.gender]![this.age]![3];
+  double get absiSD => absiTable[this.gender]![this.age]![4];
   double get absiZ => (this.absi - this.absiMean) / this.absiSD;
 
   String get absiRisk {
     double z = this.absiZ;
     String result = '';
     if (z < -0.868) {
-      result = S.of(this.context).absiRisk1;
+      result = S.of(this.context!).absiRisk1;
     } else if (z >= -0.868 && z < -0.272) {
-      result = S.of(this.context).absiRisk2;
+      result = S.of(this.context!).absiRisk2;
     } else if (z >= -0.272 && z < 0.229) {
-      result = S.of(this.context).absiRisk3;
+      result = S.of(this.context!).absiRisk3;
     } else if (z >= 0.229 && z < 0.798) {
-      result = S.of(this.context).absiRisk4;
+      result = S.of(this.context!).absiRisk4;
     } else if (z >= 0.798) {
-      result = S.of(this.context).absiRisk5;
+      result = S.of(this.context!).absiRisk5;
     }
     return result;
   }

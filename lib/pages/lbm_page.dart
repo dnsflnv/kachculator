@@ -6,7 +6,7 @@ import 'package:kachculator/calculators/calc_lbm.dart';
 import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class LbmPage extends StatefulWidget {
   static String id = '/lbm';
@@ -16,21 +16,17 @@ class LbmPage extends StatefulWidget {
 }
 
 class _LbmPageState extends State<LbmPage> {
-  TextEditingController tcWeight;
-  TextEditingController tcHeight;
-  bool heightError;
-  bool weightError;
-  Gender gender;
+  TextEditingController tcWeight = TextEditingController(text: '90');
+  TextEditingController tcHeight = TextEditingController(text: '184');
+  bool heightError = false;
+  bool weightError = false;
+  Gender gender = Gender.male;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   @override
   void initState() {
     super.initState();
-    tcWeight = TextEditingController(text: '90');
-    tcHeight = TextEditingController(text: '184');
-    gender = Gender.male;
-    isUS = weightError = heightError = false;
   }
 
   bool _validation() {
@@ -51,8 +47,8 @@ class _LbmPageState extends State<LbmPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(title: Text(S.of(context).lbmPageTitle)),
+    return MpScaffold(
+      appBar: MpAppBar(title: Text(S.of(context).lbmPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -63,7 +59,7 @@ class _LbmPageState extends State<LbmPage> {
                 Text(S.of(context).lbmPageDescription),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcWeight,
                     labelText: S.of(context).bmiWeight,
                     inputFormatters: [
@@ -77,7 +73,7 @@ class _LbmPageState extends State<LbmPage> {
                   ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcHeight,
                     labelText: S.of(context).bmiHeight,
                     inputFormatters: [
@@ -101,8 +97,7 @@ class _LbmPageState extends State<LbmPage> {
                     });
                   },
                 ),
-                mpSwitch(
-                  context: this.context,
+                MpSwitch(
                   title: S.of(context).useImperialUS,
                   value: isUS,
                   onChanged: (bool value) {
@@ -129,7 +124,7 @@ class _LbmPageState extends State<LbmPage> {
                     });
                   },
                 ),
-                mpButton(
+                MpButton(
                   label: S.of(context).calculate,
                   onPressed: () {
                     if (_validation()) return null;

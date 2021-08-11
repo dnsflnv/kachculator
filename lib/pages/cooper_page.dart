@@ -5,7 +5,7 @@ import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 import 'package:kachculator/calculators/calc_cooper_vomax.dart';
 
 class CooperPage extends StatefulWidget {
@@ -16,13 +16,13 @@ class CooperPage extends StatefulWidget {
 }
 
 class _CooperPageState extends State<CooperPage> {
-  TextEditingController tcDistanse;
-  TextEditingController tcAge;
-  bool isAthlete;
-  Gender gender;
-  bool isUS;
-  bool ageError;
-  bool distanceError;
+  TextEditingController tcDistanse = TextEditingController(text: '2700');
+  TextEditingController tcAge = TextEditingController(text: '42');
+  bool isAthlete = false;
+  Gender gender = Gender.male;
+  bool isUS = false;
+  bool ageError = false;
+  bool distanceError = false;
 
   bool _validation() {
     if (tcDistanse.text.isEmpty || double.parse(tcDistanse.text) <= 0) {
@@ -43,17 +43,12 @@ class _CooperPageState extends State<CooperPage> {
   @override
   void initState() {
     super.initState();
-    tcDistanse = TextEditingController(text: '2700');
-    tcAge = TextEditingController(text: '41');
-    gender = Gender.male;
-    isAthlete = false;
-    isUS = ageError = distanceError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).cooperPageTitle),
       ),
       body: SafeArea(
@@ -70,7 +65,7 @@ class _CooperPageState extends State<CooperPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcAge,
                       labelText: S.of(context).age,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -82,7 +77,7 @@ class _CooperPageState extends State<CooperPage> {
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcDistanse,
                       labelText: S.of(context).cooperDistanse,
                       inputFormatters: [
@@ -103,8 +98,7 @@ class _CooperPageState extends State<CooperPage> {
                       });
                     },
                   ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).isAthlete,
                     value: isAthlete,
                     onChanged: (bool value) {
@@ -118,8 +112,7 @@ class _CooperPageState extends State<CooperPage> {
                       });
                     },
                   ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -144,7 +137,7 @@ class _CooperPageState extends State<CooperPage> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 16.0, left: 32.0, right: 32.0),
-                    child: mpButton(
+                    child: MpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_validation()) return null;

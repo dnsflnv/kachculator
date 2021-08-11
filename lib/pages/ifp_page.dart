@@ -6,7 +6,7 @@ import 'package:kachculator/calculators/calc_ifp.dart';
 import 'package:kachculator/config.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class IfpPage extends StatefulWidget {
   static String id = '/ifp';
@@ -16,24 +16,18 @@ class IfpPage extends StatefulWidget {
 }
 
 class _IfpPageState extends State<IfpPage> {
-  TextEditingController tcBodyweight;
-  TextEditingController tcTotal;
-  bool errorTotal;
-  bool errorBodyweight;
-  Gender gender;
-  bool isUS;
-  Equipment equipment; // equipment
-  Event event;
+  TextEditingController tcBodyweight = TextEditingController(text: '90');
+  TextEditingController tcTotal = TextEditingController(text: '300');
+  bool errorTotal = false;
+  bool errorBodyweight = false;
+  Gender gender = Gender.male;
+  bool isUS = false;
+  Equipment equipment = Equipment.raw;
+  Event event = Event.sbd;
 
   @override
   void initState() {
     super.initState();
-    tcBodyweight = TextEditingController(text: '90');
-    tcTotal = TextEditingController(text: '300');
-    gender = Gender.male;
-    isUS = errorTotal = errorBodyweight = false;
-    equipment = Equipment.raw;
-    event = Event.sbd;
   }
 
   bool _validation() {
@@ -54,8 +48,8 @@ class _IfpPageState extends State<IfpPage> {
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(title: Text(S.of(context).ifpPageTitle)),
+    return MpScaffold(
+      appBar: MpAppBar(title: Text(S.of(context).ifpPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -67,7 +61,7 @@ class _IfpPageState extends State<IfpPage> {
                 // Total weight
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcTotal,
                     labelText: S.of(context).ifpTotalWeight,
                     inputFormatters: [
@@ -82,7 +76,7 @@ class _IfpPageState extends State<IfpPage> {
                 // Bodyweight
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: mpTextField(
+                  child: MpTextField(
                     controller: tcBodyweight,
                     labelText: S.of(context).bmiWeight,
                     inputFormatters: [
@@ -95,8 +89,7 @@ class _IfpPageState extends State<IfpPage> {
                     message: S.of(context).bmiWeightValidation,
                   ),
 
-                mpSwitch(
-                  context: this.context,
+                MpSwitch(
                   title: S.of(context).useImperialUS,
                   value: isUS,
                   onChanged: (bool value) {
@@ -170,8 +163,7 @@ class _IfpPageState extends State<IfpPage> {
                 SizedBox(
                   height: 8.0,
                 ),
-                mpButton(
-                  context: context,
+                MpButton(
                   label: S.of(context).calculate,
                   onPressed: () {
                     if (_validation()) return null;
@@ -190,9 +182,9 @@ class _IfpPageState extends State<IfpPage> {
                         event: event);
 
                     String res = """
-**GLP**: ${result["glp"].toStringAsFixed(3)}
+**GLP**: ${result["glp"]!.toStringAsFixed(3)}
 
-**Dots**: ${result["dots"].toStringAsFixed(3)}
+**Dots**: ${result["dots"]!.toStringAsFixed(3)}
 """; //
                     Navigator.push(
                       context,

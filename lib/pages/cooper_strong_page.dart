@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc_cooper_strong.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class CooperStrongPage extends StatefulWidget {
   static String id = '/cooperStrong';
@@ -14,8 +14,8 @@ class CooperStrongPage extends StatefulWidget {
 }
 
 class _CooperStrongPageState extends State<CooperStrongPage> {
-  TextEditingController tcMinutes;
-  bool errorMinutes;
+  TextEditingController tcMinutes = TextEditingController(text: '4');
+  bool errorMinutes = false;
 
   bool _validation() {
     if (tcMinutes.text.isEmpty || double.parse(tcMinutes.text) <= 0) {
@@ -30,14 +30,12 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
   @override
   void initState() {
     super.initState();
-    tcMinutes = TextEditingController(text: '4');
-    errorMinutes = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(
+    return MpScaffold(
+      appBar: MpAppBar(
         title: Text(S.of(context).cooperStrongPageTitle),
       ),
       body: SafeArea(
@@ -62,7 +60,7 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcMinutes,
                       labelText: S.of(context).cooperStrongMinutes,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -75,7 +73,7 @@ class _CooperStrongPageState extends State<CooperStrongPage> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 16.0, left: 32.0, right: 32.0),
-                    child: mpButton(
+                    child: MpButton(
                       label: S.of(context).calculate,
                       onPressed: () {
                         if (_validation()) return null;

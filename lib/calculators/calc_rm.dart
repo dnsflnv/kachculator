@@ -1,16 +1,15 @@
-import 'dart:math';
-import 'package:flutter/widgets.dart';
+import 'dart:math' show pow;
 import 'package:kachculator/calculators/calc.dart';
 
 class CalcRm {
-  double weightAthlete;
-  double heightAthleteCm;
-  double waistCircumferenceCm;
+  double? weightAthlete = 0;
+  double heightAthleteCm = 0;
+  double waistCircumferenceCm = 0;
 
-  int repeat;
-  double weight;
-  Gender gender;
-  int age;
+  int? repeat;
+  double? weight;
+  Gender? gender;
+  int age = 0;
 
   Map<Gender, Map<Coeff, double>> coeff = {
     Gender.male: {
@@ -32,29 +31,29 @@ class CalcRm {
   };
 
   CalcRm(
-      {@required this.weightAthlete,
-      @required this.weight,
-      @required this.repeat,
-      @required this.gender});
+      {required this.weightAthlete,
+      required this.weight,
+      required this.repeat,
+      required this.gender});
 
-  double get oneRmEpley => (this.repeat * this.weight) / 30.0 + this.weight;
-  double get oneRmBrzycki => this.weight * (36.0 / (37.0 - this.repeat));
+  double get oneRmEpley => (this.repeat! * this.weight!) / 30.0 + this.weight!;
+  double get oneRmBrzycki => this.weight! * (36.0 / (37.0 - this.repeat!));
   double get oneRmLander =>
-      (100 * this.weight) / (101.3 - 2.67123 * this.repeat);
-  double get oneRmLombardi => this.weight * pow(this.repeat, 0.1);
-  double get oneRmMayhew => (100 * this.weight) / (52.2 + 41.9 * 7.01863E-06);
-  double get oneRmOConner => this.weight * (1 + 0.025 * this.repeat);
-  double get oneRmWathan => 100 * this.weight / (48.8 + 53.8);
+      (100 * this.weight!) / (101.3 - 2.67123 * this.repeat!);
+  double get oneRmLombardi => this.weight! * pow(this.repeat!, 0.1);
+  double get oneRmMayhew => (100 * this.weight!) / (52.2 + 41.9 * 7.01863E-06);
+  double get oneRmOConner => this.weight! * (1 + 0.025 * this.repeat!);
+  double get oneRmWathan => 100 * this.weight! / (48.8 + 53.8);
 
   double get oneRmWilks {
-    Map<Coeff, double> c = coeff[this.gender];
-    double result = (500.0 * weight) /
-        (c[Coeff.a] +
-            c[Coeff.b] * this.weightAthlete +
-            c[Coeff.c] * pow(this.weightAthlete, 2) +
-            c[Coeff.d] * pow(this.weightAthlete, 3) +
-            c[Coeff.e] * pow(this.weightAthlete, 4) +
-            c[Coeff.f] * pow(this.weightAthlete, 5));
+    Map<Coeff, double> c = coeff[this.gender]!;
+    double result = (500.0 * weight!) /
+        (c[Coeff.a]! +
+            c[Coeff.b]! * this.weightAthlete! +
+            c[Coeff.c]! * pow(this.weightAthlete!, 2) +
+            c[Coeff.d]! * pow(this.weightAthlete!, 3) +
+            c[Coeff.e]! * pow(this.weightAthlete!, 4) +
+            c[Coeff.f]! * pow(this.weightAthlete!, 5));
     return result;
   }
 }

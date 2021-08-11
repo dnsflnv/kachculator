@@ -6,7 +6,7 @@ import 'package:kachculator/generated/l10n.dart';
 import 'package:kachculator/calculators/calc_bmi.dart';
 import 'package:kachculator/calculators/calc.dart';
 import 'package:kachculator/pages/result_page.dart';
-import 'package:kachculator/widgets/mp_widgets.dart';
+import 'package:kachculator/widgets/multiplatform_widgets.dart';
 
 class BmiPage extends StatefulWidget {
   static String id = '/bmi';
@@ -16,13 +16,13 @@ class BmiPage extends StatefulWidget {
 }
 
 class _BmiPageState extends State<BmiPage> {
-  TextEditingController tcWeight;
-  bool weightError;
-  TextEditingController tcHeight;
-  bool heightError;
+  TextEditingController tcWeight = TextEditingController(text: '89.6');
+  bool weightError = false;
+  TextEditingController tcHeight = TextEditingController(text: '183.5');
+  bool heightError = false;
   double bmi = 0;
   String result = '';
-  bool isUS;
+  bool isUS = false;
 
   bool _validation() {
     if (tcHeight.text.isEmpty || double.parse(tcHeight.text) <= 0) {
@@ -43,15 +43,12 @@ class _BmiPageState extends State<BmiPage> {
   @override
   void initState() {
     super.initState();
-    tcWeight = TextEditingController(text: '89.6');
-    tcHeight = TextEditingController(text: '183.5');
-    isUS = heightError = weightError = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return mpScaffold(
-      appBar: mpAppBar(title: Text(S.of(context).bmiPageTitle)),
+    return MpScaffold(
+      appBar: MpAppBar(title: Text(S.of(context).bmiPageTitle)),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -63,7 +60,7 @@ class _BmiPageState extends State<BmiPage> {
                   Text(S.of(context).bmiPageDesc),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcWeight,
                       labelText: S.of(context).bmiWeight,
                       inputFormatters: [
@@ -77,7 +74,7 @@ class _BmiPageState extends State<BmiPage> {
                     ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: mpTextField(
+                    child: MpTextField(
                       controller: tcHeight,
                       labelText: S.of(context).bmiHeight,
                       inputFormatters: [
@@ -89,8 +86,7 @@ class _BmiPageState extends State<BmiPage> {
                     MpValidationMessage(
                       message: S.of(context).bmiHeightValidation,
                     ),
-                  mpSwitch(
-                    context: this.context,
+                  MpSwitch(
                     title: S.of(context).useImperialUS,
                     value: isUS,
                     onChanged: (bool value) {
@@ -116,7 +112,7 @@ class _BmiPageState extends State<BmiPage> {
                       });
                     },
                   ),
-                  mpButton(
+                  MpButton(
                     label: S.of(context).calculate,
                     onPressed: () {
                       if (_validation()) return null;
