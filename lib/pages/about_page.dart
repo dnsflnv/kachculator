@@ -16,7 +16,7 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // String about;
+    MarkdownStyleSheet style = MarkdownStyleSheet.fromTheme(Theme.of(context));
 
     return MpScaffold(
       appBar: MpAppBar(
@@ -34,8 +34,7 @@ class AboutPage extends StatelessWidget {
           controller: controller,
           selectable: false,
           styleSheetTheme: MarkdownStyleSheetBaseTheme.platform,
-          onTapLink: ((href) => launch(href)) as void Function(
-              String, String?, String)?,
+          onTapLink: (text, href, title) => launch(href!),
         ),
       ),
     );
