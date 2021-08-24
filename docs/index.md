@@ -1,3 +1,9 @@
+---
+layout: home
+title: Kachculator
+subtitle: Fitness / bodybuilding / powerlifting calculator
+---
+
 Available calculations: 
 - Body Mass Index (BMI);
 - A body shape index (ABSI);
